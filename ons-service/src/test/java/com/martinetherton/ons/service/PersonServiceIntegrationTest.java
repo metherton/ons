@@ -18,7 +18,6 @@ public class PersonServiceIntegrationTest extends ServiceIntegrationTest {
     PersonService personService;
     
     @Test
-    @Ignore
     public void getPerson() {
         Assert.assertThat(personService.getPerson(0).getFirstName(), Matchers.is("Martin"));
     }

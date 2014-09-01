@@ -18,6 +18,9 @@
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
 
+
+    <!-- Data access using 100% JPA -->
+  
 	   <!-- A transaction manager for working with JPA Entity Managers -->
 	   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 	       <property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -50,7 +53,32 @@
     </bean> 
 
 
-    
+     <!-- Data access using 100% JPA -->
+    <beans profile="dev">
+        <!-- A transaction manager for working with JPA Entity Managers -->
+        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+            <property name="entityManagerFactory" ref="entityManagerFactory" />
+        </bean>
+
+        <!-- FactoryBean that creates the EntityManagerFactory -->
+        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+            <property name="jpaVendorAdapter">
+                <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+            </property>
+            <property name="packagesToScan" value="com.martinetherton" />
+            <property name="jpaProperties">
+                <props>
+                    <prop key="hibernate.show_sql">true</prop>
+                    <prop key="hibernate.format_sql">true</prop>
+                </props>
+            </property>
+            <property name="dataSource" ref="dataSource" />
+        </bean>
+        <jdbc:embedded-database id="dataSource">
+            <jdbc:script location="classpath:/META-INF/db/schema.sql" />
+            <jdbc:script location="classpath:/META-INF/db/test-data.sql" />
+        </jdbc:embedded-database>        
+    </beans>  
     
     
 </beans>

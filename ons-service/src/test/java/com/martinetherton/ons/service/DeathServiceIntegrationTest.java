@@ -17,7 +17,6 @@ public class DeathServiceIntegrationTest extends ServiceIntegrationTest {
     private DeathRepository deathRepository;
 
     @Test
-    @Ignore
     public void deadPersonShouldBeMartin() {
         DeathService deathService = new DeathServiceImpl(deathRepository);
         assertThat(deathService.getDeath(0).getPerson().getFirstName(), Matchers.is("Martin"));

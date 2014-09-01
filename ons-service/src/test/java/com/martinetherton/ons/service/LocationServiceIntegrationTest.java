@@ -18,14 +18,12 @@ public class LocationServiceIntegrationTest extends ServiceIntegrationTest {
     LocationRepository locationRepository;
     
     @Test
-    @Ignore
     public void cityForId0ShouldBeSheffield() {
         LocationService locationService = new LocationServiceImpl(locationRepository);
         Assert.assertThat(locationService.getLocation(0).getCity(), Matchers.is("Sheffield"));
     }
     
     @Test
-    @Ignore
     public void cityForId1ShouldBeLondon() {
         LocationService locationService = new LocationServiceImpl(locationRepository);
         Assert.assertThat(locationService.getLocation(1).getCity(), Matchers.is("London"));

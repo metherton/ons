@@ -23,7 +23,6 @@ public class SurnameServiceIntegrationTest extends ServiceIntegrationTest {
     private SurnameService surnameService;
     
     @Test
-    @Ignore
     public void getSurname() {
         assertThat(surnameService.getSurname((long) 0).getSurname(), Matchers.is("Etherton"));
         assertThat(surnameService.getSurname((long) 0).getSurname(), Matchers.is("Etherton"));
@@ -40,14 +39,14 @@ public class SurnameServiceIntegrationTest extends ServiceIntegrationTest {
         assertThat(surnameService.getSurnames().size(), Matchers.greaterThan(0));
     }
     
-//    @Test
-//    public void insertSurname() {
-//        Surname newSurname = new Surname();
-//        newSurname.setSurname("SurnameToInsert");
-//        surnameService.add(newSurname);
-//        Surname insertedSurname = surnameService.getSurnameWithName("SurnameToInsert");
-//        assertThat(insertedSurname.getSurname(), is("SurnameToInsert"));
-//    }
+    @Test
+    public void insertSurname() {
+        Surname newSurname = new Surname();
+        newSurname.setSurname("SurnameToInsert");
+        surnameService.add(newSurname);
+        Surname insertedSurname = surnameService.getSurnameWithName("SurnameToInsert");
+        assertThat(insertedSurname.getSurname(), is("SurnameToInsert"));
+    }
     
     @Test
     @Ignore
