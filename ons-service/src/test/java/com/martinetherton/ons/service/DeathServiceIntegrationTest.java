@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,6 +17,7 @@ public class DeathServiceIntegrationTest extends ServiceIntegrationTest {
     private DeathRepository deathRepository;
 
     @Test
+    @Ignore
     public void deadPersonShouldBeMartin() {
         DeathService deathService = new DeathServiceImpl(deathRepository);
         assertThat(deathService.getDeath(0).getPerson().getFirstName(), Matchers.is("Martin"));

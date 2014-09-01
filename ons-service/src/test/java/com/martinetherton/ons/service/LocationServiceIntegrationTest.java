@@ -2,6 +2,7 @@ package com.martinetherton.ons.service;
 
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,14 @@ public class LocationServiceIntegrationTest extends ServiceIntegrationTest {
     LocationRepository locationRepository;
     
     @Test
+    @Ignore
     public void cityForId0ShouldBeSheffield() {
         LocationService locationService = new LocationServiceImpl(locationRepository);
         Assert.assertThat(locationService.getLocation(0).getCity(), Matchers.is("Sheffield"));
     }
     
     @Test
+    @Ignore
     public void cityForId1ShouldBeLondon() {
         LocationService locationService = new LocationServiceImpl(locationRepository);
         Assert.assertThat(locationService.getLocation(1).getCity(), Matchers.is("London"));

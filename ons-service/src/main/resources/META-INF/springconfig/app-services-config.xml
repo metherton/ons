@@ -33,7 +33,7 @@
 
 	<bean id="personVisitCount" class="com.martinetherton.ons.service.PersonVisitCountImpl" />
 
-	 <beans profile="prod">
+ 	 <beans profile="prod">
      	<bean class="org.springframework.jmx.export.MBeanExporter">
 	        <property name="beans">
 	            <map>
@@ -41,6 +41,6 @@
 	           </map>
 	       </property>
     	</bean>
-    </beans>
+    </beans> 
 	 
 </beans>
