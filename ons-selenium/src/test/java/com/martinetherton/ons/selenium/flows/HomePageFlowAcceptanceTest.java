@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.martinetherton.ons.selenium.pages.HomePage;
 
-public class HomePageFlow {
+public class HomePageFlowAcceptanceTest {
 
 	private HomePage homePage;
 	private WebDriver driver;
@@ -35,5 +35,10 @@ public class HomePageFlow {
     public void homePage() {
     	assertThat(homePage.heading(), is("Welcome to the Etherton One Name Study"));
     }     
+    
+    @Test
+    public void searchForAnEthertonBySurnameShouldReturnAListOfEthertons() {
+    	homePage.searchBySurname("Etherton");
+    }
     
 }

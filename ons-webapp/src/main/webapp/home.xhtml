@@ -23,12 +23,26 @@
 	<ui:define name="content">
 		<h:outputText value="Find an Etherton" />
 		
-		Name: <h:outputText value="#{dvd.name}" />
 		
-		 
-		 <h:selectManyCheckbox id="genre" value="#{dvd.genre}">
-			<f:selectItems value="#{dvd.genreList}" />		 
-		 </h:selectManyCheckbox>
+		<h:panelGrid columns="1">
+			<h:panelGroup>
+				<h:outputLabel for="surnameList">
+					<h:outputText value="#{msg.surnameSearch}" />
+				</h:outputLabel><h:selectOneMenu id="surnameList" value="homePage.surname">
+							<f:selectItems value="#{homePage.surnameList}" />
+						 </h:selectOneMenu>
+			</h:panelGroup>
+			<h:panelGroup>					 
+				<h:outputLabel for="firstName">
+					<h:outputText value="#{msg.firstNameSearch}" />
+				</h:outputLabel> <h:inputText id="firstName"/>
+			</h:panelGroup>
+			<h:panelGroup>
+				<h:outputLabel for="search">
+					<h:outputText value="#{msg.searchButton}" />
+				</h:outputLabel> <h:commandButton id="search" value="#{msg.search}" action="#{homePage.search}"/>
+			</h:panelGroup>
+		</h:panelGrid>
 		 
 	</ui:define>
 

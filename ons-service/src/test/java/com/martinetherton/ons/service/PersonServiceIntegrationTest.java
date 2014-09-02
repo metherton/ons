@@ -39,5 +39,4 @@ public class PersonServiceIntegrationTest extends ServiceIntegrationTest {
         personService.pointcutWithParam("Martin");
     }
     
-    
 }

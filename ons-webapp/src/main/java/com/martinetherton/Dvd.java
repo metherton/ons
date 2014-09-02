@@ -14,13 +14,12 @@ import org.springframework.stereotype.Component;
 import com.martinetherton.ons.service.SurnameService;
 
 @Named
-//@ManagedBean
 @SessionScoped
 public class Dvd implements Serializable {
 	
 	private String genre;
 	private List<String> genreList = new ArrayList<String>(Arrays.asList("Pop", "Jazz"));
-	private String name = "bla";
+	private String name;
 	private SurnameService surnameService;
 	
 	public String getName() {
