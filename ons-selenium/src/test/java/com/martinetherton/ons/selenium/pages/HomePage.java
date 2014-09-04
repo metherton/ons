@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,10 +19,10 @@ public class HomePage {
 	@FindBy(how = How.ID, using = "heading")
 	private WebElement heading;
 
-	@FindBy(how = How.ID, using = "surnameList")
+	@FindBy(how = How.XPATH, using = "//select[contains(@id,'surnameList')]")
 	private WebElement surnameSelectionBox;
 	
-	@FindBy(how = How.ID, using = "search")
+	@FindBy(how = How.XPATH, using = "//input[contains(@id,'search')]")
 	private WebElement searchButton;
 	
 	
@@ -41,11 +42,11 @@ public class HomePage {
 	}
 
 
-	public void searchBySurname(String surname) {
+	public SearchListResultsPage searchBySurname(String surname) {
 		Select select = new Select(surnameSelectionBox);
-		select.deselectAll();
 		select.selectByValue(surname);
 		searchButton.click();
+		return PageFactory.initElements(driver, SearchListResultsPage.class);
 	}
 	
 

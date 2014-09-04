@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.martinetherton.ons.selenium.pages.HomePage;
+import com.martinetherton.ons.selenium.pages.SearchListResultsPage;
 
 public class HomePageFlowAcceptanceTest {
 
@@ -38,7 +39,8 @@ public class HomePageFlowAcceptanceTest {
     
     @Test
     public void searchForAnEthertonBySurnameShouldReturnAListOfEthertons() {
-    	homePage.searchBySurname("Etherton");
+    	SearchListResultsPage searchBySurname = homePage.searchBySurname("Etherton");
+    	assertThat(searchBySurname.numberOfRows(),Matchers.is(3));
     }
     
 }

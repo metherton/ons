@@ -12,7 +12,7 @@ import javax.inject.Named;
 @SessionScoped
 public class HomePage implements Serializable {
 
-	private List<String> surnameList = new ArrayList<String>(Arrays.asList("Etherton"));
+	private List<String> surnameList = new ArrayList<String>(Arrays.asList("Wilkinson", "Fink", "Etherton", "Bell"));
 	private String surname;
 	
 	public HomePage() {
@@ -35,5 +35,7 @@ public class HomePage implements Serializable {
 		this.surnameList = surnameList;
 	}
 	
-	
+	public String search() {
+		return "searchListResults";
+	}
 }
