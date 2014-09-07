@@ -11,13 +11,19 @@
 
 	<h:head>
 		<title><ui:insert name="title" /></title>
+		<h:outputStylesheet name="styles.css" library="css" />
 	</h:head>
 	<h:body>
 	
 		<div id="heading" class="header">
-	    	 <div id="pageTitle"><ui:insert name="heading" /></div>
+	    	 <div id="pageTitle">
+	    	 	<ui:insert name="heading" />
+	    	 </div>
 		</div>
 	
+		<div id="sideBarLeft">
+			<ui:insert name="sideBarLeft" />
+		</div> 
 	
 		<div id="content">
 		  <ui:insert name="content" />
