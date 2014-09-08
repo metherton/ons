@@ -25,4 +25,9 @@ ons-webapp/.project
 ons-webapp/.settings/*
 ons-webapp/bin/*
 ons-webapp/target/*
+ons-command/.classpath
+ons-command/.project
+ons-command/.settings/*
+ons-command/bin/*
+ons-command/target/*
 
