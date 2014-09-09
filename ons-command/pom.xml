@@ -11,6 +11,103 @@
   </parent>
 
   <artifactId>ons-command</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <name>Etherton One Name Study Command Line Application</name>
+  
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>     
+           <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>  	            
+           </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>  
+        
+ 	        <dependency>
+	          <groupId>org.springframework</groupId>
+	          <artifactId>spring-webmvc</artifactId>
+	          <version>${org.springframework.version}</version>
+	        </dependency>	        
+ 	        <dependency>
+	          <groupId>org.springframework</groupId>
+	          <artifactId>spring-context</artifactId>
+	          <version>${org.springframework.version}</version>
+	        </dependency>
+ 	        <dependency>
+	          <groupId>org.springframework</groupId>
+	          <artifactId>spring-web</artifactId>
+	          <version>${org.springframework.version}</version>
+	        </dependency>	
+ 	        <dependency>
+	          <groupId>org.springframework</groupId>
+	          <artifactId>spring-orm</artifactId>
+	          <version>${org.springframework.version}</version>
+	        </dependency>		        
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-beans</artifactId>
+	            <version>${org.springframework.version}</version>
+	        </dependency> 	        
+	        	        
+	                
+    <dependency>
+      <groupId>com.martinetherton</groupId>
+      <artifactId>ons-model</artifactId>
+      <version>${ons.version}</version>
+    </dependency> 
+
+    <dependency>
+      <groupId>com.martinetherton</groupId>
+      <artifactId>ons-service</artifactId>
+      <version>${ons.version}</version>
+    </dependency> 	
+	
+			<!-- LOGGING -->
+	        
+ 		    <dependency>
+		        <groupId>org.slf4j</groupId>
+		        <artifactId>jcl-over-slf4j</artifactId>
+		        <version>1.6.1</version>
+		    </dependency>
+		    <dependency>
+		        <groupId>org.slf4j</groupId>
+		        <artifactId>slf4j-api</artifactId>
+		        </dependency>
+		    <dependency>
+		        <groupId>org.slf4j</groupId>
+		        <artifactId>slf4j-log4j12</artifactId>
+		        <version>1.6.1</version><!--$NO-MVN-MAN-VER$-->
+		    </dependency>
+		    <dependency>
+		        <groupId>log4j</groupId>
+		        <artifactId>log4j</artifactId>
+		        <version>1.2.14</version>
+		    </dependency>        
+
+ 		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.8</version>
+		</dependency> 
+        
+    </dependencies>
+  
 </project>

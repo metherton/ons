@@ -2,6 +2,7 @@ package com.martinetherton.ons.model;
 
 
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="T_PERSON")
-public class Person {
+public class Person  {
 
     public Long getEntityId() {
         return entityId;

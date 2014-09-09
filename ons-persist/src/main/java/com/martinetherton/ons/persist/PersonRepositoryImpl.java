@@ -26,9 +26,9 @@ public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
     
     @Override
     public Person findBy(long entityId) {
-        if (cache != null && cache.containsKey(entityId)) {
-            return cache.get(entityId);
-        }
+//        if (cache != null && cache.containsKey(entityId)) {
+//            return cache.get(entityId);
+//        }
         return entityManager.find(Person.class, entityId);
     }
 
