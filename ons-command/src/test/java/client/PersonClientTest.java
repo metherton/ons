@@ -19,12 +19,12 @@ public class PersonClientTest {
 	
 	private RestTemplate restTemplate = new RestTemplate();
 		
-//	@Test
-//	public void getPerson() {
-//		String url = BASE_URL + "/persons/{personId}";
-//		Person person = restTemplate.getForObject(url, Person.class, 1); 
-//		assertEquals("Mark", person.getFirstName());
-//	}
+	@Test
+	public void getPerson() {
+		String url = BASE_URL + "/persons/{personId}";
+		Person person = restTemplate.getForObject(url, Person.class, 1); 
+		assertEquals("Mark", person.getFirstName());
+	}
 
 	@Test
 	public void getSurname() {

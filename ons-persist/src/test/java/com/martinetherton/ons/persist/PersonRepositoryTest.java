@@ -45,7 +45,6 @@ public class PersonRepositoryTest {
         Person person = repository.findBy(id);
         assertNotNull(person);
         assertThat(person.getFirstName(), is("Martin"));
-        assertThat(person.getMarriages().size(), is(2));
         System.out.println(person);
     }
 

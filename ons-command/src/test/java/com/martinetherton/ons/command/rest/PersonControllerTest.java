@@ -19,13 +19,11 @@ public class PersonControllerTest {
 
 	private PersonController controller;
 	private PersonService personService;
-	private SurnameService surnameService;
 	
 	@Before
 	public void setUp() {
 		personService = Mockito.mock(PersonServiceImpl.class);
-		surnameService = Mockito.mock(SurnameServiceImpl.class);
-		controller = new PersonController(personService,surnameService);
+		controller = new PersonController(personService);
 	}
 	
 	@Test

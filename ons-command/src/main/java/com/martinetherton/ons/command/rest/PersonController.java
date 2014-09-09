@@ -16,23 +16,15 @@ import com.martinetherton.ons.service.SurnameService;
 public class PersonController {
 
 	private PersonService personService;
-	private SurnameService surnameService;
 
 	@Autowired
-	public PersonController(PersonService personService, SurnameService surnameService) {
+	public PersonController(PersonService personService) {
 		this.personService = personService;
-		this.surnameService = surnameService;
 	}
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
 	public @ResponseBody Person personDetails(@PathVariable("personId") long id) {
 		Person person = personService.getPerson(id);
-		return person;
-	}
-
-	@RequestMapping(value = "/surnames/{surnameId}", method = RequestMethod.GET)
-	public @ResponseBody Surname surnameDetails(@PathVariable("surnameId") long id) {
-		Surname person = surnameService.getSurname(id);
 		return person;
 	}	
 	
