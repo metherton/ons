@@ -38,4 +38,8 @@ public class HomePage implements Serializable {
 	public String search() {
 		return "searchListResults";
 	}
+	
+	public String getCurrentYear() {
+		return "2014";
+	}
 }

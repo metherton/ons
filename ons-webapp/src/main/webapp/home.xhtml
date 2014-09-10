@@ -37,7 +37,12 @@
 				<h:panelGroup>					 
 					<h:outputLabel for="firstName">
 						<h:outputText value="#{msg.firstNameSearch}" />
-					</h:outputLabel> <h:inputText id="firstName"/>
+					</h:outputLabel> 
+					<h:inputText id="firstName" required="true">
+						<f:convertNumber integerOnly="true" groupingUsed="false" />  
+						<f:validateLongRange minimum="1900" maximum="#{homePage.currentYear}" />
+					</h:inputText>
+					<h:message for="firstName" styleClass="error" showSummary="true" showDetail="false"/>
 				</h:panelGroup>
 				<h:panelGroup>
 					<h:outputLabel for="search">

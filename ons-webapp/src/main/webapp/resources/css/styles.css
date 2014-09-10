@@ -1,6 +1,7 @@
 div {
 	
 	font: italic bold 12px/30px Georgia, serif;
+	
 }
 
 #heading {
@@ -18,4 +19,9 @@ div {
 	width:80%; 
 	margin-left:5%;
 	background-color: green;
+}
+
+.error {
+	font: 20px/40px Georgia, serif;
+	color: red;
 }
