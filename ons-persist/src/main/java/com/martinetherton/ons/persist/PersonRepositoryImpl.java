@@ -9,6 +9,9 @@ import javax.annotation.PreDestroy;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Repository;
@@ -16,6 +19,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.martinetherton.ons.model.Person;
+import com.martinetherton.ons.model.Surname;
 
 
 @Repository
@@ -72,7 +76,7 @@ public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
 
     @Override
     public Person findEarliestPerson() {
-        // TODO Auto-generated method stub
+  
         return null;
     }
 
@@ -87,6 +91,14 @@ public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
     public void afterPropertiesSet() throws Exception {
         System.out.println("in after properties set");
     }
+
+	@Override
+	public List<Person> findBy(Surname surname) {
+        Query query = entityManager.createQuery("select p from Person p where p.surname.surname = :surname");
+        query.setParameter("surname", surname.getSurname());
+        List<Person> persons = query.getResultList();
+        return persons;
+	}
 
 
 }

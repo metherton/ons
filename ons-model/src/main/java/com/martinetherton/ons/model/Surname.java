@@ -1,9 +1,26 @@
 package com.martinetherton.ons.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+@Entity
+@Table(name="T_SURNAME")
 public class Surname {
 
-    public Long getEntityId() {
+    public Surname(String surname) {
+		this.surname = surname;
+	}
+
+	public Surname() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getEntityId() {
         return entityId;
     }
 
@@ -19,8 +36,14 @@ public class Surname {
         this.surname = surname;
     }
 
+	@Id
+    @Column(name="ID")
+    @GeneratedValue    
     private Long entityId;
     
+    @Column(name="SURNAME")
+    @NotNull
+    @Size(min=1)	
     private String surname;
     
     @Override

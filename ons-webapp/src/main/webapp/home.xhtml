@@ -38,9 +38,10 @@
 					<h:outputLabel for="firstName">
 						<h:outputText value="#{msg.firstNameSearch}" />
 					</h:outputLabel> 
-					<h:inputText id="firstName" required="true">
+<!-- 					<h:inputText id="firstName" required="true">  -->
+					<h:inputText id="firstName">
 						<f:convertNumber integerOnly="true" groupingUsed="false" />  
-						<f:validateLongRange minimum="1900" maximum="#{homePage.currentYear}" />
+	<!-- 					<f:validateLongRange minimum="1900" maximum="#{homePage.currentYear}" />  -->
 					</h:inputText>
 					<h:message for="firstName" styleClass="error" showSummary="true" showDetail="false"/>
 				</h:panelGroup>
@@ -50,6 +51,19 @@
 					</h:outputLabel> <h:commandButton id="search" value="#{msg.search}" action="#{homePage.search}"/>
 				</h:panelGroup>
 			</h:panelGrid>
+			<fieldset>
+					<h:outputLabel for="firstName">
+						<h:outputText value="#{msg.firstNameSearch}" />
+					</h:outputLabel> 
+			
+			</fieldset>
+			<fieldset>
+					<h:outputLabel for="firstName">
+						<h:outputText value="#{msg.firstNameSearch}" />
+					</h:outputLabel> 
+			
+			</fieldset>
+
 		</h:form> 
 	</ui:define>
 

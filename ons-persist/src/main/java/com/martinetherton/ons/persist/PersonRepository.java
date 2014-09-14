@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 
 import com.martinetherton.ons.model.Person;
+import com.martinetherton.ons.model.Surname;
 
 
 public interface PersonRepository {
@@ -25,5 +26,7 @@ public interface PersonRepository {
     Person findEarliestPerson();
 
     List<Person> findAll();
+
+	List<Person> findBy(Surname surname);
 
 }

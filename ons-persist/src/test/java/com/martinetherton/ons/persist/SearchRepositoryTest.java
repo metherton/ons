@@ -1,91 +1,33 @@
 package com.martinetherton.ons.persist;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import javax.sql.DataSource;
 
-import org.hamcrest.Matchers;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-import com.martinetherton.ons.model.Person;
-import com.martinetherton.ons.model.Surname;
+public class SearchRepositoryTest {
 
-public class PersonRepositoryTest {
-
-    private PersonRepository repository;
+    private SearchRepository repository;
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
     
     @Before
-    public void setUpPersonRepository() {
+    public void setUpSearchRepository() {
         entityManagerFactory = createEntityManagerFactory();
         entityManager = entityManagerFactory.createEntityManager();
-        repository = new PersonRepositoryImpl();
+        repository = new SearchRepositoryImpl();
         repository.setEntityManager(entityManager);        
-    }
-    
-    @Test
-    public void findPersonById() {
-        long id = 0;
-        Person person = repository.findBy(id);
-        assertNotNull(person);
-        assertThat(person.getFirstName(), is("Martin"));
-        System.out.println(person);
-    }
-    
-    @Test
-    public void findPersonsBySurname() {
-        Surname surname = new Surname("Etherton");
-        List<Person> persons = repository.findBy(surname);
-        assertThat(persons.size(), is(4));
-    }
-   
-
-    @Test
-    @Ignore
-    public void findOldestPerson() {
-        Person person = repository.findEarliestPerson();
-        assertThat(person.getFirstName(), is("Samuel Original"));
-    }
-    
-    @Test
-    public void populatePersonCache() {
-        repository.populateCache();
-        Assert.assertThat(repository.getPersonCache().size(), Matchers.is(6));
-    }
-    
-    @Test
-    public void clearCache() {
-        repository.populateCache();
-        Assert.assertThat(repository.getPersonCache().size(), Matchers.is(6));
-        repository.clearCache();
-        Assert.assertThat(repository.getPersonCache().size(), Matchers.is(0));
-    }    
-    
-    @Test
-    public void findAllPersons() {
-        List<Person> persons = repository.findAll();
-        assertThat(persons.size(), is(6));
-    }
-    
+    }	
+	
     private EntityManagerFactory createEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(createTestDataSource());
@@ -128,5 +70,7 @@ public class PersonRepositoryTest {
         .addScript("classpath:/META-INF/db/test-data.sql")
         .build();        
     }        
+	
+	    
     
 }

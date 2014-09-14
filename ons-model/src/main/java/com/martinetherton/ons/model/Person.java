@@ -5,12 +5,14 @@ package com.martinetherton.ons.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
@@ -41,14 +43,19 @@ public class Person  {
         return handicapped;
     }
 
-
-
-
     public void setHandicapped(Boolean handicapped) {
         this.handicapped = handicapped;
     }
 
-    @Id
+    public Surname getSurname() {
+		return surname;
+	}
+
+	public void setSurname(Surname surname) {
+		this.surname = surname;
+	}
+
+	@Id
     @Column(name="ID")
     @GeneratedValue
     private Long entityId;
@@ -61,6 +68,9 @@ public class Person  {
     @Column(name="HANDICAPPED")
     private Boolean handicapped;
       
+    @OneToOne
+    @JoinColumn(name="SURNAME_ID")
+    private Surname surname;
 
   
     
