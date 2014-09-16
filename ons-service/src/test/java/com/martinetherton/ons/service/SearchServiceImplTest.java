@@ -1,6 +1,7 @@
 package com.martinetherton.ons.service;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -19,7 +20,7 @@ public class SearchServiceImplTest {
 		Surname surname = new Surname("Etherton");
 		searchQuery.setSurname(surname);
 		searchService.search(searchQuery);
-		Mockito.verify(personRepository.findPersonsWith(surname));
+		verify(personRepository).findBy(surname);
 	}
 
  

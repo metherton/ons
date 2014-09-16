@@ -10,8 +10,8 @@ public class SearchQueryTest {
 	@Test
 	public void searchQuerySettersAndGetters() {
 		SearchQuery searchQuery = new SearchQuery();
-		searchQuery.setSurname("Etherton");
-		assertThat(searchQuery.getSurname(), Matchers.is("Etherton"));
+		searchQuery.setSurname(new Surname("Etherton"));
+		assertThat(searchQuery.getSurname(), Matchers.is(new Surname("Etherton")));
 	}
 	
 }

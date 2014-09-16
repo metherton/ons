@@ -12,8 +12,11 @@ public class SearchResultTest {
 		
 		SearchResult searchResult = new SearchResult();
 		searchResult.setSurname("Etherton");
+		searchResult.setFirstName("Martin");
 		
 		assertThat(searchResult.getSurname(), is("Etherton"));
+		assertThat(searchResult.getFirstName(), is("Martin"));
+		
 	}
 	
 }

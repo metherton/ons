@@ -1,5 +1,8 @@
 package com.martinetherton.ons.command.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,9 +26,11 @@ public class PersonController {
 	}
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
-	public @ResponseBody Person personDetails(@PathVariable("personId") long id) {
+	public @ResponseBody List<Person> personDetails(@PathVariable("personId") long id) {
+		List<Person> persons = new ArrayList<Person>();
 		Person person = personService.getPerson(id);
-		return person;
+		persons.add(person);
+		return persons;
 	}	
 	
 }

@@ -24,13 +24,28 @@
 	
 	
 	<ui:define name="content">
-		<h:outputText value="Search Results List" />
+	
+		<h:form>
+			<h:outputText value="Search Results List" />
 		
-		<h:panelGrid columns="1">
-			<h:outputText value="Martin" />
-			<h:outputText value="Mark" />
-			<h:outputText value="Rhonda" />
-		</h:panelGrid> 
+			<p:dataTable value="#{homePage.searchResults}" var="searchResult">
+	
+			
+				<p:column sortBy="#{searchResult.firstName}">
+					<f:facet name="header">
+						First Name
+					</f:facet>
+					#{searchResult.firstName}
+				</p:column>		
+				<p:column>
+					<f:facet name="header">
+						Surname
+					</f:facet>	
+					#{searchResult.surname}
+				</p:column>
+			
+			</p:dataTable>	
+		</h:form> 
 	</ui:define>
 
 </ui:composition>
