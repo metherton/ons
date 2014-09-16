@@ -17,6 +17,7 @@
         <module>ons-persist</module>
         <module>ons-service</module>
         <module>ons-webapp</module>
+        <module>ons-command</module>
     <module>ons-selenium</module>
   </modules>
 

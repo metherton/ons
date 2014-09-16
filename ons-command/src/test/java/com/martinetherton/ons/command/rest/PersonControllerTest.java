@@ -3,6 +3,8 @@ package com.martinetherton.ons.command.rest;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 
+import java.util.List;
+
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,8 +33,8 @@ public class PersonControllerTest {
 		Person expectedPerson = new Person();
 		expectedPerson.setFirstName("John");
 		Mockito.when(personService.getPerson(1)).thenReturn(expectedPerson);
-		Person person = controller.personDetails(1L);
+		List<Person> persons = controller.personDetails(1L);
 		verify(personService).getPerson(1L);
-		assertThat(person.getFirstName(), Matchers.is("John"));
+		assertThat(persons.get(0).getFirstName(), Matchers.is("John"));
 	}
 }

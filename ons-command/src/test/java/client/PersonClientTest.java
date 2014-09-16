@@ -3,6 +3,7 @@ package client;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +21,7 @@ public class PersonClientTest {
 	private RestTemplate restTemplate = new RestTemplate();
 		
 	@Test
+	@Ignore
 	public void getPerson() {
 		String url = BASE_URL + "/persons/{personId}";
 		Person person = restTemplate.getForObject(url, Person.class, 1); 
@@ -27,6 +29,7 @@ public class PersonClientTest {
 	}
 
 	@Test
+	@Ignore
 	public void getSurname() {
 		String url = BASE_URL + "/surnames/{surnameId}";
 		Surname person = restTemplate.getForObject(url, Surname.class, 1); 
