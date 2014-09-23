@@ -5,19 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.martinetherton.ons.model.SearchCriteria;
 import com.martinetherton.ons.model.SearchQuery;
 import com.martinetherton.ons.model.SearchResult;
 import com.martinetherton.ons.model.SearchResultFactory;
 import com.martinetherton.ons.persist.PersonRepository;
+import com.martinetherton.ons.persist.SurnameRepository;
 
 @Service
 public class SearchServiceImpl implements SearchService {
 
 	private PersonRepository personRepository;
+	private SurnameRepository surnameRepository;
 
 	@Autowired
-	public SearchServiceImpl(PersonRepository personRepository) {
+	public SearchServiceImpl(PersonRepository personRepository, SurnameRepository surnameRepository) {
 		this.personRepository = personRepository;
+		this.surnameRepository = surnameRepository;
 	}
 
 	@Override
@@ -25,6 +29,13 @@ public class SearchServiceImpl implements SearchService {
 		// TODO Auto-generated method stub
 		List<SearchResult> searchResults = SearchResultFactory.create(personRepository.findBy(searchQuery.getSurname()));
 		return searchResults;
+	}
+
+	@Override
+	public SearchCriteria searchCriteria() {
+		SearchCriteria searchCriteria = new SearchCriteria();
+		searchCriteria.setSurnameList(surnameRepository.findAll());
+		return searchCriteria;
 	}
 
 }

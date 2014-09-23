@@ -2,11 +2,13 @@
 
 /* Controllers */
 
-var phonecatApp = angular.module('phonecatApp', []);
+var onsApp = angular.module('onsApp', []);
 
-phonecatApp.controller('PhoneListCtrl', function($scope, $http) {
-  $http.get('http://localhost:8080/ons-command/rest/persons/1').success(function(data) {
-    $scope.persons = data;
+onsApp.controller('SearchBoxCtrl', function($scope, $http) {
+  $http.get('http://localhost:8080/ons-command/rest/').success(function(data) {
+    $scope.surnameList = data.surnameList;
+    $scope.surnameSelected = "Etherton";
   });
+  
 
 });

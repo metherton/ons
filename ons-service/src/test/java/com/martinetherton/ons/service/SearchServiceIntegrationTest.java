@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.martinetherton.ons.model.SearchCriteria;
 import com.martinetherton.ons.model.SearchQuery;
 import com.martinetherton.ons.model.SearchResult;
 import com.martinetherton.ons.model.Surname;
@@ -26,6 +27,12 @@ public class SearchServiceIntegrationTest extends ServiceIntegrationTest {
 		List<SearchResult> searchResults = searchService.search(query);
 		assertThat(searchResults.size(), is(4));
 		assertThat(searchResults.get(0).getSurname(), Matchers.is("Etherton"));
+	}
+	
+	@Test
+	public void searchCriteriaCreated() {
+		SearchCriteria searchCriteria = searchService.searchCriteria();
+		assertThat(searchCriteria.getSurnameList().get(0).getSurname(), Matchers.is("Etherton"));
 	}
 	
 }

@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="onsApp">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <title>Etherton One Name Study</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
   <script src="js/controllers.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
+<body ng-controller="SearchBoxCtrl">
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
         <!--Sidebar content-->
 
-        Search: <input ng-model="query">
+        Search: <select ng-model="surnameSelected">
+        			 <option ng-repeat="surname in surnameList" value="{{surname.entityId}}">{{surname.surname}}</option>
+        		</select>
 
       </div>
       <div class="col-md-10">
