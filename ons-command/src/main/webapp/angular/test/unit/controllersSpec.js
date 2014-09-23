@@ -1,18 +1,35 @@
 'use strict';
 
 /* jasmine specs for controllers go here */
-describe('PhoneCat controllers', function() {
+describe('SearchBoxCtrl controllers', function() {
 
-  describe('PhoneListCtrl', function(){
+  describe('SearchBoxCtrl', function(){
+    var scope, ctrl, $httpBackend;
 
-    beforeEach(module('phonecatApp'));
+    beforeEach(module('onsApp'));
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('http://localhost:8080/ons-command/rest/').
+          respond({surnameList:[{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]});
 
-    it('should create "phones" model with 3 phones', inject(function($controller) {
-      var scope = {},
-          ctrl = $controller('PhoneListCtrl', {$scope:scope});
-
-      expect(scope.phones.length).toBe(3);
+      scope = $rootScope.$new();
+      ctrl = $controller('SearchBoxCtrl', {$scope: scope});
     }));
+
+
+    it('should create surnameList model with 2 surnames fetched from xhr', function() {
+      expect(scope.surnameList).toBeUndefined();
+      $httpBackend.flush();
+
+      expect(scope.surnameList).toEqual([{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]);
+    });
+    
+    it('should create surnameList model with 2 surnames fetched from xhr', function() {
+        expect(scope.surnameList).toBeUndefined();
+        $httpBackend.flush();
+
+        expect(scope.surnameList).toEqual([{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]);
+      });    
 
   });
 });
