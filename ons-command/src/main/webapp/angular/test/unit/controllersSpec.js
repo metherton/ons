@@ -24,12 +24,5 @@ describe('SearchBoxCtrl controllers', function() {
       expect(scope.surnameList).toEqual([{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]);
     });
     
-    it('should create surnameList model with 2 surnames fetched from xhr', function() {
-        expect(scope.surnameList).toBeUndefined();
-        $httpBackend.flush();
-
-        expect(scope.surnameList).toEqual([{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]);
-      });    
-
   });
 });
