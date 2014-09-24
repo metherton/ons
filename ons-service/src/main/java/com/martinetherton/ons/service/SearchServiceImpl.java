@@ -26,7 +26,6 @@ public class SearchServiceImpl implements SearchService {
 
 	@Override
 	public List<SearchResult> search(SearchQuery searchQuery) {
-		// TODO Auto-generated method stub
 		List<SearchResult> searchResults = SearchResultFactory.create(personRepository.findBy(searchQuery.getSurname()));
 		return searchResults;
 	}

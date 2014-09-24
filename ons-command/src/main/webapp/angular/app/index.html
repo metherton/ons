@@ -15,9 +15,11 @@
       <div class="col-md-2">
         <!--Sidebar content-->
 
-        Search: <select ng-model="surnameSelected">
+        Search: <select ng-model="selectedSurname">
         			 <option ng-repeat="surname in surnameList" value="{{surname.entityId}}">{{surname.surname}}</option>
         		</select>
+
+		Search: <input id="firstName" ng-model="firstName">
 
       </div>
       <div class="col-md-10">

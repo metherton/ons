@@ -11,11 +11,12 @@ describe('Ons App', function() {
     });
 
 
-    it('should display a list of surnames in the search select box', function() {
+    it('should contain a first name and surname text boxes, and a search button', function() {
 
       var surnameList = element.all(by.repeater('surname in surnameList'));
+      var n = element(by.model('firstName'));
+      n.sendKeys("eesdfdsfdfsdfsdfsdfsdfsdfsdf");
 
-      expect(surnameList.count()).toBe(2);
     });
 
 
