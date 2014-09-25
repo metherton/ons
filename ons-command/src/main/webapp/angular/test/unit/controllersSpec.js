@@ -1,28 +1,72 @@
 'use strict';
 
 /* jasmine specs for controllers go here */
-describe('SearchBoxCtrl controllers', function() {
+describe('PhoneCat controllers', function() {
 
-  describe('SearchBoxCtrl', function(){
+  beforeEach(function(){
+    this.addMatchers({
+      toEqualData: function(expected) {
+        return angular.equals(this.actual, expected);
+      }
+    });
+  });
+
+  beforeEach(module('phonecatApp'));
+  beforeEach(module('phonecatServices'));
+
+  describe('PhoneListCtrl', function(){
     var scope, ctrl, $httpBackend;
 
-    beforeEach(module('onsApp'));
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('http://localhost:8080/ons-command/rest/').
-          respond({surnameList:[{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]});
+      $httpBackend.expectGET('phones/phones.json').
+          respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
 
       scope = $rootScope.$new();
-      ctrl = $controller('SearchBoxCtrl', {$scope: scope});
+      ctrl = $controller('PhoneListCtrl', {$scope: scope});
     }));
 
 
-    it('should create surnameList model with 2 surnames fetched from xhr', function() {
-      expect(scope.surnameList).toBeUndefined();
+    it('should create "phones" model with 2 phones fetched from xhr', function() {
+      expect(scope.phones).toEqualData([]);
       $httpBackend.flush();
 
-      expect(scope.surnameList).toEqual([{entityId:'1',surname:'Etherton'},{entityId:'2',surname:'Wilkinson'}]);
+      expect(scope.phones).toEqualData(
+          [{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
     });
-    
+
+
+    it('should set the default value of orderProp model', function() {
+      expect(scope.orderProp).toBe('age');
+    });
+  });
+
+
+  describe('PhoneDetailCtrl', function(){
+    var scope, $httpBackend, ctrl,
+        xyzPhoneData = function() {
+          return {
+            name: 'phone xyz',
+                images: ['image/url1.png', 'image/url2.png']
+          }
+        };
+
+
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData());
+
+      $routeParams.phoneId = 'xyz';
+      scope = $rootScope.$new();
+      ctrl = $controller('PhoneDetailCtrl', {$scope: scope});
+    }));
+
+
+    it('should fetch phone detail', function() {
+      expect(scope.phone).toEqualData({});
+      $httpBackend.flush();
+
+      expect(scope.phone).toEqualData(xyzPhoneData());
+    });
   });
 });

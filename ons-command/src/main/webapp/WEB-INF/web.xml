@@ -8,7 +8,7 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-				/WEB-INF/mvc-config.xml
+				classpath:/META-INF/springconfig/mvc-config.xml 
 			</param-value>
 		</init-param>
     	<load-on-startup>1</load-on-startup>
@@ -46,9 +46,9 @@
   </listener>
  	
 -->
-
- <!-- 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list> -->
-
+<!--
+ 	<welcome-file-list>
+		<welcome-file>angular/app/index.html</welcome-file>
+	</welcome-file-list>
+-->
 </web-app>
