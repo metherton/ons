@@ -8,11 +8,11 @@ onsApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/ons-command/rest/persons', {
-        templateUrl: 'partials/personList.html',
+        templateUrl: 'angular/app/partials/personList.html',
         controller: 'PersonListCtrl'
       }).
       when('/ons-command/rest/persons/:personId', {
-          templateUrl: 'partials/person-detail.html',
+          templateUrl: 'angular/app/partials/person-detail.html',
           controller: 'PersonDetailCtrl'
         }).      
       otherwise({
