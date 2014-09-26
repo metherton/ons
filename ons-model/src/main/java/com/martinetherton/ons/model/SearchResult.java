@@ -4,6 +4,7 @@ public class SearchResult {
 
 	private String surname;
 	private String firstName;
+	private String birthDate;
 
 	public void setSurname(String surname) {
 		this.surname = surname;
@@ -19,6 +20,14 @@ public class SearchResult {
 
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 
 }

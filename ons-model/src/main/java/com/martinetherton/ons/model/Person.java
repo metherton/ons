@@ -3,6 +3,7 @@ package com.martinetherton.ons.model;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -39,14 +40,6 @@ public class Person  {
         this.firstName = firstName;
     }
 
-    public Boolean getHandicapped() {
-        return handicapped;
-    }
-
-    public void setHandicapped(Boolean handicapped) {
-        this.handicapped = handicapped;
-    }
-
     public Surname getSurname() {
 		return surname;
 	}
@@ -65,13 +58,20 @@ public class Person  {
     @Size(min=1)
     private String firstName;
     
-    @Column(name="HANDICAPPED")
-    private Boolean handicapped;
-      
     @OneToOne
     @JoinColumn(name="SURNAME_ID")
     private Surname surname;
 
-  
+    @Column(name="DATE_OF_BIRTH") 
+    @NotNull
+    private Date birthDate;
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
     
 }

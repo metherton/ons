@@ -1,5 +1,7 @@
 package com.martinetherton.ons.service;
 
+import java.util.Date;
+
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,6 +24,7 @@ public class PersonServiceIntegrationTest extends ServiceIntegrationTest {
         Person pToInsert = new Person();
         System.out.println("entityId is " + pToInsert.getEntityId());
         pToInsert.setFirstName("PToInsert");
+        pToInsert.setBirthDate(new Date());
         personService.addPerson(pToInsert);
         Person personInserted = personService.getPerson(pToInsert.getEntityId());
         Assert.assertThat(personInserted.getFirstName(), Matchers.is("PToInsert"));
