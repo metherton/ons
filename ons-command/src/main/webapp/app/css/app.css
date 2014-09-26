@@ -2,6 +2,7 @@
 
 body {
 	font-family: verdana;
+	font-size:1.3em;
 }
 
 th {
@@ -17,4 +18,10 @@ td {
 
 tr:nth-child(odd) {
 	background-color: #f1f1f1;
+}
+
+header, nav, section, article, footer {
+	border:1px solid grey; 
+	margin:5px; 
+	padding:8px;
 }
