@@ -7,15 +7,15 @@ var onsApp = angular.module('onsApp', ['ngRoute', 'onsControllers']);
 onsApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/ons-command/rest/', {
-        templateUrl: 'partials/search.html',
-        controller: 'HomePageCtrl'
+      when('/ons-command/rest/persons', {
+        templateUrl: 'partials/personList.html',
+        controller: 'PersonListCtrl'
       }).
-      when('/ons-command/rest/search/surname/:name', {
-        templateUrl: 'partials/searchResults.html',
-        controller: 'SearchCtrl'
-      }).
+      when('/ons-command/rest/persons/:personId', {
+          templateUrl: 'partials/person-detail.html',
+          controller: 'PersonDetailCtrl'
+        }).      
       otherwise({
-        redirectTo: '/ons-command/rest/'
+        redirectTo: '/ons-command/rest/persons'
       });
   }]);

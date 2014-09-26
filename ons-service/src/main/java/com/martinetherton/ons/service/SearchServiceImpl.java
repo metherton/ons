@@ -31,6 +31,12 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	public List<SearchResult> listAllPersons() {
+		List<SearchResult> searchResults = SearchResultFactory.create(personRepository.findAll());
+		return searchResults;
+	}	
+	
+	@Override
 	public SearchCriteria searchCriteria() {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setSurnameList(surnameRepository.findAll());

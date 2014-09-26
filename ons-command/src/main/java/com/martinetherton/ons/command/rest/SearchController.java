@@ -39,4 +39,9 @@ public class SearchController {
 		return searchService.search(query);
 	}	
 	
+	@RequestMapping(value = "/persons", method = RequestMethod.GET)
+	public @ResponseBody List<SearchResult> listAllPersons() {
+		return searchService.listAllPersons();
+	}		
+	
 }

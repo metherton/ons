@@ -10,6 +10,8 @@ public interface SearchService {
 
 	List<SearchResult> search(SearchQuery searchQuery);
 
+	List<SearchResult> listAllPersons();	
+	
 	SearchCriteria searchCriteria();
 
 }
