@@ -1,5 +1,8 @@
 <article>
-
+	<label for="surname">Surname</label>
+	<input id="surname" ng-model="surname" name="surname">
+	<label for="firstName">First Name</label>
+	<input id="firstName" ng-model="firstName" name="firstName">
 </article>
 
 <article>
@@ -9,7 +12,7 @@
 			<th>Surname</th>
 			<th>Date Of Birth</th>
 		</tr>
-		<tr ng-repeat="person in persons">
+		<tr ng-repeat="person in persons | filter:surname | filter:firstName">
 			<td>{{person.firstName}}</td>
 			<td>{{person.surname}}</td>
 			<td>{{person.birthDate}}</td>

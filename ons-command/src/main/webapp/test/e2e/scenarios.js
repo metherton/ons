@@ -11,10 +11,22 @@ describe('Ons App', function() {
       });
   });
 
+  describe('Etherton Person list view', function() {
+
+	  beforeEach(function() {
+	      browser.get('app/index.html#/ons-command/rest/persons');
+	  });
+  
+  }); 
+  
   describe('Person list view', function() {
 
-    beforeEach(function() {
-      browser.get('app/index.html#/ons-command/rest/persons');
-    });
+	  beforeEach(function() {
+	      browser.get('app/index.html#/ons-command/rest/persons');
+	  });
+  
   });
+  
+  
+  
 });
