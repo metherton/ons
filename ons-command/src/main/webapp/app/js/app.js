@@ -12,8 +12,8 @@ onsApp.config(['$routeProvider',
         controller: 'PersonListCtrl'
       }).
       when('/ons-command/rest/persons/:personId', {
-          templateUrl: 'partials/person-detail.html',
-          controller: 'PersonDetailCtrl'
+          templateUrl: 'partials/personDetails.html',
+          controller: 'PersonDetailsCtrl'
         }).      
       otherwise({
         redirectTo: '/ons-command/rest/persons'

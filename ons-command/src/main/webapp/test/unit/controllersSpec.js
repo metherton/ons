@@ -36,4 +36,30 @@ describe('Ons controllers', function() {
 
   });
 
+  describe('PersonDetailsCtrl', function(){
+	    var scope, $httpBackend, ctrl,
+	        person1DetailsData = function() {
+	          return {firstName: 'Martin'}
+	        };
+
+
+	    beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
+	      $httpBackend = _$httpBackend_;
+	      $httpBackend.expectGET('/ons-command/rest/persons/1').respond(person1DetailsData());
+
+	      $routeParams.personId = 1;
+	      scope = $rootScope.$new();
+	      ctrl = $controller('PersonDetailsCtrl', {$scope: scope});
+	    }));
+
+
+	    it('should fetch person detail', function() {
+	      expect(scope.personDetails).toBeUndefined();
+	      $httpBackend.flush();
+
+	      expect(scope.personDetails).toEqual(person1DetailsData());
+	    });
+	  });  
+  
+  
 });

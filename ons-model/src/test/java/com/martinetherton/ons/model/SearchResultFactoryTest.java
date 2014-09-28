@@ -17,6 +17,7 @@ public class SearchResultFactoryTest {
 	@Test
 	public void searchResultsCreatedFromListOfPersons() {
 		Person person1 = new Person();
+		person1.setEntityId(1L);
 		person1.setFirstName("Martin");
 		person1.setSurname(new Surname("Etherton"));
         Calendar cal = Calendar.getInstance();
@@ -24,6 +25,7 @@ public class SearchResultFactoryTest {
         Date myBirthDate = cal.getTime();
         person1.setBirthDate(myBirthDate);
 		Person person2 = new Person();
+		person2.setEntityId(2L);
 		person2.setFirstName("John");
 		person2.setSurname(new Surname("Smith"));
 		person2.setBirthDate(myBirthDate);
@@ -34,7 +36,8 @@ public class SearchResultFactoryTest {
 		assertThat(searchResults.get(1).getSurname(), Matchers.is("Smith"));
 		assertThat(searchResults.get(0).getFirstName(), Matchers.is("Martin"));
 		assertThat(searchResults.get(1).getFirstName(), Matchers.is("John"));	
-		assertThat(searchResults.get(0).getBirthDate(), Matchers.is("04 Mar 1963"));		
+		assertThat(searchResults.get(0).getBirthDate(), Matchers.is("04 Mar 1963"));	
+		assertThat(searchResults.get(0).getEntityId(), Matchers.is("1"));	
 	}
 	
 }

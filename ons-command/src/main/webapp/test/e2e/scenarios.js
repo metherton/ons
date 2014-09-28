@@ -12,21 +12,18 @@ describe('Ons App', function() {
   });
 
   describe('Etherton Person list view', function() {
-
 	  beforeEach(function() {
 	      browser.get('app/index.html#/ons-command/rest/persons');
-	  });
-  
+	  }); 
   }); 
   
-  describe('Person list view', function() {
+  describe('Person detail view', function() {
+	    beforeEach(function() {
+	      browser.get('http://localhost:8080/ons-command/app/index.html#/ons-command/rest/persons/1');
+	    });
+	    it('should display person with id 1 page', function() {
+	      expect(element(by.binding('personDetails.firstName')).getText()).toBe('mark');
+	    });
+	});   
 
-	  beforeEach(function() {
-	      browser.get('app/index.html#/ons-command/rest/persons');
-	  });
-  
-  });
-  
-  
-  
 });

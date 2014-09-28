@@ -11,10 +11,10 @@ onsControllers.controller('PersonListCtrl', ['$scope', '$http',
         });
 }])
 
-onsControllers.controller('PersonDetailCtrl', ['$scope', '$routeParams', '$http',
+onsControllers.controller('PersonDetailsCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
     $http.get('/ons-command/rest/persons/' + $routeParams.personId).success(function(data) {
-      $scope.person = data;
+      $scope.personDetails = data;
     });
 
 }]);

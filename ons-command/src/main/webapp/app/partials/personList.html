@@ -13,7 +13,7 @@
 			<th>Date Of Birth</th>
 		</tr>
 		<tr ng-repeat="person in persons | filter:surname | filter:firstName">
-			<td>{{person.firstName}}</td>
+			<td><a href="#/ons-command/rest/persons/{{person.entityId}}">{{person.firstName}}</a></td>
 			<td>{{person.surname}}</td>
 			<td>{{person.birthDate}}</td>
 		</tr>

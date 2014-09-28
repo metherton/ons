@@ -26,11 +26,9 @@ public class PersonController {
 	}
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
-	public @ResponseBody List<Person> personDetails(@PathVariable("personId") long id) {
-		List<Person> persons = new ArrayList<Person>();
+	public @ResponseBody Person personDetails(@PathVariable("personId") long id) {
 		Person person = personService.getPerson(id);
-		persons.add(person);
-		return persons;
+		return person;
 	}	
 	
 }
