@@ -5,6 +5,10 @@ import java.util.List;
 
 public class PersonDetails {
 
+	public PersonDetails() {
+		
+	}
+	
 	public static class Builder {
 
 		private final Person person;
