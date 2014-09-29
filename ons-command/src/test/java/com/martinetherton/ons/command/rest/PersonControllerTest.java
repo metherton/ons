@@ -33,8 +33,8 @@ public class PersonControllerTest {
 		Person expectedPerson = new Person();
 		expectedPerson.setFirstName("John");
 		Mockito.when(personService.getPerson(1)).thenReturn(expectedPerson);
-		List<Person> persons = controller.personDetails(1L);
+		Person person = controller.personDetails(1L);
 		verify(personService).getPerson(1L);
-		assertThat(persons.get(0).getFirstName(), Matchers.is("John"));
+		assertThat(person.getFirstName(), Matchers.is("John"));
 	}
 }
