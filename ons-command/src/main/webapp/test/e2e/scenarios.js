@@ -22,7 +22,7 @@ describe('Ons App', function() {
 	      browser.get('http://localhost:8080/ons-command/app/index.html#/ons-command/rest/persons/1');
 	    });
 	    it('should display person with id 1 page', function() {
-	      expect(element(by.binding('personDetails.firstName')).getText()).toBe('mark');
+	      expect(element(by.binding('personDetails.person.firstName')).getText()).toBe('mark');
 	    });
 	});   
 

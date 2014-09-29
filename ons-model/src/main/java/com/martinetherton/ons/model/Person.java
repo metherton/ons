@@ -24,7 +24,53 @@ import javax.validation.constraints.Size;
 @Table(name="T_PERSON")
 public class Person  {
 
-    public Long getEntityId() {
+    @Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((birthDate == null) ? 0 : birthDate.hashCode());
+		result = prime * result
+				+ ((entityId == null) ? 0 : entityId.hashCode());
+		result = prime * result
+				+ ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (birthDate == null) {
+			if (other.birthDate != null)
+				return false;
+		} else if (!birthDate.equals(other.birthDate))
+			return false;
+		if (entityId == null) {
+			if (other.entityId != null)
+				return false;
+		} else if (!entityId.equals(other.entityId))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (surname == null) {
+			if (other.surname != null)
+				return false;
+		} else if (!surname.equals(other.surname))
+			return false;
+		return true;
+	}
+
+	public Long getEntityId() {
         return entityId;
     }
 

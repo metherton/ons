@@ -3,6 +3,7 @@ package com.martinetherton.ons.persist;
 import static org.junit.Assert.assertThat;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -21,6 +22,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.model.Marriage;
+import com.martinetherton.ons.model.Person;
 
 public class MarriageRepositoryTest {
 
@@ -44,7 +46,17 @@ public class MarriageRepositoryTest {
         assertThat(marriage.getPerson().getEntityId(), Matchers.is(0L));
         assertThat(marriage.getPartner().getEntityId(), Matchers.is(4L));
         
-    }    
+    }   
+    
+    @Test
+    public void findMarriageForPerson() {
+    	Person person = new Person();
+    	person.setEntityId(5L);
+        List<Marriage> marriages = repository.findMarriagesFor(person);
+        assertThat(marriages.size(), Matchers.is(1));
+        assertThat(marriages.get(0).getPartner().getFirstName(), Matchers.is("Nora"));
+    }     
+    
 
     private EntityManagerFactory createEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
