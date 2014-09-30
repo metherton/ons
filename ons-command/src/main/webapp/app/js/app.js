@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var onsApp = angular.module('onsApp', ['ngRoute', 'onsControllers']);
+var onsApp = angular.module('onsApp', ['ngRoute', 'onsControllers', 'onsServices']);
 
 onsApp.config(['$routeProvider',
   function($routeProvider) {

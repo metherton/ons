@@ -12,6 +12,7 @@ describe('Ons controllers', function() {
   });
 
   beforeEach(module('onsApp'));
+  beforeEach(module('onsServices'));
 
   describe('PersonListCtrl', function(){
     var scope, ctrl, $httpBackend;
@@ -27,7 +28,7 @@ describe('Ons controllers', function() {
 
 
     it('should create "persons" model with 2 persons fetched from xhr', function() {
-      expect(scope.persons).toBeUndefined();
+      expect(scope.persons).toEqualData([]);
       $httpBackend.flush(); 
 
       expect(scope.persons).toEqualData(
@@ -54,10 +55,10 @@ describe('Ons controllers', function() {
 
 
 	    it('should fetch person detail', function() {
-	      expect(scope.personDetails).toBeUndefined();
+	      expect(scope.personDetails).toEqualData({});
 	      $httpBackend.flush();
 
-	      expect(scope.personDetails).toEqual(person1DetailsData());
+	      expect(scope.personDetails).toEqualData(person1DetailsData());
 	    });
 	  });  
   

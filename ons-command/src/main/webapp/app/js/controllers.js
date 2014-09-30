@@ -4,18 +4,13 @@
 
 var onsControllers = angular.module('onsControllers', []);
 
-onsControllers.controller('PersonListCtrl', ['$scope', '$http',
-	function($scope, $http) {
-		$http.get('/ons-command/rest/persons').success(function(data) {
-		$scope.persons = data;	
-        });
-}])
+onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
+	function($scope, Person) {
+		$scope.persons = Person.query();
+    }])
 
-onsControllers.controller('PersonDetailsCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
-    $http.get('/ons-command/rest/persons/' + $routeParams.personId).success(function(data) {
-      $scope.personDetails = data;
-    });
-
-}]);
+onsControllers.controller('PersonDetailsCtrl', ['$scope', '$routeParams', 'Person',
+  function($scope, $routeParams, Person) {
+      $scope.personDetails = Person.get({personId: $routeParams.personId});
+   }]);
 

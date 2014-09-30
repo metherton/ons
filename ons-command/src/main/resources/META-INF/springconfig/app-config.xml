@@ -12,5 +12,6 @@
     <import resource="classpath:/META-INF/springconfig/app-services-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
+    <import resource="security-config.xml"/> 
 
 </beans>

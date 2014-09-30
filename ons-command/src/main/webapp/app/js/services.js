@@ -2,9 +2,9 @@
 
 var onsServices = angular.module('onsServices', ['ngResource']);
 
-onsServices.factory('Search', ['$resource',
+onsServices.factory('Person', ['$resource',
   function($resource){
-    return $resource('phones/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
+    return $resource('/ons-command/rest/persons/:personId', {}, {
+      query: {method:'GET', params:{personId:''}, isArray:true}
     });
   }]);
