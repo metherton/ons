@@ -62,5 +62,27 @@ describe('Ons controllers', function() {
 	    });
 	  });  
   
+  describe('SurnameListCtrl', function(){
+	    var scope, ctrl, $httpBackend;
+
+	    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+	      $httpBackend = _$httpBackend_;
+	      $httpBackend.expectGET('/ons-command/rest/surnames').
+	          respond([{entityId:1,surname:'etherton'},{entityId:2, surname:'wilkinson'}]);
+	      
+	      scope = $rootScope.$new();
+	      ctrl = $controller('SurnameListCtrl', {$scope: scope});
+	    }));
+
+
+	    it('should create "surnames" model with 2 surnames fetched from xhr', function() {
+	      expect(scope.surnames).toEqualData([]);
+	      $httpBackend.flush(); 
+
+	      expect(scope.surnames).toEqualData(
+	    		  [{entityId:1,surname:'etherton'},{entityId:2, surname:'wilkinson'}]);
+	    });
+
+	  }); 
   
 });

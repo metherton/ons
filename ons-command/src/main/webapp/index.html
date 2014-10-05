@@ -1,27 +1,21 @@
-<html ng-app="notesApp">
+<!DOCTYPE html>
+<html>
 <head>
-<title>$http get example</title>
+<meta charset="UTF-8">
+<title>Martin Etherton Software Services</title>
+  <link rel="stylesheet" href="app/css/app.css">
 </head>
-<body ng-controller="MainCtrl as mainCtrl">
-<h1>Hello Servers!</h1>
-<div ng-repeat="person in mainCtrl.items">
-<div><span ng-bind="person.entityId"></span></div>
-<div><span ng-bind="person.firstName"></span></div>
-<div><span ng-bind="person.surname.surname"></span></div>
-<br/><br/>
-</div>
-<script src="angular.min.js"></script>
-<script>
-angular.module('notesApp', [])
-.controller('MainCtrl', ['$http', function($http) {
-var self = this;
-self.items = [];
-$http.get('/ons-command/app/persons/1').then(function(response) {
-self.items = response.data;
-}, function(errResponse) {
-console.log('Error while fetching notes');
-});
-}]);
-</script>
+<body>
+	<header><h1>Martin Etherton Software Services</h1></header>
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="index.html">About Me</a>
+		<a href="app/index.html#/ons-command/rest/persons" target="_blank">One Name Study</a>
+		
+		<a href="index.html">Contact</a>
+	</nav>
+	<footer>
+		<p>&copy; Martin Etherton Software Services. All rights reserved.</p>
+	</footer>
 </body>
 </html>

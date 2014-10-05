@@ -56,6 +56,7 @@ public class SurnameRepositoryImpl implements SurnameRepository, InitializingBea
         String surname = rs.getString("SURNAME");
         Surname entity = new Surname();
         entity.setSurname(surname);
+        entity.setEntityId(rs.getLong("ID"));
         return entity;
     }    
     

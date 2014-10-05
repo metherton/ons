@@ -15,6 +15,10 @@ describe('Ons App', function() {
 	  beforeEach(function() {
 	      browser.get('app/index.html#/ons-command/rest/persons');
 	  }); 
+	  
+//      it('should display persons page', function() {
+//	      expect(element.all(by.repeater('person in persons')).count()).toEqual(5);
+//	  });	  
   }); 
   
   describe('Person detail view', function() {
@@ -26,4 +30,16 @@ describe('Ons App', function() {
 	    });
 	});   
 
+  describe('Surname list view', function() {
+	  beforeEach(function() {
+	      browser.get('app/index.html#/ons-command/rest/surnames');
+	  }); 
+      it('should display surnames page', function() {
+    	  var rows = element.all(by.repeater('surname in surnames'));
+    	  expect(rows.count()).toBe(2);
+	  });	  
+	  
+  }); 
+  
+  
 });

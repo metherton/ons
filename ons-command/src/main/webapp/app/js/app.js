@@ -14,7 +14,11 @@ onsApp.config(['$routeProvider',
       when('/ons-command/rest/persons/:personId', {
           templateUrl: 'partials/personDetails.html',
           controller: 'PersonDetailsCtrl'
-        }).      
+        }). 
+      when('/ons-command/rest/surnames', {
+          templateUrl: 'partials/surnameList.html',
+          controller: 'SurnameListCtrl'
+        }).        
       otherwise({
         redirectTo: '/ons-command/rest/persons'
       });
