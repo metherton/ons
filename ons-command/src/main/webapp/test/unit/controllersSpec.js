@@ -85,4 +85,30 @@ describe('Ons controllers', function() {
 
 	  }); 
   
+  describe('SurnameDetailsCtrl', function(){
+	    var scope, $httpBackend, ctrl,
+	        surnameDetails = function() {
+	          return {surname: 'etherton'}
+	        };
+
+
+	    beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
+	      $httpBackend = _$httpBackend_;
+	      $httpBackend.expectGET('/ons-command/rest/surnames/1').respond(surnameDetails());
+
+	      $routeParams.surnameId = 1;
+	      scope = $rootScope.$new();
+	      ctrl = $controller('SurnameDetailsCtrl', {$scope: scope});
+	    }));
+
+
+	    it('should fetch surname detail', function() {
+	      expect(scope.surname).toEqualData({});
+	      $httpBackend.flush();
+
+	      expect(scope.surname).toEqualData(surnameDetails());
+	    });
+	  });   
+  
+  
 });

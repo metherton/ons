@@ -43,5 +43,14 @@ describe('Ons App', function() {
 	  
   }); 
   
+  describe('Surname detail view', function() {
+	    beforeEach(function() {
+	      browser.get('http://localhost:8080/ons-command/app/index.html#/ons-command/rest/surnames/1');
+	    });
+	    it('should display surname with id 1 page', function() {
+	      expect(element(by.binding('surname.surname')).getText()).toBe('etherton');
+	    });
+	});  
+  
   
 });

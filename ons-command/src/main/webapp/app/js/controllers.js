@@ -19,3 +19,8 @@ onsControllers.controller('PersonDetailsCtrl', ['$scope', '$routeParams', 'Perso
       $scope.personDetails = Person.get({personId: $routeParams.personId});
    }]);
 
+onsControllers.controller('SurnameDetailsCtrl', ['$scope', '$routeParams', 'Surname',
+  function($scope, $routeParams, Surname) {
+	$scope.surname = Surname.get({surnameId: $routeParams.surnameId});
+  }]);
+

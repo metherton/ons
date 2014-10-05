@@ -4,7 +4,7 @@
 			<th>Surname</th>
 		</tr>
 		<tr ng-repeat="surname in surnames">
-			<td>{{surname.surname}}</td>
+			<td><a href="#/ons-command/rest/surnames/{{surname.entityId}}">{{surname.surname}}</a></td>
 		</tr>
 	</table>
 </article>

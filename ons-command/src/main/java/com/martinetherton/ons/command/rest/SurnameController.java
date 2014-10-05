@@ -31,4 +31,10 @@ public class SurnameController {
 	public @ResponseBody List<Surname> listAllSurnames() {
 		return surnameService.getSurnames();
 	}	
+	
+	@RequestMapping(value = "/surnames/{surnameId}", method = RequestMethod.GET)
+	public @ResponseBody Surname surnameDetails(@PathVariable("surnameId") long id) {
+		return surnameService.getSurname(id);
+	}		
+	
 }
