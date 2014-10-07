@@ -47,20 +47,20 @@ public class SurnameController {
 
 	@RequestMapping(value = "/surnames", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public HttpEntity<String> createSurname(@RequestBody Surname newSurname,
+	public HttpEntity<?> createSurname(@RequestBody Surname newSurname,
 			@Value("#{request.requestURL}") StringBuffer url) {
-		surnameService.add(newSurname);
+		Surname surname = surnameService.add(newSurname);
 
-		return entityWithLocation(url, newSurname.getEntityId());
+		return entityWithLocation(url, surname.getEntityId());
 	}	
 
-	private HttpEntity<String> entityWithLocation(StringBuffer url,
+	private HttpEntity<Object> entityWithLocation(StringBuffer url,
 			Object resourceId) {
 		// Configure and return an HttpEntity object - it will be used to build
 		// the HttpServletResponse
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(getLocationForChildResource(url, resourceId));
-		return new HttpEntity<String>(headers);
+		return new HttpEntity<Object>(headers);
 	}
 
 	/**

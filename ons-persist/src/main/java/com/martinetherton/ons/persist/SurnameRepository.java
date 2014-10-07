@@ -4,6 +4,8 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+
 import com.martinetherton.ons.model.Surname;
 
 public interface SurnameRepository {
@@ -21,4 +23,8 @@ public interface SurnameRepository {
     Map findSurnameAsMap(long id);
     List<Surname> findAllSurnameInfo();
     public void init();
+    
+    void setEntityManager(EntityManager entityManager);
+    Surname save(Surname surname);
+    
 }

@@ -22,7 +22,9 @@ public class PersistAppConfig {
     
     @Bean
     public SurnameRepository surnameRepository() {
-        SurnameRepository surnameRepository = new SurnameRepositoryImpl(dataSource);
+//        SurnameRepository surnameRepository = new SurnameRepositoryImpl(dataSource);
+        SurnameRepository surnameRepository = new JpaSurnameRepositoryImpl();
+
         return surnameRepository;
     }
     

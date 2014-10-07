@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.InitializingBean;
@@ -152,5 +153,17 @@ public class SurnameRepositoryImpl implements SurnameRepository, InitializingBea
     }
 
     private List<Properties> adminEmails;
+
+	@Override
+	public void setEntityManager(EntityManager entityManager) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Surname save(Surname surname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 }

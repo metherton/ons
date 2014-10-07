@@ -1,7 +1,6 @@
 <article>
 	<form name="addForm" ng-submit="add(newSurname)">
 		<input type="text" ng-model="newSurname">
-		<input type="text" ng-model="clickedName" >
 		<input type="submit" value="Add" >
 	</form>
 </article>
@@ -10,8 +9,8 @@
 		<tr>
 			<th>Surname</th>
 		</tr>
-		<tr ng-repeat="surname in surnames">
-			<td><a href="#/ons-command/rest/surnames/{{surname.entityId}}">{{surname.surname}}</a></td>
+		<tr ng-repeat="surname in surnames" >
+			<td><a href="#/ons-command/rest/surnames/{{surname.entityId}}"><span ng-bind="surname.surname" /></a></td>
 		</tr>
 	</table>
 </article>

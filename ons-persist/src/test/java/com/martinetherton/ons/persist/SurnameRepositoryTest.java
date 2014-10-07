@@ -26,7 +26,7 @@ public class SurnameRepositoryTest {
     
     @Before
     public void setUp() {
-        repository = new SurnameRepositoryImpl(createTestDataSource());
+        repository = new JpaSurnameRepositoryImpl();
     }
     
     @Test

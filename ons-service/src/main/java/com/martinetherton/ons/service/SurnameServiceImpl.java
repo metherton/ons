@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.martinetherton.ons.model.Surname;
+import com.martinetherton.ons.persist.JpaSurnameRepositoryImpl;
 import com.martinetherton.ons.persist.SurnameRepository;
 
 @Service
@@ -52,8 +53,8 @@ public class SurnameServiceImpl implements SurnameService {
 
     @Override
     @Transactional
-    public void add(Surname surname) {
-        surnameRepository.insert(surname);
+    public Surname add(Surname surname) {
+        return surnameRepository.save(surname);
     }
 
     @Override

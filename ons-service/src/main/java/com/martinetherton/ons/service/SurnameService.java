@@ -12,7 +12,7 @@ public interface SurnameService {
 
     Surname getSurnameWithName(String name);
 
-    void add(Surname newSurname);
+    Surname add(Surname newSurname);
 
     void update(Surname changedSurname);
 
