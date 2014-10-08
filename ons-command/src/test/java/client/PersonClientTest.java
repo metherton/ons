@@ -22,6 +22,7 @@ public class PersonClientTest {
 	private RestTemplate restTemplate = new RestTemplate();
 		
 	@Test
+	@Ignore
 	public void getPersonDetails() {
 		String url = BASE_URL + "/persons/{personId}";
 		PersonDetails personDetails = restTemplate.getForObject(url, PersonDetails.class, 5); 

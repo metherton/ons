@@ -88,9 +88,9 @@ public class SurnameRepositoryImpl implements SurnameRepository, InitializingBea
         return jdbcTemplate.queryForObject(sql, new SurnameMapper(), name);
     }
 
-    public int getSurnameCount() {
+    public Long getSurnameCount() {
         String sql = "select count(*) from T_SURNAME";
-        return jdbcTemplate.queryForInt(sql);
+        return (long) jdbcTemplate.queryForInt(sql);
     }
 
     @Override
@@ -122,9 +122,9 @@ public class SurnameRepositoryImpl implements SurnameRepository, InitializingBea
     }
 
     @Override
-    public int findNumberOfSurnamesGreaterThanLetter(String letter) {
+    public Long findNumberOfSurnamesGreaterThanLetter(String letter) {
         String sql = "select count(*) from T_SURNAME where SURNAME > ?";
-        return jdbcTemplate.queryForInt(sql, letter);
+        return (long) jdbcTemplate.queryForInt(sql, letter);
     }
 
     @Override

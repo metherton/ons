@@ -19,7 +19,17 @@ public class PersonDetailsBuilderTest {
 		Person partner = new Person();
 		partner.setEntityId(2L);
 		partner.setFirstName("Erna");
+		
+		Person father = new Person();
+		father.setFirstName("Sid");
+		father.setSurname(new Surname("Smith"));
+		Person mother = new Person();
+		mother.setFirstName("Nora");
+		mother.setSurname(new Surname("Jones"));
 
+		person.setFather(father);
+		person.setMother(mother);
+		
 		Marriage marriage = new Marriage();
 		marriage.setPerson(person);
 		marriage.setPartner(partner);
@@ -31,6 +41,8 @@ public class PersonDetailsBuilderTest {
 		PersonDetails personDetails = new PersonDetails.Builder(person).withMarriages(marriages).build();
 		assertThat(personDetails.getPerson().getFirstName(), Matchers.is("Martin"));
 		assertThat(personDetails.getMarriages().get(0).getPartner().getFirstName(), Matchers.is("Erna"));
+		assertThat(personDetails.getFatherDetails(), Matchers.is("Sid Smith"));
+		assertThat(personDetails.getMotherDetails(), Matchers.is("Nora Jones"));
 	}
 	
 }

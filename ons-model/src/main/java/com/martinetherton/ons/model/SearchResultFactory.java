@@ -16,9 +16,16 @@ public class SearchResultFactory {
 			searchResult.setFirstName(person.getFirstName());
 			searchResult.setBirthDate(format(person.getBirthDate()));
 			searchResult.setEntityId(person.getEntityId().toString());
+			searchResult.setFatherDetails(parentDetails(person.getFather()));
+			searchResult.setMotherDetails(parentDetails(person.getMother()));
+
 			searchResults.add(searchResult);
 		}
 		return searchResults;
+	}
+
+	private static String parentDetails(Person person) {
+		return person != null ? person.getFirstName() + " " + person.getSurname().getSurname() : "";
 	}
 
 	private static String format(Date birthDate) {

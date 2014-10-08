@@ -13,7 +13,7 @@ public class PersonDetails {
 
 		private final Person person;
 		private List<Marriage> marriages = new ArrayList<Marriage>();
-
+		
 		public Builder(Person person) {
 			this.person = person;
 		}
@@ -51,6 +51,15 @@ public class PersonDetails {
 
 	public List<Marriage> getMarriages() {
 		return marriages;
+	}
+
+	public String getFatherDetails() {
+		return person.getFather() == null ? "" : person.getFather().getFirstName() + " " + person.getFather().getSurname().getSurname();
+
+	}
+
+	public String getMotherDetails() {
+		return person.getMother() == null ? "" : person.getMother().getFirstName() + " " + person.getMother().getSurname().getSurname();
 	}
 
 }

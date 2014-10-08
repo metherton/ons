@@ -38,14 +38,15 @@ public class JpaSurnameRepositoryImpl implements SurnameRepository {
 
 	@Override
 	public Surname findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+        Query query = entityManager.createQuery("select s from Surname s where surname = :name")
+				.setParameter("name", name);
+        return (Surname) query.getSingleResult();
 	}
 
 	@Override
-	public int getSurnameCount() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Long getSurnameCount() {
+        Query query = entityManager.createQuery("select count(s.entityId) from Surname s");
+        return (Long) query.getSingleResult();
 	}
 
 	@Override
@@ -79,9 +80,10 @@ public class JpaSurnameRepositoryImpl implements SurnameRepository {
 	}
 
 	@Override
-	public int findNumberOfSurnamesGreaterThanLetter(String letter) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Long findNumberOfSurnamesGreaterThanLetter(String letter) {
+        Query query = entityManager.createQuery("select count(s.entityId) from Surname s where SURNAME > :letter")
+        							.setParameter("letter", letter);
+        return (Long) query.getSingleResult();
 	}
 
 	@Override
@@ -92,8 +94,9 @@ public class JpaSurnameRepositoryImpl implements SurnameRepository {
 
 	@Override
 	public List<Surname> findAllSurnameInfo() {
-		// TODO Auto-generated method stub
-		return null;
+        Query query = entityManager.createQuery("select s from Surname s");
+        List<Surname> surnames = query.getResultList();
+        return surnames;
 	}
 
 	@Override

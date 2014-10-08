@@ -13,13 +13,13 @@ public interface SurnameRepository {
     Surname findBy(long i);
     public List<Surname> findAll();
     public Surname findByName(String name);
-    public int getSurnameCount();
+    public Long getSurnameCount();
     void generateSurnameFile(PrintWriter out);
     Surname findByNameFromResultSet(String string);
     int insert(Surname surname);
     int update(Surname surname);
     String findLastSurname();
-    int findNumberOfSurnamesGreaterThanLetter(String letter);
+    Long findNumberOfSurnamesGreaterThanLetter(String letter);
     Map findSurnameAsMap(long id);
     List<Surname> findAllSurnameInfo();
     public void init();

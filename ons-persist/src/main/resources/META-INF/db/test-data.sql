@@ -3,7 +3,7 @@ insert into T_SURNAME (SURNAME) values ('Eatherton');
 insert into T_SURNAME (SURNAME) values ('Wilkinson');
 insert into T_SURNAME (SURNAME) values ('De Roo');
 
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH) values (0, 'Martin', '1963-03-04');
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID) values (0, 'Martin', '1963-03-04', 5, 3);
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH) values (0, 'Mark', '1960-06-30');
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH) values (0, 'Samuel Original', '1805-01-01');
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH) values (2, 'Nora', '1936-04-23');

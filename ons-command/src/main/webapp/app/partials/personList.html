@@ -11,11 +11,15 @@
 			<th>First Name</th>
 			<th>Surname</th>
 			<th>Date Of Birth</th>
+			<th>Father</th>
+			<th>Mother</th>
 		</tr>
 		<tr ng-repeat="person in persons | filter:surname | filter:firstName">
 			<td><a href="#/ons-command/rest/persons/{{person.entityId}}">{{person.firstName}}</a></td>
 			<td>{{person.surname}}</td>
 			<td>{{person.birthDate}}</td>
+			<td>{{person.fatherDetails}}</td>
+			<td>{{person.motherDetails}}</td>			
 		</tr>
 	</table>
 </article>

@@ -48,7 +48,8 @@ public class PersonRepositoryTest {
         Person person = repository.findBy(id);
         assertNotNull(person);
         assertThat(person.getFirstName(), is("Martin"));
-        System.out.println(person);
+        assertThat(person.getFather().getFirstName(), is("Sydney"));
+        assertThat(person.getMother().getFirstName(), is("Nora"));
     }
     
     @Test

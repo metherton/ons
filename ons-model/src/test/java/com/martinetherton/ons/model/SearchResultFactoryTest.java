@@ -20,7 +20,17 @@ public class SearchResultFactoryTest {
 		person1.setEntityId(1L);
 		person1.setFirstName("Martin");
 		person1.setSurname(new Surname("Etherton"));
-        Calendar cal = Calendar.getInstance();
+		Person father1 = new Person();
+		father1.setFirstName("father1firstname");
+		father1.setSurname(new Surname("father1surname"));
+		person1.setFather(father1);
+		Person mother1 = new Person();
+		mother1.setFirstName("mother1firstname");
+		mother1.setSurname(new Surname("mother1surname"));
+
+		person1.setMother(mother1);
+
+		Calendar cal = Calendar.getInstance();
         cal.set(1963, 2, 4);
         Date myBirthDate = cal.getTime();
         person1.setBirthDate(myBirthDate);
@@ -38,6 +48,9 @@ public class SearchResultFactoryTest {
 		assertThat(searchResults.get(1).getFirstName(), Matchers.is("John"));	
 		assertThat(searchResults.get(0).getBirthDate(), Matchers.is("04 Mar 1963"));	
 		assertThat(searchResults.get(0).getEntityId(), Matchers.is("1"));	
+		assertThat(searchResults.get(0).getFatherDetails(), Matchers.is("father1firstname father1surname"));	
+		assertThat(searchResults.get(0).getMotherDetails(), Matchers.is("mother1firstname mother1surname"));	
+
 	}
 	
 }

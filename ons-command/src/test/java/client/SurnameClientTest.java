@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Random;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ public class SurnameClientTest {
 	private RestTemplate restTemplate = new RestTemplate();
 	
 	@Test
+	@Ignore
 	public void createSurname() {
 		String url = BASE_URL + "/surnames";
 		// use a unique number to avoid conflicts

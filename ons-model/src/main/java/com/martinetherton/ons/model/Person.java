@@ -112,12 +112,36 @@ public class Person  {
     @NotNull
     private Date birthDate;
 
+    @OneToOne
+    @JoinColumn(name="FATHER_ID")    
+	private Person father;
+
+    @OneToOne
+    @JoinColumn(name="MOTHER_ID")       
+	private Person mother;
+
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
 	public Date getBirthDate() {
 		return birthDate;
+	}
+
+	public Person getFather() {
+		return father;
+	}
+
+	public Person getMother() {
+		return mother;
+	}
+
+	public void setFather(Person father) {
+		this.father = father;
+	}
+
+	public void setMother(Person mother) {
+		this.mother = mother;
 	}
     
 }
