@@ -6,6 +6,14 @@
 </article>
 
 <article>
+	<form name="addForm" ng-submit="add(newFirstName)">
+	<input ng-model="newFirstName" >
+	<input type="submit" value="Add" >
+	</form>
+</article>
+
+
+<article>
 	<table width="100%">
 		<tr>
 			<th>First Name</th>
@@ -16,10 +24,10 @@
 		</tr>
 		<tr ng-repeat="person in persons | filter:surname | filter:firstName">
 			<td><a href="#/ons-command/rest/persons/{{person.entityId}}">{{person.firstName}}</a></td>
-			<td>{{person.surname}}</td>
+			<td>{{person.surname.surname}}</td>
 			<td>{{person.birthDate}}</td>
-			<td>{{person.fatherDetails}}</td>
-			<td>{{person.motherDetails}}</td>			
+			<td>{{person.father.firstName}}</td>
+			<td>{{person.mother.firstName}}</td>
 		</tr>
 	</table>
 </article>

@@ -74,6 +74,24 @@ public class PersonRepositoryTest {
     }
     
     @Test
+    @Ignore
+    public void newPersonAdded() {
+    	Person person = new Person();
+    	person.setFirstName("PERSON_FIRST_NAME");
+    	Person father = new Person();
+    	father.setFirstName("FATHER_FIRST_NAME");
+    	Person mother = new Person();
+    	mother.setFirstName("MOTHER_FIRST_NAME");
+    	Surname surname = new Surname("A_SURNAME");
+    	person.setSurname(surname);
+    	person.setFather(father);
+    	person.setMother(mother);
+    	int numberOfPersonBefore = (repository.findAll()).size();
+    	Person newPerson = repository.add(person);
+    	assertThat((repository.findAll()).size(), Matchers.is(numberOfPersonBefore + 1));
+    }
+    
+    @Test
     public void clearCache() {
         repository.populateCache();
         Assert.assertThat(repository.getPersonCache().size(), Matchers.is(6));

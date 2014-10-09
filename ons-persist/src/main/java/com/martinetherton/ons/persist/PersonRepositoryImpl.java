@@ -70,8 +70,9 @@ public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
     }
 
     @Override
-    public void add(Person newPerson) {
+    public Person add(Person newPerson) {
         entityManager.persist(newPerson);
+        return newPerson;
     }
 
     @Override

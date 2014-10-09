@@ -1,5 +1,7 @@
 package com.martinetherton.ons.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Service;
@@ -7,6 +9,8 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.martinetherton.ons.model.Person;
+import com.martinetherton.ons.model.SearchResult;
+import com.martinetherton.ons.model.SearchResultFactory;
 import com.martinetherton.ons.persist.PersonRepository;
 
 @Service
@@ -39,8 +43,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public void addPerson(Person pToInsert) {
-        personRepository.add(pToInsert);
+    public Person addPerson(Person pToInsert) {
+        return personRepository.add(pToInsert);
     }
 
     @Override
@@ -60,6 +64,9 @@ public class PersonServiceImpl implements PersonService {
         System.out.println("pointcutWithParam: " + name);
     }
 
-
+	@Override
+	public List<Person> listAllPersons() {
+		return personRepository.findAll();
+	}	
 
 }

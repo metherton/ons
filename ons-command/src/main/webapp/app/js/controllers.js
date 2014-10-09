@@ -6,8 +6,20 @@ var onsControllers = angular.module('onsControllers', []);
 
 onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 	function($scope, Person) {
-	console.log("getting persons");
 		$scope.persons = Person.query();
+		
+		$scope.add = function(newFirstName) {
+			//alert('add person');
+			$scope.addedPerson = new Person({firstName: newFirstName});
+//			$scope.addedPerson.firstName = newFirstName;
+//			$scope.addedPerson.surname = new Surname({surname: newSurname});
+			$scope.addedPerson.$save(function (person, headers) {
+				$scope.persons = Person.query();
+				$scope.addedPerson.firstName = '';
+				//$scope.addedPerson.surname = '';
+			}); 
+		};			
+		
     }]);
 
 onsControllers.controller('SurnameListCtrl', ['$scope', 'Surname',
@@ -25,7 +37,7 @@ onsControllers.controller('SurnameListCtrl', ['$scope', 'Surname',
     
 onsControllers.controller('PersonDetailsCtrl', ['$scope', '$routeParams', 'Person',
   function($scope, $routeParams, Person) {
-      $scope.personDetails = Person.get({personId: $routeParams.personId});
+      $scope.person = Person.get({personId: $routeParams.personId});
    }]);
 
 onsControllers.controller('SurnameDetailsCtrl', ['$scope', '$routeParams', 'Surname',

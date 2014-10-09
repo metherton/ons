@@ -21,7 +21,7 @@ public interface PersonRepository {
 
     void clearCache();
 
-    void add(Person newPerson);
+    Person add(Person newPerson);
 
     Person findEarliestPerson();
 
