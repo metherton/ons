@@ -9,8 +9,10 @@ onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 		$scope.persons = Person.query();
 		
 		$scope.add = function(newFirstName) {
-			//alert('add person');
-			$scope.addedPerson = new Person({firstName: newFirstName});
+			alert('add person');
+		//	var addedSurname = new Surname({entityId: 1});
+			$scope.addedPerson = new Person({firstName: newFirstName, surname: {entityId : 1}, birthDate: -299984400000});
+		//	$scope.addedPerson.surname = addedSurname;
 //			$scope.addedPerson.firstName = newFirstName;
 //			$scope.addedPerson.surname = new Surname({surname: newSurname});
 			$scope.addedPerson.$save(function (person, headers) {
