@@ -24,7 +24,52 @@ import javax.validation.constraints.Size;
 @Table(name="T_PERSON")
 public class Person  {
 
-    @Override
+    public static class Builder {
+
+    	private Person father;
+    	private Person mother;
+    	private final Long entityId;
+    	private final String firstName;
+    	private final Surname surname;
+    	private final Date birthDate;
+    	
+		public Builder(Long entityId, String firstName, Surname surname, Date birthDate) {
+			this.entityId = entityId;
+			this.firstName = firstName;
+			this.surname = surname;
+			this.birthDate = birthDate;
+		}
+
+		public Builder withFather(Person val) {
+			father = val;
+			return this;
+		}
+
+		public Builder withMother(Person val) {
+			mother = val;
+			return this;
+		}
+
+		public Person build() {
+			return new Person(this);
+		}
+
+	}
+
+    public Person() {
+    	
+    }
+    
+	private Person(Builder builder) {
+		entityId = builder.entityId;
+		firstName = builder.firstName;
+		surname = builder.surname;
+		birthDate = builder.birthDate;
+		father = builder.father;
+		mother = builder.mother;
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

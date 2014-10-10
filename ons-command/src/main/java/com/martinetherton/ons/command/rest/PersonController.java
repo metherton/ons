@@ -45,16 +45,17 @@ public class PersonController {
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public HttpEntity<String> createPerson(@RequestBody Person newPerson,
+	public HttpEntity<String> createPerson(@RequestBody PersonDetails newPerson,
 			@Value("#{request.requestURL}") StringBuffer url) {
+		Person person = Person.Builder(newPerson.getFirstName(), newPerson.getSurname)
 		Person person = personService.addPerson(newPerson);
 
 		return entityWithLocation(url, person.getEntityId());
 	}		
 
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
-	public @ResponseBody List<Person> listAllPersons() {
-		return personService.listAllPersons();
+	public @ResponseBody List<PersonDetails> listAllPersons() {
+		return personService.listAllPersonDetails();
 	}		
 	
 	private HttpEntity<String> entityWithLocation(StringBuffer url,

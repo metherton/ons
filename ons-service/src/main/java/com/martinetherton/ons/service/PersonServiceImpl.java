@@ -1,5 +1,6 @@
 package com.martinetherton.ons.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,15 +9,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.martinetherton.ons.model.Marriage;
 import com.martinetherton.ons.model.Person;
+import com.martinetherton.ons.model.PersonDetails;
 import com.martinetherton.ons.model.SearchResult;
 import com.martinetherton.ons.model.SearchResultFactory;
+import com.martinetherton.ons.persist.MarriageRepository;
 import com.martinetherton.ons.persist.PersonRepository;
 
 @Service
 public class PersonServiceImpl implements PersonService {
 
     private PersonRepository personRepository;
+    private MarriageRepository marriageRepository;
     private PersonVisitCount personVisitCount;
 
     public void setPersonRepository(PersonRepository personRepository) {
@@ -29,8 +34,9 @@ public class PersonServiceImpl implements PersonService {
 //    }
 
     @Autowired
-    public PersonServiceImpl(PersonRepository personRepository, PersonVisitCount personVisitCount) {
+    public PersonServiceImpl(PersonRepository personRepository, MarriageRepository marriageRepository, PersonVisitCount personVisitCount) {
         this.personRepository = personRepository;
+        this.marriageRepository = marriageRepository;
         this.personVisitCount = personVisitCount;
     }
     
@@ -65,8 +71,15 @@ public class PersonServiceImpl implements PersonService {
     }
 
 	@Override
-	public List<Person> listAllPersons() {
-		return personRepository.findAll();
+	public List<PersonDetails> listAllPersonDetails() {
+		List<Person> persons = personRepository.findAll();
+		List<PersonDetails> listPersonDetails = new ArrayList<PersonDetails>();
+		for (Person p : persons) {
+			List<Marriage> retrievedMarriages = marriageRepository.findMarriagesFor(p);
+			PersonDetails personDetails = new PersonDetails.Builder(p).withMarriages(retrievedMarriages).build();
+			listPersonDetails.add(personDetails);
+		}
+		return listPersonDetails;
 	}	
 
 }

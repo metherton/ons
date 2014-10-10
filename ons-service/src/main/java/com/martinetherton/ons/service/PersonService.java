@@ -3,6 +3,7 @@ package com.martinetherton.ons.service;
 import java.util.List;
 
 import com.martinetherton.ons.model.Person;
+import com.martinetherton.ons.model.PersonDetails;
 
 public interface PersonService {
 
@@ -14,6 +15,6 @@ public interface PersonService {
     void pointcut2();
     void pointcutWithParam(String name);
 
-	List<Person> listAllPersons();
+	List<PersonDetails> listAllPersonDetails();
     
 }
