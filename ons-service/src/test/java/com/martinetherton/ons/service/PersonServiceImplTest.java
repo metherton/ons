@@ -11,7 +11,7 @@ public class PersonServiceImplTest {
     @Test
     public void personServiceImplCreation() {
         PersonRepositoryImpl mockRepository = Mockito.mock(PersonRepositoryImpl.class);
-        PersonService personService = new PersonServiceImpl(mockRepository, null);
+        PersonService personService = new PersonServiceImpl(mockRepository, null, null);
         Assert.assertNotNull(personService);
     }
     

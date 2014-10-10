@@ -1,5 +1,7 @@
 package com.martinetherton.ons.model;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +33,7 @@ public class PersonDetails {
 
 	private Person person;
 	private List<Marriage> marriages;
+	private String birthDate;
 
 	private PersonDetails(Builder builder) {
 		person = builder.person;
@@ -62,4 +65,9 @@ public class PersonDetails {
 		return person.getMother() == null ? "" : person.getMother().getFirstName() + " " + person.getMother().getSurname().getSurname();
 	}
 
+	public String getBirthDate() {
+		Format formatter = new SimpleDateFormat("dd-MM-yyyy");
+		return formatter.format(person.getBirthDate());
+	}
+	
 }

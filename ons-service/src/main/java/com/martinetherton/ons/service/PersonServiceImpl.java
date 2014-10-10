@@ -82,4 +82,9 @@ public class PersonServiceImpl implements PersonService {
 		return listPersonDetails;
 	}	
 
+//	@Override
+//	public List<Person> listAllPersonDetails() {
+//		return personRepository.findAll();
+//	}		
+	
 }

@@ -23,12 +23,12 @@
 			<th>Father</th>
 			<th>Mother</th>
 		</tr>
-		<tr ng-repeat="person in persons | filter:surname | filter:firstName">
-			<td><a href="#/ons-command/rest/persons/{{person.entityId}}">{{person.firstName}}</a></td>
-			<td>{{person.surname.surname}}</td>
+ 	 	<tr ng-repeat="person in persons | filter:surname | filter:firstName">
+  			<td><a href="#/ons-command/rest/persons/{{person.person.entityId}}">{{person.person.firstName}}</a></td>
+ 			<td>{{person.person.surname.surname}}</td>
 			<td>{{person.birthDate}}</td>
-			<td>{{person.father.firstName}}</td>
-			<td>{{person.mother.firstName}}</td>
+			<td>{{person.fatherDetails}}</td>
+			<td>{{person.motherDetails}}</td>  
 		</tr>
 	</table>
 </article>

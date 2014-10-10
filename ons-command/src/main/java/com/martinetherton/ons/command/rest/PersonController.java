@@ -43,20 +43,28 @@ public class PersonController {
 		return personService.getPerson(id);
 	}	
 	
-	@RequestMapping(value = "/persons", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.CREATED)
-	public HttpEntity<String> createPerson(@RequestBody PersonDetails newPerson,
-			@Value("#{request.requestURL}") StringBuffer url) {
-		Person person = Person.Builder(newPerson.getFirstName(), newPerson.getSurname)
-		Person person = personService.addPerson(newPerson);
-
-		return entityWithLocation(url, person.getEntityId());
-	}		
+//	@RequestMapping(value = "/persons", method = RequestMethod.POST)
+//	@ResponseStatus(HttpStatus.CREATED)
+//	public HttpEntity<String> createPerson(@RequestBody PersonDetails newPerson,
+//			@Value("#{request.requestURL}") StringBuffer url) {
+//		Person person = Person.Builder(newPerson.getFirstName(), newPerson.getSurname)
+//		Person person = personService.addPerson(newPerson);
+//
+//		return entityWithLocation(url, person.getEntityId());
+//	}		
 
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public @ResponseBody List<PersonDetails> listAllPersons() {
-		return personService.listAllPersonDetails();
+		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
+		return listAllPersonDetails;		
 	}		
+
+//	@RequestMapping(value = "/persons", method = RequestMethod.GET)
+//	public @ResponseBody List<Person> listAllPersons() {
+//		List<Person> listAllPersonDetails = personService.listAllPersonDetails();
+//		return listAllPersonDetails;
+//	}		
+	
 	
 	private HttpEntity<String> entityWithLocation(StringBuffer url,
 			Object resourceId) {

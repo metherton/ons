@@ -7,9 +7,7 @@ var onsControllers = angular.module('onsControllers', []);
 onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 	function($scope, Person) {
 		$scope.persons = Person.query();
-		
 		$scope.add = function(newFirstName) {
-			alert('add person');
 		//	var addedSurname = new Surname({entityId: 1});
 			$scope.addedPerson = new Person({firstName: newFirstName, surname: {entityId : 1}, birthDate: -299984400000});
 		//	$scope.addedPerson.surname = addedSurname;
