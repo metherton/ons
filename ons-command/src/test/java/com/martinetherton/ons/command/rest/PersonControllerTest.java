@@ -1,11 +1,16 @@
 package com.martinetherton.ons.command.rest;
 
-import static org.hamcrest.Matchers.is;
+
 import static org.junit.Assert.assertThat;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Matchers;
+
 import org.mockito.Mockito;
 
 import com.martinetherton.ons.model.Person;
@@ -34,9 +39,20 @@ public class PersonControllerTest {
 		Person expectedPerson = new Person();
 		expectedPerson.setFirstName("John");
 		PersonDetails expectedPersonDetails = new PersonDetails.Builder(expectedPerson).build();
-		Mockito.when(personDetailsService.getPersonDetails(Matchers.any(Person.class))).thenReturn(expectedPersonDetails);
+		Mockito.when(personService.getPersonDetails(1)).thenReturn(expectedPersonDetails);
 		PersonDetails personDetails = controller.personDetails(1L);
-		Mockito.verify(personDetailsService).getPersonDetails(Matchers.any(Person.class));
-		assertThat(personDetails.getPerson().getFirstName(), is("John"));
+		Mockito.verify(personService).getPersonDetails(1L);
+		assertThat(personDetails.getPerson().getFirstName(), Matchers.is("John"));
 	}
+	
+	@Test
+	public void getAddPersonForm() {
+		List<PersonDetails> personDetails = new ArrayList<PersonDetails>();
+		personDetails.add(new PersonDetails());
+		Mockito.when(personService.listAllPersonDetails()).thenReturn(personDetails);
+		AddPersonForm addPersonForm = controller.getAddPersonForm();
+		Assert.assertThat(addPersonForm.personDetails().size(), Matchers.is(1));		
+		Mockito.verify(personService).listAllPersonDetails();
+	}
+	
 }

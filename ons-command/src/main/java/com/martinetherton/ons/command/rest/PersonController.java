@@ -42,6 +42,13 @@ public class PersonController {
 	public @ResponseBody PersonDetails personDetails(@PathVariable("personId") long id) {
 		return personService.getPersonDetails(id);
 	}	
+
+	@RequestMapping(value = "/persons", method = RequestMethod.GET)	
+	public @ResponseBody  AddPersonForm getAddPersonForm() {
+		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
+		AddPersonForm addPersonForm = new AddPersonForm.Builder(listAllPersonDetails).build();
+		return addPersonForm;
+	}		
 	
 //	@RequestMapping(value = "/persons", method = RequestMethod.POST)
 //	@ResponseStatus(HttpStatus.CREATED)
@@ -53,11 +60,11 @@ public class PersonController {
 //		return entityWithLocation(url, person.getEntityId());
 //	}		
 
-	@RequestMapping(value = "/persons", method = RequestMethod.GET)
-	public @ResponseBody List<PersonDetails> listAllPersons() {
-		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
-		return listAllPersonDetails;		
-	}		
+//	@RequestMapping(value = "/persons", method = RequestMethod.GET)
+//	public @ResponseBody List<PersonDetails> listAllPersons() {
+//		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
+//		return listAllPersonDetails;		
+//	}		
 
 //	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 //	public @ResponseBody List<Person> listAllPersons() {
@@ -85,7 +92,9 @@ public class PersonController {
 		UriTemplate template = new UriTemplate(url.append("/{childId}")
 				.toString());
 		return template.expand(childIdentifier);
-	}	
+	}
+
+
 	
 	
 	

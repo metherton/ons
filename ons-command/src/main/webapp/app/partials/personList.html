@@ -23,7 +23,7 @@
 			<th>Father</th>
 			<th>Mother</th>
 		</tr>
- 	 	<tr ng-repeat="person in persons | filter:surname | filter:firstName">
+ 	 	<tr ng-repeat="person in addPersonForm.personDetails | filter:surname | filter:firstName">
   			<td><a href="#/ons-command/rest/persons/{{person.person.entityId}}">{{person.person.firstName}}</a></td>
  			<td>{{person.person.surname.surname}}</td>
 			<td>{{person.birthDate}}</td>

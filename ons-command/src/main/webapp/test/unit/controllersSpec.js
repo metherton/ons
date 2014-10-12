@@ -20,7 +20,7 @@ describe('Ons controllers', function() {
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('/ons-command/rest/persons').
-          respond([{surname:'Etherton',firstName:'Mark'},{surname:'Etherton',firstName:'Samuel'}]);
+          respond({personDetails : [{person: {surname:'Etherton',firstName:'Mark'}}, {person : {surname:'Etherton',firstName:'Samuel'}}]});
 
       scope = $rootScope.$new();
       ctrl = $controller('PersonListCtrl', {$scope: scope});
@@ -28,11 +28,11 @@ describe('Ons controllers', function() {
 
 
     it('should create "persons" model with 2 persons fetched from xhr', function() {
-      expect(scope.persons).toEqualData([]);
+  //    expect(scope.addPersonForm).toEqualData({personDetails : []});
       $httpBackend.flush(); 
 
-      expect(scope.persons).toEqualData(
-    		  [{surname:'Etherton',firstName:'Mark'},{surname:'Etherton',firstName:'Samuel'}]);
+      expect(scope.addPersonForm).toEqualData(
+    		  {personDetails : [{person: {surname:'Etherton',firstName:'Mark'}}, {person : {surname:'Etherton',firstName:'Samuel'}}]});
     });
 
   });

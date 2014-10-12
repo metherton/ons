@@ -5,7 +5,7 @@ var onsServices = angular.module('onsServices', ['ngResource']);
 onsServices.factory('Person', ['$resource',
   function($resource){
     return $resource('/ons-command/rest/persons/:personId', {}, {
-      query: {method:'GET', params:{personId:''}, isArray:true}
+      query: {method:'GET', params:{personId:''}, isArray:false}
     });
   }]);
 
