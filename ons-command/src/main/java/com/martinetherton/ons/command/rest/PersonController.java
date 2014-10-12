@@ -39,8 +39,8 @@ public class PersonController {
 	}
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
-	public @ResponseBody Person personDetails(@PathVariable("personId") long id) {
-		return personService.getPerson(id);
+	public @ResponseBody PersonDetails personDetails(@PathVariable("personId") long id) {
+		return personService.getPersonDetails(id);
 	}	
 	
 //	@RequestMapping(value = "/persons", method = RequestMethod.POST)

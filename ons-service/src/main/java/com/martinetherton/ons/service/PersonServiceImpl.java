@@ -80,6 +80,12 @@ public class PersonServiceImpl implements PersonService {
 			listPersonDetails.add(personDetails);
 		}
 		return listPersonDetails;
+	}
+
+	@Override
+    @Transactional(readOnly=true)
+	public PersonDetails getPersonDetails(long id) {
+		return new PersonDetails.Builder(personRepository.findBy(id)).build();
 	}	
 
 //	@Override

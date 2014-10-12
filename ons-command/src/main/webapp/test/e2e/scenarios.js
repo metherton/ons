@@ -17,7 +17,7 @@ describe('Ons App', function() {
 	  }); 
 	  
       it('should display persons page', function() {
-	      expect(element.all(by.repeater('person in persons')).count()).toEqual(5);
+	      expect(element.all(by.repeater('person in persons')).count()).toEqual(6);
 	  });	  
   }); 
   
@@ -38,7 +38,7 @@ describe('Ons App', function() {
 	  }); 
       it('should display surnames page', function() {
     	  var history = element.all(by.repeater('surname in surnames'));
-    	  expect(history.count()).toEqual(2);
+    	  expect(history.count()).toEqual(11);
       });	  
 	  
   }); 

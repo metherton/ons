@@ -37,7 +37,7 @@ onsControllers.controller('SurnameListCtrl', ['$scope', 'Surname',
     
 onsControllers.controller('PersonDetailsCtrl', ['$scope', '$routeParams', 'Person',
   function($scope, $routeParams, Person) {
-      $scope.person = Person.get({personId: $routeParams.personId});
+      $scope.personDetails = Person.get({personId: $routeParams.personId});
    }]);
 
 onsControllers.controller('SurnameDetailsCtrl', ['$scope', '$routeParams', 'Surname',

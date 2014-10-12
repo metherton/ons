@@ -16,5 +16,7 @@ public interface PersonService {
     void pointcutWithParam(String name);
 
 	List<PersonDetails> listAllPersonDetails();
+
+	PersonDetails getPersonDetails(long id);
     
 }
