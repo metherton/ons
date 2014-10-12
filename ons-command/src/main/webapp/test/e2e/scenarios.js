@@ -17,7 +17,7 @@ describe('Ons App', function() {
 	  }); 
 	  
       it('should display persons page', function() {
-	      expect(element.all(by.repeater('person in addPersonForm.persons')).count()).toEqual(6);
+	      expect(element.all(by.repeater('person in addPersonForm.personDetails')).count()).toEqual(6);
 	  });	  
   }); 
   
