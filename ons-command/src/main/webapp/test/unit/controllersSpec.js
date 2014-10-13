@@ -20,7 +20,7 @@ describe('Ons controllers', function() {
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('/ons-command/rest/persons').
-          respond({personDetails : [{person: {surname:'Etherton',firstName:'Mark'}}, {person : {surname:'Etherton',firstName:'Samuel'}}]});
+          respond({personDetails : [{person: {surname:'Etherton',firstName:'Mark', birthDate: 2}}, {person : {surname:'Etherton',firstName:'Samuel', birthDate: 1}}]});
 
       scope = $rootScope.$new();
       ctrl = $controller('PersonListCtrl', {$scope: scope});
@@ -32,7 +32,9 @@ describe('Ons controllers', function() {
       $httpBackend.flush(); 
 
       expect(scope.addPersonForm).toEqualData(
-    		  {personDetails : [{person: {surname:'Etherton',firstName:'Mark'}}, {person : {surname:'Etherton',firstName:'Samuel'}}]});
+    		  {personDetails : [{person: {surname:'Etherton',firstName:'Mark', birthDate: 2}}, {person : {surname:'Etherton',firstName:'Samuel', birthDate: 1}}]});
+
+      expect(scope.orderProp).toBe('person.birthDate');
     });
 
   });

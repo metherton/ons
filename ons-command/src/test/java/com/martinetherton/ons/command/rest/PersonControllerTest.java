@@ -51,7 +51,7 @@ public class PersonControllerTest {
 		personDetails.add(new PersonDetails());
 		Mockito.when(personService.listAllPersonDetails()).thenReturn(personDetails);
 		AddPersonForm addPersonForm = controller.getAddPersonForm();
-		Assert.assertThat(addPersonForm.personDetails().size(), Matchers.is(1));		
+		Assert.assertThat(addPersonForm.getPersonDetails().size(), Matchers.is(1));		
 		Mockito.verify(personService).listAllPersonDetails();
 	}
 	
