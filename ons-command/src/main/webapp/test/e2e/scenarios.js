@@ -17,8 +17,10 @@ describe('Ons App', function() {
 	  }); 
 	  
       it('should display persons page', function() {
-	      expect(element.all(by.repeater('person in addPersonForm.personDetails')).count()).toEqual(6);
-	  });	  
+    	  var personList = element.all(by.repeater('person in addPersonForm.personDetails'));
+	      expect(personList.count()).toEqual(6);
+	      expect(personList.get(0).getText()).toContain('samuel');	
+      });	  
   }); 
   
   describe('Person detail view', function() {
