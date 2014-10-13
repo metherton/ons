@@ -9,14 +9,21 @@ onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 		$scope.addPersonForm = Person.query();
 		$scope.orderProp = 'person.birthDate';	
 	//	$scope.personDetails = $scope.addPersonForm.personDetails;
-		$scope.add = function(newFirstName) {
-		//	var addedSurname = new Surname({entityId: 1});
-			$scope.addedPerson = new Person({firstName: newFirstName, surname: {entityId : 1}, birthDate: -299984400000});
+		$scope.add = function(addedPerson) {
+		//	alert(addedPerson);
+			$scope.addedPerson = new Person({firstName: addedPerson.firstName, 
+											 surname: {entityId : 1}, 
+											 birthDate: -299984400000});
 		//	$scope.addedPerson.surname = addedSurname;
 //			$scope.addedPerson.firstName = newFirstName;
 //			$scope.addedPerson.surname = new Surname({surname: newSurname});
-			$scope.addedPerson.$save(function (person, headers) {
-				$scope.persons = Person.query();
+			//$scope.addedPerson.$save(function (person, headers) {
+		//	$scope.addedPerson.$save(function (person, headers) {	
+			$scope.addedPerson.$save(function (person, headers) {	
+				
+			//	alert('personadded');
+			
+				$scope.addPersonForm = Person.query();
 				$scope.addedPerson.firstName = '';
 				//$scope.addedPerson.surname = '';
 			}); 
