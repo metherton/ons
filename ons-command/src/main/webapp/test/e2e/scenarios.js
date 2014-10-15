@@ -18,8 +18,12 @@ describe('Ons App', function() {
 	  
       it('should display persons page', function() {
     	  var personList = element.all(by.repeater('person in addPersonForm.personDetails'));
-	      expect(personList.count()).toEqual(6);
+	      expect(personList.count()).toEqual(9);
 	      expect(personList.get(0).getText()).toContain('samuel');	
+    	  var surnameList = element.all(by.repeater('surname in addPersonForm.surnames'));
+	      expect(surnameList.count()).toEqual(10);
+	      expect(surnameList.get(0).getText()).toContain('etherton');	
+
       });	  
   }); 
   

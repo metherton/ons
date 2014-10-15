@@ -25,12 +25,14 @@ public class PersonBuilderTest {
 		Date birthDate = new Date();
 		Long entityId = 1L;
 		
-		Person person = new Person.Builder(entityId, firstName, surname, birthDate).withFather(father).withMother(mother).build();
+		Person person = new Person.Builder(entityId, firstName, surname, birthDate, 1).withFather(father).withMother(mother).build();
 		assertThat(person.getFirstName(), Matchers.is("Martin"));
 		assertThat(person.getFather(), Matchers.is(father));
 		assertThat(person.getMother(), Matchers.is(mother));
 		assertThat(person.getBirthDate(), Matchers.is(birthDate));
 		assertThat(person.getEntityId(), Matchers.is(1L));
+		assertThat(person.getGender(), Matchers.is(1));
+		
 	}
 	
 	

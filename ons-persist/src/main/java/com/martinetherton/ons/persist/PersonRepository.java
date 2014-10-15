@@ -29,4 +29,8 @@ public interface PersonRepository {
 
 	List<Person> findBy(Surname surname);
 
+	List<Person> findAllMalePersons();
+
+	List<Person> findAllFemalePersons();
+
 }

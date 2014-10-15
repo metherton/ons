@@ -86,6 +86,28 @@ public class PersonServiceImpl implements PersonService {
     @Transactional(readOnly=true)
 	public PersonDetails getPersonDetails(long id) {
 		return new PersonDetails.Builder(personRepository.findBy(id)).build();
+	}
+
+	@Override
+	public List<PersonDetails> listAllMalePersonDetails() {
+		List<Person> persons = personRepository.findAllMalePersons();
+		List<PersonDetails> listPersonDetails = new ArrayList<PersonDetails>();
+		for (Person p : persons) {
+			PersonDetails personDetails = new PersonDetails.Builder(p).build();
+			listPersonDetails.add(personDetails);
+		}
+		return listPersonDetails;
+	}
+
+	@Override
+	public List<PersonDetails> listAllFemalePersonDetails() {
+		List<Person> persons = personRepository.findAllFemalePersons();
+		List<PersonDetails> listPersonDetails = new ArrayList<PersonDetails>();
+		for (Person p : persons) {
+			PersonDetails personDetails = new PersonDetails.Builder(p).build();
+			listPersonDetails.add(personDetails);
+		}
+		return listPersonDetails;
 	}	
 
 //	@Override

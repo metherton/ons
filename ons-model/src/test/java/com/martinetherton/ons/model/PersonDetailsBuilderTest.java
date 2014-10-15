@@ -16,6 +16,7 @@ public class PersonDetailsBuilderTest {
 		Person person = new Person();
 		person.setEntityId(1L);
 		person.setFirstName("Martin");
+		person.setSurname(new Surname("Etherton"));
 		Person partner = new Person();
 		partner.setEntityId(2L);
 		partner.setFirstName("Erna");
@@ -43,6 +44,7 @@ public class PersonDetailsBuilderTest {
 		assertThat(personDetails.getMarriages().get(0).getPartner().getFirstName(), Matchers.is("Erna"));
 		assertThat(personDetails.getFatherDetails(), Matchers.is("Sid Smith"));
 		assertThat(personDetails.getMotherDetails(), Matchers.is("Nora Jones"));
+		assertThat(personDetails.getPersonSummary(), Matchers.is("Martin Etherton"));
 	}
 	
 }

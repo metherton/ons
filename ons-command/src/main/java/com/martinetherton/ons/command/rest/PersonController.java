@@ -31,11 +31,13 @@ public class PersonController {
 
 	private PersonService personService;
 	private PersonDetailsService personDetailsService;
+	private SurnameService surnameService;
 
 	@Autowired
-	public PersonController(PersonService personService, PersonDetailsService personDetailsService) {
+	public PersonController(PersonService personService, PersonDetailsService personDetailsService, SurnameService surnameService) {
 		this.personService = personService;
 		this.personDetailsService = personDetailsService;
+		this.surnameService = surnameService;
 	}
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
@@ -46,7 +48,14 @@ public class PersonController {
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)	
 	public @ResponseBody  AddPersonForm getAddPersonForm() {
 		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
-		AddPersonForm addPersonForm = new AddPersonForm.Builder(listAllPersonDetails, new Person()).build();
+		List<PersonDetails> listAllFatherDetails = personService.listAllMalePersonDetails();
+		List<PersonDetails> listAllMotherDetails = personService.listAllFemalePersonDetails();
+		
+		AddPersonForm addPersonForm = new AddPersonForm.Builder(listAllPersonDetails, 
+																new Person(), 
+																surnameService.getSurnames(),
+																listAllFatherDetails,
+																listAllMotherDetails).build();
 		return addPersonForm;
 	}		
 	
@@ -54,9 +63,7 @@ public class PersonController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public HttpEntity<String> createPerson(@RequestBody Person newPerson,
 			@Value("#{request.requestURL}") StringBuffer url) {
-	//	Person person = Person.Builder(newPerson.getFirstName(), newPerson.getSurname)
 		Person person = personService.addPerson(newPerson);
-
 		return entityWithLocation(url, person.getEntityId());
 	}		
 

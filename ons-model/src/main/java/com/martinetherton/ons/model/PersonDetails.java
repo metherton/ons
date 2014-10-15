@@ -26,7 +26,6 @@ public class PersonDetails {
 		}
 
 		public PersonDetails build() {
-			// TODO Auto-generated method stub
 			return new PersonDetails(this);
 		}
 	}
@@ -34,6 +33,7 @@ public class PersonDetails {
 	private Person person;
 	private List<Marriage> marriages;
 	private String birthDate;
+	private String personSummary;
 
 	private PersonDetails(Builder builder) {
 		person = builder.person;
@@ -68,6 +68,10 @@ public class PersonDetails {
 	public String getBirthDate() {
 		Format formatter = new SimpleDateFormat("dd-MM-yyyy");
 		return formatter.format(person.getBirthDate());
+	}
+
+	public String getPersonSummary() {
+		return person.getFirstName() + " " + person.getSurname().getSurname();
 	}
 	
 }

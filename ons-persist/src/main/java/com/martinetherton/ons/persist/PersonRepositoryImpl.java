@@ -101,5 +101,18 @@ public class PersonRepositoryImpl implements PersonRepository, InitializingBean{
         return persons;
 	}
 
+	@Override
+	public List<Person> findAllMalePersons() {
+        Query query = entityManager.createQuery("select p from Person p where p.gender = 1");
+        List<Person> persons = query.getResultList();
+        return persons;
+	}
+
+	@Override
+	public List<Person> findAllFemalePersons() {
+        Query query = entityManager.createQuery("select p from Person p where p.gender = 0");
+        List<Person> persons = query.getResultList();
+        return persons;
+	}	
 
 }

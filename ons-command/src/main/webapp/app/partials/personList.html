@@ -1,19 +1,18 @@
-<article>
-	<label for="surname">Surname</label>
-	<input id="surname" ng-model="surname" name="surname">
-	<label for="firstName">First Name</label>
-	<input id="firstName" ng-model="firstName" name="firstName">
-</article>
 
-<article>
-	<form name="addForm" ng-submit="add(addedPerson)">
-	<input ng-model="addedPerson.firstName" >
-	
-	<input type="submit" value="Add" >
+<p>Add Person: <input type="checkbox" ng-model="checked"></p>
+<article ng-show="checked">
+	<form name="addForm" ng-submit="add(addedPerson, birthDate)">
+		<p><label for="firstName">First Name:</label><input id="firstName" ng-model="addedPerson.firstName" ><label for="father">Father:</label><select id="father" ng-model="addedPerson.father.entityId" ng-options="fatherDetails.person.entityId as fatherDetails.personSummary for fatherDetails in addPersonForm.fatherDetails"></select><input type="submit" value="Add Person" ></p>
+		<p><label for="surname">Surname:</label><select id="surname" ng-model="addedPerson.surname.entityId" ng-options="surname.entityId as surname.surname for surname in addPersonForm.surnames"></select><label for="mother">Mother:</label><select id="mother" ng-model="addedPerson.mother.entityId" ng-options="motherDetails.person.entityId as motherDetails.personSummary for motherDetails in addPersonForm.motherDetails"></p>	
+	 	<p><label for="birthDate">Birth Date:</label><input type="date" ng-model="addedPerson.birthDate"></p>		
 	</form>
 </article>
-
-
+<article>
+	<label for="surnameFilter">Surname</label>
+	<input id="surnameFilter" ng-model="surnameFilter" name="surnameFilter">
+	<label for="firstNameFilter">First Name</label>
+	<input id="firstNameFilter" ng-model="firstNameFilter" name="firstNameFilter">
+</article>
 <article>
 	<table width="100%">
 		<tr>
@@ -23,7 +22,7 @@
 			<th>Father</th>
 			<th>Mother</th>
 		</tr>
- 	 	<tr ng-repeat="person in addPersonForm.personDetails | filter:surname | filter:firstName | orderBy:orderProp">
+ 	 	<tr ng-repeat="person in addPersonForm.personDetails | filter:surnameFilter | filter:firstNameFilter | orderBy:orderProp">
   			<td><a href="#/ons-command/rest/persons/{{person.person.entityId}}">{{person.person.firstName}}</a></td>
  			<td>{{person.person.surname.surname}}</td>
 			<td>{{person.birthDate}}</td>

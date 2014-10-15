@@ -6,26 +6,26 @@ var onsControllers = angular.module('onsControllers', []);
 
 onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 	function($scope, Person) {
+		$scope.hideAddForm = false;
+		$scope.showAddPerson = function() {
+			$scope.hideAddForm = !$scope.hideAddForm;
+		}
+		
 		$scope.addPersonForm = Person.query();
 		$scope.orderProp = 'person.birthDate';	
-	//	$scope.personDetails = $scope.addPersonForm.personDetails;
 		$scope.add = function(addedPerson) {
-		//	alert(addedPerson);
+			alert(addedPerson.father.entityId);
+			alert(addedPerson.mother.entityId);
 			$scope.addedPerson = new Person({firstName: addedPerson.firstName, 
-											 surname: {entityId : 1}, 
-											 birthDate: -299984400000});
-		//	$scope.addedPerson.surname = addedSurname;
-//			$scope.addedPerson.firstName = newFirstName;
-//			$scope.addedPerson.surname = new Surname({surname: newSurname});
-			//$scope.addedPerson.$save(function (person, headers) {
-		//	$scope.addedPerson.$save(function (person, headers) {	
+											 surname: {entityId : addedPerson.surname.entityId}, 
+											 birthDate: addedPerson.birthDate,
+											 father: {entityId : addedPerson.father.entityId},
+											 mother: {entityId : addedPerson.mother.entityId},
+											 gender: 1
+											});
 			$scope.addedPerson.$save(function (person, headers) {	
-				
-			//	alert('personadded');
-			
 				$scope.addPersonForm = Person.query();
 				$scope.addedPerson.firstName = '';
-				//$scope.addedPerson.surname = '';
 			}); 
 		};			
 		

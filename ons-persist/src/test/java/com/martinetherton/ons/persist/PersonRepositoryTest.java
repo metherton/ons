@@ -105,6 +105,12 @@ public class PersonRepositoryTest {
         assertThat(persons.size(), is(6));
     }
     
+    @Test
+    public void findAllMalePersons() {
+        List<Person> persons = repository.findAllMalePersons();
+        assertThat(persons.size(), is(4));
+    }   
+    
     private EntityManagerFactory createEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(createTestDataSource());

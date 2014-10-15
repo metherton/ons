@@ -32,12 +32,14 @@ public class Person  {
     	private final String firstName;
     	private final Surname surname;
     	private final Date birthDate;
+    	private int gender;
     	
-		public Builder(Long entityId, String firstName, Surname surname, Date birthDate) {
+		public Builder(Long entityId, String firstName, Surname surname, Date birthDate, int gender) {
 			this.entityId = entityId;
 			this.firstName = firstName;
 			this.surname = surname;
 			this.birthDate = birthDate;
+			this.gender = gender;
 		}
 
 		public Builder withFather(Person val) {
@@ -56,6 +58,9 @@ public class Person  {
 
 	}
 
+    @Column(name="GENDER")   
+	private int gender;
+
     public Person() {
     	
     }
@@ -67,6 +72,7 @@ public class Person  {
 		birthDate = builder.birthDate;
 		father = builder.father;
 		mother = builder.mother;
+		gender = builder.gender;
 	}
 
 	@Override
@@ -187,6 +193,10 @@ public class Person  {
 
 	public void setMother(Person mother) {
 		this.mother = mother;
+	}
+
+	public int getGender() {
+		return gender;
 	}
     
 }
