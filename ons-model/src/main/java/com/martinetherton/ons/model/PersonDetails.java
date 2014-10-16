@@ -57,12 +57,12 @@ public class PersonDetails {
 	}
 
 	public String getFatherDetails() {
-		return person.getFather() == null ? "" : person.getFather().getFirstName() + " " + person.getFather().getSurname().getSurname();
+		return person.getFather() == null ? "" : person.getFather().getPerson().getFirstName() + " " + person.getFather().getPerson().getSurname().getSurname();
 
 	}
 
 	public String getMotherDetails() {
-		return person.getMother() == null ? "" : person.getMother().getFirstName() + " " + person.getMother().getSurname().getSurname();
+		return person.getMother() == null ? "" : person.getMother().getPerson().getFirstName() + " " + person.getMother().getPerson().getSurname().getSurname();
 	}
 
 	public String getBirthDate() {

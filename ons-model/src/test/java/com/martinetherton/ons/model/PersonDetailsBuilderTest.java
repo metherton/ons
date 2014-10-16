@@ -21,12 +21,10 @@ public class PersonDetailsBuilderTest {
 		partner.setEntityId(2L);
 		partner.setFirstName("Erna");
 		
-		Person father = new Person();
-		father.setFirstName("Sid");
-		father.setSurname(new Surname("Smith"));
-		Person mother = new Person();
-		mother.setFirstName("Nora");
-		mother.setSurname(new Surname("Jones"));
+		Father father = new Father();
+		father.setEntityId(1L);
+		Mother mother = new Mother();
+		mother.setEntityId(1L);
 
 		person.setFather(father);
 		person.setMother(mother);

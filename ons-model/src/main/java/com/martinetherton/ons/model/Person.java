@@ -26,8 +26,8 @@ public class Person  {
 
     public static class Builder {
 
-    	private Person father;
-    	private Person mother;
+    	private Father father;
+    	private Mother mother;
     	private final Long entityId;
     	private final String firstName;
     	private final Surname surname;
@@ -42,12 +42,12 @@ public class Person  {
 			this.gender = gender;
 		}
 
-		public Builder withFather(Person val) {
+		public Builder withFather(Father val) {
 			father = val;
 			return this;
 		}
 
-		public Builder withMother(Person val) {
+		public Builder withMother(Mother val) {
 			mother = val;
 			return this;
 		}
@@ -163,13 +163,13 @@ public class Person  {
     @NotNull
     private Date birthDate;
 
-    @OneToOne
-    @JoinColumn(name="FATHER_ID")    
-	private Person father;
-
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name="MOTHER_ID")       
-	private Person mother;
+	private Mother mother;    
+    
+    @OneToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name="FATHER_ID")    
+	private Father father;
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
@@ -179,19 +179,19 @@ public class Person  {
 		return birthDate;
 	}
 
-	public Person getFather() {
+	public Father getFather() {
 		return father;
 	}
 
-	public Person getMother() {
+	public Mother getMother() {
 		return mother;
 	}
 
-	public void setFather(Person father) {
+	public void setFather(Father father) {
 		this.father = father;
 	}
 
-	public void setMother(Person mother) {
+	public void setMother(Mother mother) {
 		this.mother = mother;
 	}
 

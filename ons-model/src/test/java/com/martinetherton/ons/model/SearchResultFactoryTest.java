@@ -20,13 +20,11 @@ public class SearchResultFactoryTest {
 		person1.setEntityId(1L);
 		person1.setFirstName("Martin");
 		person1.setSurname(new Surname("Etherton"));
-		Person father1 = new Person();
-		father1.setFirstName("father1firstname");
-		father1.setSurname(new Surname("father1surname"));
+		Father father1 = new Father();
+		father1.setEntityId(1L);
 		person1.setFather(father1);
-		Person mother1 = new Person();
-		mother1.setFirstName("mother1firstname");
-		mother1.setSurname(new Surname("mother1surname"));
+		Mother mother1 = new Mother();
+		mother1.setEntityId(1L);
 
 		person1.setMother(mother1);
 

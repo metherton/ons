@@ -13,12 +13,10 @@ public class PersonBuilderTest {
 
 	@Test
 	public void personBuilder() {		
-		Person father = new Person();
-		father.setFirstName("Sid");
-		father.setSurname(new Surname("Smith"));
-		Person mother = new Person();
-		mother.setFirstName("Nora");
-		mother.setSurname(new Surname("Jones"));
+		Father father = new Father();
+		father.setEntityId(1L);
+		Mother mother = new Mother();
+		mother.setEntityId(1L);
 		
 		String firstName = "Martin";
 		Surname surname = new Surname("Smith");

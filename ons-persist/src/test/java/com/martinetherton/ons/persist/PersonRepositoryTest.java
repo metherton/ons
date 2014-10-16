@@ -25,6 +25,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+import com.martinetherton.ons.model.Father;
+import com.martinetherton.ons.model.Mother;
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.Surname;
 
@@ -48,8 +50,8 @@ public class PersonRepositoryTest {
         Person person = repository.findBy(id);
         assertNotNull(person);
         assertThat(person.getFirstName(), is("Martin"));
-        assertThat(person.getFather().getFirstName(), is("Sydney"));
-        assertThat(person.getMother().getFirstName(), is("Nora"));
+        assertThat(person.getFather().getPerson().getEntityId(), is(5L));
+        assertThat(person.getMother().getPerson().getEntityId(), is(3L));
     }
     
     @Test
@@ -78,10 +80,8 @@ public class PersonRepositoryTest {
     public void newPersonAdded() {
     	Person person = new Person();
     	person.setFirstName("PERSON_FIRST_NAME");
-    	Person father = new Person();
-    	father.setFirstName("FATHER_FIRST_NAME");
-    	Person mother = new Person();
-    	mother.setFirstName("MOTHER_FIRST_NAME");
+    	Father father = new Father();
+    	Mother mother = new Mother();
     	Surname surname = new Surname("A_SURNAME");
     	person.setSurname(surname);
     	person.setFather(father);

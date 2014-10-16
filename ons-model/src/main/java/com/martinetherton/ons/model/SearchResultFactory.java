@@ -16,8 +16,8 @@ public class SearchResultFactory {
 			searchResult.setFirstName(person.getFirstName());
 			searchResult.setBirthDate(format(person.getBirthDate()));
 			searchResult.setEntityId(person.getEntityId().toString());
-			searchResult.setFatherDetails(parentDetails(person.getFather()));
-			searchResult.setMotherDetails(parentDetails(person.getMother()));
+			searchResult.setFatherDetails(parentDetails(person.getFather().getPerson()));
+			searchResult.setMotherDetails(parentDetails(person.getMother().getPerson()));
 
 			searchResults.add(searchResult);
 		}
