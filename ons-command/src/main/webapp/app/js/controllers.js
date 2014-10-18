@@ -14,14 +14,15 @@ onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 		$scope.addPersonForm = Person.query();
 		$scope.orderProp = 'person.birthDate';	
 		$scope.add = function(addedPerson) {
-			alert(addedPerson.father.entityId);
-			alert(addedPerson.mother.entityId);
+			alert(addedPerson.fatherId);
+			alert(addedPerson.motherId);
+			alert(addedPerson.gender);
 			$scope.addedPerson = new Person({firstName: addedPerson.firstName, 
 											 surname: {entityId : addedPerson.surname.entityId}, 
 											 birthDate: addedPerson.birthDate,
-											 father: {entityId : addedPerson.father.entityId},
-											 mother: {entityId : addedPerson.mother.entityId},
-											 gender: 1
+											 fatherId: parseInt(addedPerson.fatherId),
+											 motherId: parseInt(addedPerson.motherId),
+											 gender: parseInt(addedPerson.gender)
 											});
 			$scope.addedPerson.$save(function (person, headers) {	
 				$scope.addPersonForm = Person.query();

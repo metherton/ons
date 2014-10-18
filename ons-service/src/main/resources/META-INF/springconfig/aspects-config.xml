@@ -13,10 +13,11 @@
                             http://www.springframework.org/schema/context 
                             http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="pointcutLoggerImpl" class="com.martinetherton.ons.aspects.PointcutLoggerImpl"/>
+ <!--    <bean id="pointcutLoggerImpl" class="com.martinetherton.ons.aspects.PointcutLoggerImpl"/>
     <aop:aspectj-autoproxy>
         <aop:include name="pointcutLoggerImpl"/>
     </aop:aspectj-autoproxy>    
+     -->
     
 <!--     <bean id="databaseAccessLogger" class="com.martinetherton.ons.aspects.DatabaseAccessLogger"/>
     

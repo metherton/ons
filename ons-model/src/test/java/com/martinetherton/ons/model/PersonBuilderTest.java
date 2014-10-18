@@ -13,20 +13,18 @@ public class PersonBuilderTest {
 
 	@Test
 	public void personBuilder() {		
-		Father father = new Father();
-		father.setEntityId(1L);
-		Mother mother = new Mother();
-		mother.setEntityId(1L);
 		
 		String firstName = "Martin";
 		Surname surname = new Surname("Smith");
 		Date birthDate = new Date();
 		Long entityId = 1L;
 		
-		Person person = new Person.Builder(entityId, firstName, surname, birthDate, 1).withFather(father).withMother(mother).build();
+		Long fatherId = 2L;
+		Long motherId = 3L;
+		Person person = new Person.Builder(entityId, firstName, surname, birthDate, 1).withFather(fatherId ).withMother(motherId ).build();
 		assertThat(person.getFirstName(), Matchers.is("Martin"));
-		assertThat(person.getFather(), Matchers.is(father));
-		assertThat(person.getMother(), Matchers.is(mother));
+		assertThat(person.getFatherId(), Matchers.is(fatherId));
+		assertThat(person.getMotherId(), Matchers.is(motherId));
 		assertThat(person.getBirthDate(), Matchers.is(birthDate));
 		assertThat(person.getEntityId(), Matchers.is(1L));
 		assertThat(person.getGender(), Matchers.is(1));

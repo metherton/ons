@@ -50,8 +50,8 @@ public class PersonRepositoryTest {
         Person person = repository.findBy(id);
         assertNotNull(person);
         assertThat(person.getFirstName(), is("Martin"));
-        assertThat(person.getFather().getPerson().getEntityId(), is(5L));
-        assertThat(person.getMother().getPerson().getEntityId(), is(3L));
+        assertThat(person.getFatherId(), is(5L));
+        assertThat(person.getMotherId(), is(3L));
     }
     
     @Test
@@ -80,12 +80,10 @@ public class PersonRepositoryTest {
     public void newPersonAdded() {
     	Person person = new Person();
     	person.setFirstName("PERSON_FIRST_NAME");
-    	Father father = new Father();
-    	Mother mother = new Mother();
     	Surname surname = new Surname("A_SURNAME");
     	person.setSurname(surname);
-    	person.setFather(father);
-    	person.setMother(mother);
+    	person.setFatherId(3L);
+    	person.setMotherId(4L);
     	int numberOfPersonBefore = (repository.findAll()).size();
     	Person newPerson = repository.add(person);
     	assertThat((repository.findAll()).size(), Matchers.is(numberOfPersonBefore + 1));

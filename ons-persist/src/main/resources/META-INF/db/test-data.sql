@@ -6,7 +6,7 @@ insert into T_SURNAME (SURNAME) values ('De Roo');
 insert into T_FATHER (PERSON_ID) values (5);
 insert into T_MOTHER (PERSON_ID) values (3);
 
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER) values (0, 'Martin', '1963-03-04', 0, 0, 1);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER) values (0, 'Martin', '1963-03-04', 5, 3, 1);
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 'Mark', '1960-06-30', 1);
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 'Samuel Original', '1805-01-01', 1);
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (2, 'Nora', '1936-04-23', 0);

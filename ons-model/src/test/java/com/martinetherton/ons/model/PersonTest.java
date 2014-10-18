@@ -19,15 +19,11 @@ public class PersonTest {
         cal.set(1963, 3, 4);
         Date myBirthDate = cal.getTime();
         person.setBirthDate(myBirthDate);
-        Father father = new Father();
-        father.setEntityId(1L);
-        Mother mother = new Mother();
-        mother.setEntityId(1L);
-        person.setFather(father);
-        person.setMother(mother);
+        person.setFatherId(1L);
+        person.setMotherId(2L);
         assertThat(person.getBirthDate(), Matchers.is(myBirthDate));
-        assertThat(person.getFather().getEntityId(), Matchers.is(1L));
-        assertThat(person.getMother().getEntityId(), Matchers.is(1L));        
+        assertThat(person.getFatherId(), Matchers.is(1L));
+        assertThat(person.getMotherId(), Matchers.is(2L));        
     }
     
 }

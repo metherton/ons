@@ -20,13 +20,8 @@ public class SearchResultFactoryTest {
 		person1.setEntityId(1L);
 		person1.setFirstName("Martin");
 		person1.setSurname(new Surname("Etherton"));
-		Father father1 = new Father();
-		father1.setEntityId(1L);
-		person1.setFather(father1);
-		Mother mother1 = new Mother();
-		mother1.setEntityId(1L);
 
-		person1.setMother(mother1);
+		//person1.setMother(mother1);
 
 		Calendar cal = Calendar.getInstance();
         cal.set(1963, 2, 4);

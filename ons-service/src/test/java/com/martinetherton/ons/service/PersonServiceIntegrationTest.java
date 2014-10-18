@@ -21,23 +21,14 @@ public class PersonServiceIntegrationTest extends ServiceIntegrationTest {
     @Test
     public void getPerson() {
         Assert.assertThat(personService.getPerson(0).getFirstName(), Matchers.is("Martin"));
-        Assert.assertThat(personService.getPerson(0).getFather().getPerson().getFirstName(), Matchers.is("Martin"));
+        Assert.assertThat(personService.getPerson(0).getFatherId(), Matchers.is(5L));
     }
     
     @Test
     public void insertPerson() {
         Person pToInsert = new Person();
-        Father father = new Father();
-        Person fatherPerson = new Person();
-        fatherPerson.setEntityId(5L);
-        father.setPerson(fatherPerson);
-        Mother mother = new Mother();
-        Person motherPerson = new Person();
-        motherPerson.setEntityId(3L);
-        mother.setPerson(motherPerson);
-
-        pToInsert.setFather(father);
-        pToInsert.setMother(mother);
+        pToInsert.setFatherId(3L);
+        pToInsert.setMotherId(6L);
         System.out.println("entityId is " + pToInsert.getEntityId());
         pToInsert.setFirstName("PToInsert");
         pToInsert.setBirthDate(new Date());

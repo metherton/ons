@@ -1,13 +1,15 @@
-
-<p>Add Person: <input type="checkbox" ng-model="checked"></p>
-<article ng-show="checked">
-	<form name="addForm" ng-submit="add(addedPerson, birthDate)">
-		<p><label for="firstName">First Name:</label><input id="firstName" ng-model="addedPerson.firstName" ><label for="father">Father:</label><select id="father" ng-model="addedPerson.father.entityId" ng-options="fatherDetails.person.entityId as fatherDetails.personSummary for fatherDetails in addPersonForm.fatherDetails"></select><input type="submit" value="Add Person" ></p>
-		<p><label for="surname">Surname:</label><select id="surname" ng-model="addedPerson.surname.entityId" ng-options="surname.entityId as surname.surname for surname in addPersonForm.surnames"></select><label for="mother">Mother:</label><select id="mother" ng-model="addedPerson.mother.entityId" ng-options="motherDetails.person.entityId as motherDetails.personSummary for motherDetails in addPersonForm.motherDetails"></p>	
-	 	<p><label for="birthDate">Birth Date:</label><input type="date" ng-model="addedPerson.birthDate"></p>		
+<p><a ng-click="showAddPerson = !showAddPerson" ng-init="showAddPerson=false">Add Person</a></p>
+<article ng-show="showAddPerson">
+	<form name="addForm" ng-submit="add(addedPerson)">
+		<p><label for="firstName">First Name:</label><input id="firstName" ng-model="addedPerson.firstName" /><label id="lblFather" for="father">Father:</label><select id="father" ng-model="addedPerson.fatherId" ng-options="fatherDetails.person.entityId as fatherDetails.personSummary for fatherDetails in addPersonForm.fatherDetails"></select></p>
+		<p><label for="surname">Surname:</label><select id="surname" ng-model="addedPerson.surname.entityId" ng-options="surname.entityId as surname.surname for surname in addPersonForm.surnames"></select><label id="lblMother" for="mother">Mother:</label><select id="mother" ng-model="addedPerson.motherId" ng-options="motherDetails.person.entityId as motherDetails.personSummary for motherDetails in addPersonForm.motherDetails"></select></p>	
+	 	<p><label for="birthDate">Birth Date:</label><input type="date" ng-model="addedPerson.birthDate" id="birthDate" /></p>
+		<p><label for="gender">Gender:</label><input id="male" type="radio" ng-model="addedPerson.gender" value="1" /><label id="lblMale" for="male">Male</label><input id="female" type="radio" ng-model="addedPerson.gender" value="0" /><label id="lblFemale" for="female">Female</label></p>	
+		<p><input type="submit" value="Add Person" /></p>
 	</form>
 </article>
-<article>
+<p><a ng-click="showFilter = !showFilter" ng-init="showFilter=false">Filter</a></p>
+<article ng-show="showFilter">
 	<label for="surnameFilter">Surname</label>
 	<input id="surnameFilter" ng-model="surnameFilter" name="surnameFilter">
 	<label for="firstNameFilter">First Name</label>
@@ -19,6 +21,7 @@
 			<th>First Name</th>
 			<th>Surname</th>
 			<th>Date Of Birth</th>
+			<th>Gender</th>
 			<th>Father</th>
 			<th>Mother</th>
 		</tr>
@@ -26,6 +29,7 @@
   			<td><a href="#/ons-command/rest/persons/{{person.person.entityId}}">{{person.person.firstName}}</a></td>
  			<td>{{person.person.surname.surname}}</td>
 			<td>{{person.birthDate}}</td>
+			<td>{{person.person.gender ? 'male' : 'female'}}</td>
 			<td>{{person.fatherDetails}}</td>
 			<td>{{person.motherDetails}}</td>  
 		</tr>

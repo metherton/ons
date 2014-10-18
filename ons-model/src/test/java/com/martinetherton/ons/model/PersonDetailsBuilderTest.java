@@ -21,23 +21,27 @@ public class PersonDetailsBuilderTest {
 		partner.setEntityId(2L);
 		partner.setFirstName("Erna");
 		
-		Father father = new Father();
-		father.setEntityId(1L);
-		Mother mother = new Mother();
-		mother.setEntityId(1L);
+		Person father = new Person();
+		father.setSurname(new Surname("Smith"));
+		father.setFirstName("Sid");
 
-		person.setFather(father);
-		person.setMother(mother);
+		Person mother = new Person();
+		father.setSurname(new Surname("Jones"));
+		father.setFirstName("Nora");
+		
+		Long fatherId = 3L;
+		person.setFatherId(fatherId );
+		Long motherId = 4L;
+		person.setMotherId(motherId );
 		
 		Marriage marriage = new Marriage();
 		marriage.setPerson(person);
-		marriage.setPartner(partner);
-		
+		marriage.setPartner(partner);	
 		
 		List<Marriage> marriages = new ArrayList<Marriage>();
 		marriages.add(marriage);
 		
-		PersonDetails personDetails = new PersonDetails.Builder(person).withMarriages(marriages).build();
+		PersonDetails personDetails = new PersonDetails.Builder(person).withMarriages(marriages).withFather(father).withMother(mother).build();
 		assertThat(personDetails.getPerson().getFirstName(), Matchers.is("Martin"));
 		assertThat(personDetails.getMarriages().get(0).getPartner().getFirstName(), Matchers.is("Erna"));
 		assertThat(personDetails.getFatherDetails(), Matchers.is("Sid Smith"));

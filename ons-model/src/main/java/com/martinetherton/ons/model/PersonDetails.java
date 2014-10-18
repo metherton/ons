@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.martinetherton.ons.model.PersonDetails.Builder;
+
 public class PersonDetails {
 
 	public PersonDetails() {
@@ -14,6 +16,8 @@ public class PersonDetails {
 	public static class Builder {
 
 		private final Person person;
+		private Person father;
+		private Person mother;
 		private List<Marriage> marriages = new ArrayList<Marriage>();
 		
 		public Builder(Person person) {
@@ -25,19 +29,35 @@ public class PersonDetails {
 			return this;
 		}
 
+		public Builder withFather(Person val) {
+			father = val;
+			return this;
+		}
+
+		public Builder withMother(Person val) {
+			mother = val;
+			return this;
+		}		
+		
 		public PersonDetails build() {
 			return new PersonDetails(this);
 		}
+
+
 	}
 
 	private Person person;
 	private List<Marriage> marriages;
 	private String birthDate;
 	private String personSummary;
+	private Person father;
+	private Person mother;
 
 	private PersonDetails(Builder builder) {
 		person = builder.person;
 		marriages = builder.marriages;
+		father = builder.father;
+		mother = builder.mother;
 	}
 
 	public void setPerson(Person person) {
@@ -57,12 +77,19 @@ public class PersonDetails {
 	}
 
 	public String getFatherDetails() {
-		return person.getFather() == null ? "" : person.getFather().getPerson().getFirstName() + " " + person.getFather().getPerson().getSurname().getSurname();
+		return getFather() == null ? "" : getFather().getFirstName() + " " + getFather().getSurname().getSurname();
+	}
 
+	private Person getFather() {
+		return father;
 	}
 
 	public String getMotherDetails() {
-		return person.getMother() == null ? "" : person.getMother().getPerson().getFirstName() + " " + person.getMother().getPerson().getSurname().getSurname();
+		return getMother() == null ? "" : getMother().getFirstName() + " " + getMother().getSurname().getSurname();
+	}
+
+	private Person getMother() {
+		return mother;
 	}
 
 	public String getBirthDate() {

@@ -26,8 +26,8 @@ public class Person  {
 
     public static class Builder {
 
-    	private Father father;
-    	private Mother mother;
+    	private Long fatherId;
+    	private Long motherId;
     	private final Long entityId;
     	private final String firstName;
     	private final Surname surname;
@@ -42,13 +42,13 @@ public class Person  {
 			this.gender = gender;
 		}
 
-		public Builder withFather(Father val) {
-			father = val;
+		public Builder withFather(Long val) {
+			fatherId = val;
 			return this;
 		}
 
-		public Builder withMother(Mother val) {
-			mother = val;
+		public Builder withMother(Long val) {
+			motherId = val;
 			return this;
 		}
 
@@ -70,8 +70,8 @@ public class Person  {
 		firstName = builder.firstName;
 		surname = builder.surname;
 		birthDate = builder.birthDate;
-		father = builder.father;
-		mother = builder.mother;
+		fatherId = builder.fatherId;
+		motherId = builder.motherId;
 		gender = builder.gender;
 	}
 
@@ -163,13 +163,11 @@ public class Person  {
     @NotNull
     private Date birthDate;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = true)
-    @JoinColumn(name="MOTHER_ID")       
-	private Mother mother;    
-    
-    @OneToOne(cascade = CascadeType.ALL, optional = true)
-    @JoinColumn(name="FATHER_ID")    
-	private Father father;
+    @Column(name="MOTHER_ID")      
+	private Long motherId;    
+      
+    @Column(name="FATHER_ID")      
+    private Long fatherId;
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
@@ -179,20 +177,20 @@ public class Person  {
 		return birthDate;
 	}
 
-	public Father getFather() {
-		return father;
+	public Long getFatherId() {
+		return fatherId;
 	}
 
-	public Mother getMother() {
-		return mother;
+	public Long getMotherId() {
+		return motherId;
 	}
 
-	public void setFather(Father father) {
-		this.father = father;
+	public void setFatherId(Long fatherId) {
+		this.fatherId = fatherId;
 	}
 
-	public void setMother(Mother mother) {
-		this.mother = mother;
+	public void setMotherId(Long motherId) {
+		this.motherId = motherId;
 	}
 
 	public int getGender() {

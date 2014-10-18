@@ -71,12 +71,19 @@ public class PersonServiceImpl implements PersonService {
     }
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<PersonDetails> listAllPersonDetails() {
 		List<Person> persons = personRepository.findAll();
 		List<PersonDetails> listPersonDetails = new ArrayList<PersonDetails>();
 		for (Person p : persons) {
 			List<Marriage> retrievedMarriages = marriageRepository.findMarriagesFor(p);
-			PersonDetails personDetails = new PersonDetails.Builder(p).withMarriages(retrievedMarriages).build();
+			Person mother = (p.getMotherId() != null) ? personRepository.findBy(p.getMotherId()) : null;
+			Person father = (p.getFatherId() != null) ? personRepository.findBy(p.getFatherId()) : null;
+			PersonDetails personDetails = new PersonDetails.Builder(p)
+												.withMarriages(retrievedMarriages)
+												.withMother(mother)
+												.withFather(father)
+												.build();
 			listPersonDetails.add(personDetails);
 		}
 		return listPersonDetails;
@@ -89,25 +96,38 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<PersonDetails> listAllMalePersonDetails() {
 		List<Person> persons = personRepository.findAllMalePersons();
 		List<PersonDetails> listPersonDetails = new ArrayList<PersonDetails>();
 		for (Person p : persons) {
-			PersonDetails personDetails = new PersonDetails.Builder(p).build();
+			Person mother = (p.getMotherId() != null) ? personRepository.findBy(p.getMotherId()) : null;
+			Person father = (p.getFatherId() != null) ? personRepository.findBy(p.getFatherId()) : null;
+			PersonDetails personDetails = new PersonDetails.Builder(p)
+												.withMother(mother)
+												.withFather(father)
+												.build();
 			listPersonDetails.add(personDetails);
 		}
 		return listPersonDetails;
 	}
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<PersonDetails> listAllFemalePersonDetails() {
 		List<Person> persons = personRepository.findAllFemalePersons();
 		List<PersonDetails> listPersonDetails = new ArrayList<PersonDetails>();
 		for (Person p : persons) {
-			PersonDetails personDetails = new PersonDetails.Builder(p).build();
+			Person mother = (p.getMotherId() != null) ? personRepository.findBy(p.getMotherId()) : null;
+			Person father = (p.getFatherId() != null) ? personRepository.findBy(p.getFatherId()) : null;
+			PersonDetails personDetails = new PersonDetails.Builder(p)
+												.withMother(mother)
+												.withFather(father)
+												.build();
 			listPersonDetails.add(personDetails);
 		}
 		return listPersonDetails;
+
 	}	
 
 //	@Override
