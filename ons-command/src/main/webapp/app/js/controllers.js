@@ -14,9 +14,6 @@ onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
 		$scope.addPersonForm = Person.query();
 		$scope.orderProp = 'person.birthDate';	
 		$scope.add = function(addedPerson) {
-			alert(addedPerson.fatherId);
-			alert(addedPerson.motherId);
-			alert(addedPerson.gender);
 			$scope.addedPerson = new Person({firstName: addedPerson.firstName, 
 											 surname: {entityId : addedPerson.surname.entityId}, 
 											 birthDate: addedPerson.birthDate,

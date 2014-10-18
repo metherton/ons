@@ -77,7 +77,9 @@ public class PersonDetails {
 	}
 
 	public String getFatherDetails() {
-		return getFather() == null ? "" : getFather().getFirstName() + " " + getFather().getSurname().getSurname();
+		String pattern = "dd-MM-yyyy";
+		SimpleDateFormat format = new SimpleDateFormat(pattern);
+		return getFather() == null ? "" : getFather().getFirstName() + " " + getFather().getSurname().getSurname()+ " " + format.format(getFather().getBirthDate());
 	}
 
 	private Person getFather() {
@@ -85,7 +87,9 @@ public class PersonDetails {
 	}
 
 	public String getMotherDetails() {
-		return getMother() == null ? "" : getMother().getFirstName() + " " + getMother().getSurname().getSurname();
+		String pattern = "dd-MM-yyyy";
+		SimpleDateFormat format = new SimpleDateFormat(pattern);
+		return getMother() == null ? "" : getMother().getFirstName() + " " + getMother().getSurname().getSurname() + " " + format.format(getMother().getBirthDate());
 	}
 
 	private Person getMother() {
@@ -98,7 +102,9 @@ public class PersonDetails {
 	}
 
 	public String getPersonSummary() {
-		return person.getFirstName() + " " + person.getSurname().getSurname();
+		String pattern = "dd-MM-yyyy";
+		SimpleDateFormat format = new SimpleDateFormat(pattern);
+		return person.getFirstName() + " " + person.getSurname().getSurname() + " " + format.format(person.getBirthDate());
 	}
 	
 }
