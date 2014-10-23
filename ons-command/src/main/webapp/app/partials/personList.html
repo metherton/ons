@@ -25,8 +25,8 @@
 			<th>Father</th>
 			<th>Mother</th>
 		</tr>
- 	 	<tr ng-repeat="person in addPersonForm.personDetails | filter:surnameFilter | filter:firstNameFilter | orderBy:orderProp">
-  			<td><a href="#/ons-command/rest/persons/{{person.person.entityId}}">{{person.person.firstName}}</a></td>
+ 	 	<tr ng-click=nav(person.person.entityId) ng-repeat="person in addPersonForm.personDetails | filter:surnameFilter | filter:firstNameFilter | orderBy:orderProp">
+  			<td>{{person.person.firstName}}</td>
  			<td>{{person.person.surname.surname}}</td>
 			<td>{{person.birthDate}}</td>
 			<td>{{person.person.gender ? 'male' : 'female'}}</td>

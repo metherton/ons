@@ -25,8 +25,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-import com.martinetherton.ons.model.Father;
-import com.martinetherton.ons.model.Mother;
+
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.Surname;
 

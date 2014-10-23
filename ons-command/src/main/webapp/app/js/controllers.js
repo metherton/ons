@@ -1,14 +1,18 @@
-'use strict';
+	'use strict';
 
 /* Controllers */
 
-var onsControllers = angular.module('onsControllers', []);
+var onsControllers = angular.module('onsControllers', ['ngAnimate']);
 
 onsControllers.controller('PersonListCtrl', ['$scope', 'Person',
-	function($scope, Person) {
+	function($scope, Person, $log) {
 		$scope.hideAddForm = false;
 		$scope.showAddPerson = function() {
 			$scope.hideAddForm = !$scope.hideAddForm;
+		}
+		
+		$scope.nav = function(id) {
+			window.document.location = ('#/ons-command/rest/persons/' + id);
 		}
 		
 		$scope.addPersonForm = Person.query();

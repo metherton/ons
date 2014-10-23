@@ -9,8 +9,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.martinetherton.ons.model.Father;
-import com.martinetherton.ons.model.Mother;
 import com.martinetherton.ons.model.Person;
 
 public class PersonServiceIntegrationTest extends ServiceIntegrationTest {

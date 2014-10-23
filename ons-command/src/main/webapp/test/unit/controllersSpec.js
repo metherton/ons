@@ -28,7 +28,6 @@ describe('Ons controllers', function() {
 
 
     it('should create "persons" model with 2 persons fetched from xhr', function() {
-  //    expect(scope.addPersonForm).toEqualData({personDetails : []});
       $httpBackend.flush(); 
 
       expect(scope.addPersonForm).toEqualData(
@@ -57,6 +56,7 @@ describe('Ons controllers', function() {
 
 
 	    it('should fetch person detail', function() {
+	    	debugger;
 	      expect(scope.personDetails).toEqualData({});
 	      $httpBackend.flush();
 

@@ -24,11 +24,10 @@ header {
 	background-color: rgb(50, 153, 187);;
 	color: white;
 	font-size: 2.0em;
-	padding-left: 15em;
+	padding-left: 5em;
 	padding-right: 15em;
 	padding-top: 0.3em;
 	padding-bottom: 0.3em;
-
 }
 
 footer {
@@ -56,12 +55,16 @@ nav a {
 	margin-left: 2em;	
 }
 
+a {
+	cursor: pointer;
+}
+
 label {
 	width: 100px;
 }
 
 input {
-	width: 120px;
+	width: 150px;
 }
 
 #birthDate {
@@ -82,7 +85,7 @@ input {
 }
 
 select {
-	width: 120px;	
+	width: 150px;	
 }
 
 th {
@@ -96,13 +99,24 @@ td {
 	
 }
 
+tr:hover { 
+	cursor: pointer;
+	background: #FCF; 
+}
+
 tr:nth-child(odd) {
 	background-color: #f1f1f1;
 }
 
+tr:nth-child(odd):hover {
+	background-color: #f1f1f1;
+	cursor: pointer;
+	background: #FCF; 	
+}
 section, article {
 	border:1px solid grey; 
 	margin:1em; 
 	padding:1em;
+	border-radius: 15px;
 }
 

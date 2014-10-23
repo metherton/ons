@@ -23,13 +23,11 @@ public class FatherDetails {
 	}
 
 	public Person getPerson() {
-		// TODO Auto-generated method stub
-		return null;
+		return person;
 	}
 
 	public String getFatherDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		return person.getFirstName() + " " + person.getSurname().getSurname();
 	}
 
 }

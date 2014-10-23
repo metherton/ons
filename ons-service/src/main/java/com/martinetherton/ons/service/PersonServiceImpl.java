@@ -92,7 +92,14 @@ public class PersonServiceImpl implements PersonService {
 	@Override
     @Transactional(readOnly=true)
 	public PersonDetails getPersonDetails(long id) {
-		return new PersonDetails.Builder(personRepository.findBy(id)).build();
+		Person retrievedPerson = personRepository.findBy(id);
+		Person mother = (retrievedPerson.getMotherId() != null) ? personRepository.findBy(retrievedPerson.getMotherId()) : null;
+		Person father = (retrievedPerson.getFatherId() != null) ? personRepository.findBy(retrievedPerson.getFatherId()) : null;
+		List<Marriage> retrievedMarriages = marriageRepository.findMarriagesFor(retrievedPerson);
+		return new PersonDetails.Builder(retrievedPerson)
+								.withMarriages(retrievedMarriages)
+								.withMother(mother)	
+								.withFather(father).build();
 	}
 
 	@Override

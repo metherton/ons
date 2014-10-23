@@ -42,14 +42,15 @@ public class PersonController {
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
 	public @ResponseBody PersonDetails personDetails(@PathVariable("personId") long id) {
-		return personService.getPersonDetails(id);
+		PersonDetails personDetails = personService.getPersonDetails(id);
+		return personDetails;
 	}	
 
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)	
 	public @ResponseBody  AddPersonForm getAddPersonForm() {
 		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
 		List<PersonDetails> listAllFatherDetails = personService.listAllMalePersonDetails();
-		List<PersonDetails> listAllMotherDetails = personService.listAllFemalePersonDetails();
+			List<PersonDetails> listAllMotherDetails = personService.listAllFemalePersonDetails();
 		
 		AddPersonForm addPersonForm = new AddPersonForm.Builder(listAllPersonDetails, 
 																new Person(), 

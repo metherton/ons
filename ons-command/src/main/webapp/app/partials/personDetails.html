@@ -1,3 +1,7 @@
 <article>
-		<p>{{personDetails.person.firstName}}</p>
+		<p><label for="firstName">First Name:</label><span id="firstName">{{personDetails.person.firstName}}</span></p>
+		<p><label for="surname">Surname:</label><span id="surname">{{personDetails.person.surname.surname}}</span></p>
+		<p><label for="birthDate">Birth Date:</label><span id="birthDate">{{personDetails.person.birthDate | date : 'dd-MM-yyyy'}}</span></p>
+		<p><label for="father">Father:</label><span id="father">{{father.firstName}}</span></p>
+		<p><label for="mother">Mother:</label><span id="mother">{{mother.firstName}}</span></p>
 </article>
