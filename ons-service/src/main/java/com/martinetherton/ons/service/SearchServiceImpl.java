@@ -1,5 +1,6 @@
 package com.martinetherton.ons.service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import com.martinetherton.ons.persist.PersonRepository;
 import com.martinetherton.ons.persist.SurnameRepository;
 
 @Service
-public class SearchServiceImpl implements SearchService {
+public class SearchServiceImpl implements Serializable, SearchService {
 
 	private PersonRepository personRepository;
 	private SurnameRepository surnameRepository;

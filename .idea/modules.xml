@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ons-command/ons-command.iml" filepath="$PROJECT_DIR$/ons-command/ons-command.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ons-model/ons-model.iml" filepath="$PROJECT_DIR$/ons-model/ons-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ons-parent.iml" filepath="$PROJECT_DIR$/ons-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ons-persist/ons-persist.iml" filepath="$PROJECT_DIR$/ons-persist/ons-persist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ons-selenium/ons-selenium.iml" filepath="$PROJECT_DIR$/ons-selenium/ons-selenium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ons-service/ons-service.iml" filepath="$PROJECT_DIR$/ons-service/ons-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ons-webapp/ons-webapp.iml" filepath="$PROJECT_DIR$/ons-webapp/ons-webapp.iml" />
+    </modules>
+  </component>
+</project>
+
