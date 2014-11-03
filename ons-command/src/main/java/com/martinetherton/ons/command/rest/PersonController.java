@@ -1,7 +1,6 @@
 package com.martinetherton.ons.command.rest;
 
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +19,6 @@ import org.springframework.web.util.UriTemplate;
 
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.PersonDetails;
-import com.martinetherton.ons.model.SearchResult;
-import com.martinetherton.ons.model.Surname;
 import com.martinetherton.ons.service.PersonDetailsService;
 import com.martinetherton.ons.service.PersonService;
 import com.martinetherton.ons.service.SurnameService;
@@ -44,12 +41,26 @@ public class PersonController {
 	public @ResponseBody PersonDetails personDetails(@PathVariable("personId") long id) {
 		PersonDetails personDetails = personService.getPersonDetails(id);
 		return personDetails;
-	}	
+	}
 
-	@RequestMapping(value = "/persons", method = RequestMethod.GET)	
-	public @ResponseBody  List<PersonDetails> listPersonDetails() {
-		return personService.listAllPersonDetails();
-	}		
+    @RequestMapping(value = "/persons", method = RequestMethod.GET)
+    public @ResponseBody
+    PersonsForm getAddPersonForm() {
+        List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
+        List<PersonDetails> listAllFatherDetails = personService.listAllMalePersonDetails();
+        List<PersonDetails> listAllMotherDetails = personService.listAllFemalePersonDetails();
+        PersonsForm personsForm = new PersonsForm.Builder(listAllPersonDetails,
+                new Person(),
+                surnameService.getSurnames(),
+                listAllFatherDetails,
+                listAllMotherDetails).build();
+        return personsForm;
+    }
+
+//	@RequestMapping(value = "/persons", method = RequestMethod.GET)
+//	public @ResponseBody  List<PersonDetails> listPersonDetails() {
+//		return personService.listAllPersonDetails();
+//	}
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)

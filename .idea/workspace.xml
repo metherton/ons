@@ -6,29 +6,17 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../angular.js/day1.pdf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../angular.js/day2.pdf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../angular.js/day3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/SimpleCORSFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ons-model/src/main/java/com/martinetherton/ons/model/FatherDetails.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ons-model/src/test/java/com/martinetherton/ons/model/FatherDetailsBuilderTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/src/test/java/client/PersonClientTest.java" afterPath="$PROJECT_DIR$/ons-command/src/test/java/client/PersonClientTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/AddPersonForm.java" afterPath="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonsForm.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ons-command/src/test/java/com/martinetherton/ons/command/rest/AddPersonFormBuilderTest.java" afterPath="$PROJECT_DIR$/ons-command/src/test/java/com/martinetherton/ons/command/rest/PersonsFormBuilderTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java" afterPath="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/src/test/java/com/martinetherton/ons/command/rest/PersonControllerTest.java" afterPath="$PROJECT_DIR$/ons-command/src/test/java/com/martinetherton/ons/command/rest/PersonControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-model/src/main/java/com/martinetherton/ons/model/PersonDetails.java" afterPath="$PROJECT_DIR$/ons-model/src/main/java/com/martinetherton/ons/model/PersonDetails.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/css/app.css" afterPath="$PROJECT_DIR$/../angular.js/app/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/src/main/webapp/app/js/app.js" afterPath="$PROJECT_DIR$/ons-command/src/main/webapp/app/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/app.js" afterPath="$PROJECT_DIR$/../angular.js/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/js/controllers.js" afterPath="$PROJECT_DIR$/../angular.js/app/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/index.html" afterPath="$PROJECT_DIR$/../angular.js/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/ons-command.iml" afterPath="$PROJECT_DIR$/ons-command/ons-command.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ons_command_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ons_command_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/personForm.html" afterPath="$PROJECT_DIR$/../angular.js/app/personForm.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/personList.html" afterPath="$PROJECT_DIR$/../angular.js/app/personList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/partials/personList.html" afterPath="$PROJECT_DIR$/../angular.js/app/partials/personList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/pom.xml" afterPath="$PROJECT_DIR$/ons-command/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/src/main/webapp/app/js/services.js" afterPath="$PROJECT_DIR$/ons-command/src/main/webapp/app/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ons-command/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/ons-command/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../angular.js/app/js/services.js" afterPath="$PROJECT_DIR$/../angular.js/app/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ons-parent.iws" />
@@ -51,24 +39,34 @@
     <favorites_list name="ons-parent" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.35339805">
+    <splitter split-orientation="horizontal" split-proportion="0.46474358">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../angular.js/app/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.083333" vertical-offset="118" max-vertical-offset="555">
-                  <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+                <state vertical-scroll-proportion="-12.583333" vertical-offset="13" max-vertical-offset="555">
+                  <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="personList.html" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/../angular.js/app/personList.html">
+          <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../angular.js/app/js/controllers.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-                  <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+                  <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="personDetails.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../angular.js/app/partials/personDetails.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
+                  <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -77,18 +75,18 @@
           <file leaf-file-name="personList.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../angular.js/app/partials/personList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="255">
+                  <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="personList.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/app/partials/personList.html">
+          <file leaf-file-name="personForm.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../angular.js/app/personForm.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.0" vertical-offset="75" max-vertical-offset="720">
-                  <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+                <state vertical-scroll-proportion="0.5244755" vertical-offset="0" max-vertical-offset="345">
+                  <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -101,98 +99,18 @@
           <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../angular.js/app/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1005">
-                  <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1065">
+                  <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../angular.js/app/js/services.js">
+          <file leaf-file-name="personList.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/app/partials/personList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-                  <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PersonController.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3305785" vertical-offset="0" max-vertical-offset="1200">
-                  <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../angular.js/app/js/controllers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-                  <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/WEB-INF/web.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="1170">
-                  <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/app/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.25" vertical-offset="270" max-vertical-offset="705">
-                  <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../angular.js/app/css/app.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1947" max-vertical-offset="2310">
-                  <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="personForm.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../angular.js/app/personForm.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="300">
-                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../angular.js/app/css/main.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SimpleCORSFilter.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/SimpleCORSFilter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="555">
-                  <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.29126215" vertical-offset="15" max-vertical-offset="720">
+                  <caret line="7" column="0" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -208,7 +126,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../angular.js" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -233,17 +151,19 @@
         <option value="$PROJECT_DIR$/ons-command/src/test/java/com/martinetherton/ons/command/rest/PersonControllerTest.java" />
         <option value="$PROJECT_DIR$/ons-command/src/main/webapp/app/js/services.js" />
         <option value="$PROJECT_DIR$/ons-command/src/main/webapp/app/js/app.js" />
-        <option value="$PROJECT_DIR$/../angular.js/app/app.js" />
         <option value="$PROJECT_DIR$/../angular.js/app/index.html" />
-        <option value="$PROJECT_DIR$/../angular.js/app/partials/personList.html" />
         <option value="$PROJECT_DIR$/../angular.js/app/personList.html" />
         <option value="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/SimpleCORSFilter.java" />
         <option value="$PROJECT_DIR$/ons-command/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/../angular.js/app/css/app.css" />
-        <option value="$PROJECT_DIR$/../angular.js/app/personForm.html" />
+        <option value="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java" />
+        <option value="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/AddPersonForm.java" />
+        <option value="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonsForm.java" />
         <option value="$PROJECT_DIR$/../angular.js/app/js/services.js" />
         <option value="$PROJECT_DIR$/../angular.js/app/js/controllers.js" />
-        <option value="$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java" />
+        <option value="$PROJECT_DIR$/../angular.js/app/partials/personList.html" />
+        <option value="$PROJECT_DIR$/../angular.js/app/app.js" />
+        <option value="$PROJECT_DIR$/../angular.js/app/personForm.html" />
       </list>
     </option>
   </component>
@@ -391,6 +311,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -414,11 +342,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rest" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ons-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ons-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ons-command" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -443,6 +397,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ons-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ons-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -971,12 +961,12 @@
       <workItem from="1414700018955" duration="8057000" />
       <workItem from="1414771115933" duration="13058000" />
       <workItem from="1414796314965" duration="2875000" />
-      <workItem from="1414876806612" duration="18151000" />
+      <workItem from="1414876806612" duration="22781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91272000" />
+    <option name="totallyTimeSpent" value="95902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
@@ -998,12 +988,13 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32649842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15078124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41009465" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28548896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48818898" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32649842" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -1014,7 +1005,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1039,13 +1029,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java</url>
-          <line>57</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java</url>
-          <line>58</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
@@ -1061,14 +1051,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ons-command/src/main/resources/META-INF/springconfig/app-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ons-model/bin/target/classes/META-INF/springconfig/app-model-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="285">
@@ -1216,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/AddPersonForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="885">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ons-model/src/test/java/com/martinetherton/ons/model/PersonDetailsBuilderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="810">
@@ -1269,13 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="630">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/partials/personDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="353">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1340,38 +1308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/app/partials/personList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0" vertical-offset="75" max-vertical-offset="720">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.083333" vertical-offset="118" max-vertical-offset="555">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/partials/personList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="339">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/personList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="169" max-vertical-offset="555">
@@ -1396,34 +1332,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/css/app.css">
+    <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1947" max-vertical-offset="2310">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/personForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="300">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../angular.js/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1005">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="1440">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="2" selection-end-line="62" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../angular.js/app/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="390">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/personList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7281553" vertical-offset="0" max-vertical-offset="360">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.045045" vertical-offset="1947" max-vertical-offset="2310">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonsForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8708709" vertical-offset="350" max-vertical-offset="885">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.583333" vertical-offset="13" max-vertical-offset="555">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/partials/personDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1431,15 +1391,47 @@
     <entry file="file://$PROJECT_DIR$/../angular.js/app/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ons-command/src/main/java/com/martinetherton/ons/command/rest/PersonController.java">
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/partials/personList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3305785" vertical-offset="0" max-vertical-offset="1200">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="255">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1065">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/app/partials/phone-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ons-command/src/main/webapp/app/partials/personList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29126215" vertical-offset="15" max-vertical-offset="720">
+          <caret line="7" column="0" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../angular.js/app/personForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5244755" vertical-offset="0" max-vertical-offset="345">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
           <folding />
         </state>
       </provider>

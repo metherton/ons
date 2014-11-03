@@ -6,7 +6,7 @@ import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.PersonDetails;
 import com.martinetherton.ons.model.Surname;
 
-public class AddPersonForm {
+public class PersonsForm {
 
 	public static class Builder {
 
@@ -24,8 +24,8 @@ public class AddPersonForm {
 			this.motherDetails = motherDetails;
 		}
 
-		public AddPersonForm build() {
-			return new AddPersonForm(this);
+		public PersonsForm build() {
+			return new PersonsForm(this);
 		}
 
 	}
@@ -36,7 +36,7 @@ public class AddPersonForm {
 	private List<PersonDetails> fatherDetails;
 	private List<PersonDetails> motherDetails;
 
-	private AddPersonForm(Builder builder) {
+	private PersonsForm(Builder builder) {
 		personDetails = builder.personDetails;
 		addedPerson = builder.addedPerson;
 		surnames = builder.surnames;
