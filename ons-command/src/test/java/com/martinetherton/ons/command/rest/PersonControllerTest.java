@@ -50,19 +50,19 @@ public class PersonControllerTest {
 		assertThat(personDetails.getPerson().getFirstName(), Matchers.is("John"));
 	}
 	
-	@Test
-	public void getAddPersonForm() {
-		List<PersonDetails> personDetails = new ArrayList<PersonDetails>();
-		personDetails.add(new PersonDetails());
-		Mockito.when(personService.listAllPersonDetails()).thenReturn(personDetails);
-		List<Surname> surnames = new ArrayList<Surname>();
-		surnames.add(new Surname());
-		Mockito.when(surnameService.getSurnames()).thenReturn(surnames);
-		AddPersonForm addPersonForm = controller.getAddPersonForm();
-		Assert.assertThat(addPersonForm.getPersonDetails().size(), Matchers.is(1));		
-		Assert.assertThat(addPersonForm.getSurnames().size(), Matchers.is(1));	
-		Mockito.verify(personService).listAllPersonDetails();
-		Mockito.verify(surnameService).getSurnames();
-	}
+//	@Test
+//	public void getAddPersonForm() {
+//		List<PersonDetails> personDetails = new ArrayList<PersonDetails>();
+//		personDetails.add(new PersonDetails());
+//		Mockito.when(personService.listAllPersonDetails()).thenReturn(personDetails);
+//		List<Surname> surnames = new ArrayList<Surname>();
+//		surnames.add(new Surname());
+//		Mockito.when(surnameService.getSurnames()).thenReturn(surnames);
+//		AddPersonForm addPersonForm = controller.getAddPersonForm();
+//		Assert.assertThat(addPersonForm.getPersonDetails().size(), Matchers.is(1));
+//		Assert.assertThat(addPersonForm.getSurnames().size(), Matchers.is(1));
+//		Mockito.verify(personService).listAllPersonDetails();
+//		Mockito.verify(surnameService).getSurnames();
+//	}
 	
 }

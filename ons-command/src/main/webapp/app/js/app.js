@@ -26,4 +26,5 @@ onsApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/ons-command/rest/persons'
       });
-  }]);
+  }
+]);

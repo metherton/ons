@@ -2,6 +2,7 @@ package client;
 
 import static org.junit.Assert.assertEquals;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -10,6 +11,8 @@ import org.springframework.web.client.RestTemplate;
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.PersonDetails;
 import com.martinetherton.ons.model.Surname;
+
+import java.util.List;
 
 public class PersonClientTest {
 
@@ -22,19 +25,24 @@ public class PersonClientTest {
 	private RestTemplate restTemplate = new RestTemplate();
 		
 	@Test
-	@Ignore
 	public void getPersonDetails() {
 		String url = BASE_URL + "/persons/{personId}";
-		PersonDetails personDetails = restTemplate.getForObject(url, PersonDetails.class, 5); 
-		assertEquals("sydney", personDetails.getPerson().getFirstName());
+		PersonDetails personDetails = restTemplate.getForObject(url, PersonDetails.class, 3);
+		assertEquals("samuel", personDetails.getPerson().getFirstName());
 	}
 
 	@Test
-	@Ignore
 	public void getSurname() {
 		String url = BASE_URL + "/surnames/{surnameId}";
 		Surname person = restTemplate.getForObject(url, Surname.class, 1); 
-		assertEquals("Etherton", person.getSurname());
-	}	
-	
+		assertEquals("etherton", person.getSurname());
+	}
+
+    @Test
+    public void getListPersonDetails() {
+        String url = BASE_URL + "/persons";
+        PersonDetails[] listPersonDetails = restTemplate.getForObject(url, PersonDetails[].class);
+        assertEquals("samuel", listPersonDetails[0].getPerson().getFirstName());
+    }
+
 }

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../angular.js/angular-frontend.iml" filepath="$PROJECT_DIR$/../angular.js/angular-frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/ons-command/ons-command.iml" filepath="$PROJECT_DIR$/ons-command/ons-command.iml" />
       <module fileurl="file://$PROJECT_DIR$/ons-model/ons-model.iml" filepath="$PROJECT_DIR$/ons-model/ons-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/ons-parent.iml" filepath="$PROJECT_DIR$/ons-parent.iml" />

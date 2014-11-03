@@ -47,17 +47,8 @@ public class PersonController {
 	}	
 
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)	
-	public @ResponseBody  AddPersonForm getAddPersonForm() {
-		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
-		List<PersonDetails> listAllFatherDetails = personService.listAllMalePersonDetails();
-			List<PersonDetails> listAllMotherDetails = personService.listAllFemalePersonDetails();
-		
-		AddPersonForm addPersonForm = new AddPersonForm.Builder(listAllPersonDetails, 
-																new Person(), 
-																surnameService.getSurnames(),
-																listAllFatherDetails,
-																listAllMotherDetails).build();
-		return addPersonForm;
+	public @ResponseBody  List<PersonDetails> listPersonDetails() {
+		return personService.listAllPersonDetails();
 	}		
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.POST)
