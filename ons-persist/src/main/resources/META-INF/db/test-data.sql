@@ -12,9 +12,10 @@ insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (2, 'Nora', '1936-04-23', 0);
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (3, 'Erna', '1959-03-05', 0);
 insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 'Sydney', '1931-06-12', 1);
+insert into T_COUNTRY (CODE, NAME) values ('uk', 'united kingdom');
 
-insert into T_LOCATION (CITY) values ('Sheffield');
-insert into T_LOCATION (CITY) values ('London');
+insert into T_LOCATION (CITY, POST_CODE, ADDRESS_LINE_1, ADDRESS_LINE_2, COUNTRY_ID) values ('Sheffield', '1010AA', 'first address line', 'second_address_line', 0);
+insert into T_LOCATION (CITY, POST_CODE, ADDRESS_LINE_1, ADDRESS_LINE_2, COUNTRY_ID) values ('london', '1010AA', 'first address line', 'second_address_line', 0);
 
 insert into T_MARRIAGE (PERSON_ID, PARTNER_ID) values (0,4);
 insert into T_MARRIAGE (PERSON_ID, PARTNER_ID) values (5,3);

@@ -26,6 +26,6 @@ public class LocationServiceIntegrationTest extends ServiceIntegrationTest {
     @Test
     public void cityForId1ShouldBeLondon() {
         LocationService locationService = new LocationServiceImpl(locationRepository);
-        Assert.assertThat(locationService.getLocation(1).getCity(), Matchers.is("London"));
+        Assert.assertThat(locationService.getLocation(1).getCity(), Matchers.is("london"));
     }    
 }

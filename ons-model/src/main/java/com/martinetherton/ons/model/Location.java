@@ -1,18 +1,12 @@
 package com.martinetherton.ons.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
 @Table(name="T_LOCATION")
 public class Location {
 
-    public Location() {};
-    
     @Id
     @GeneratedValue
     @Column(name="ID")
@@ -21,6 +15,15 @@ public class Location {
     private String city;
     @Column(name="POST_CODE")
     private String postCode;
+    @Column(name="ADDRESS_LINE_1")
+    private String addressLine1;
+    @Column(name="ADDRESS_LINE_2")
+    private String addressLine2;
+    @OneToOne
+    @JoinColumn(name="COUNTRY_ID")
+    private Country country;
+
+    public Location() {};
 
     public Location(String city) {
         this.city = city;
@@ -38,4 +41,27 @@ public class Location {
         return postCode;
     }
 
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
+    public String getAddressLine1() {
+        return addressLine1;
+    }
+
+    public String getAddressLine2() {
+        return addressLine2;
+    }
+
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
 }

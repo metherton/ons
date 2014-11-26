@@ -24,7 +24,7 @@ import com.martinetherton.ons.service.PersonService;
 import com.martinetherton.ons.service.SurnameService;
 
 @Controller
-public class PersonController {
+public class    PersonController {
 
 	private PersonService personService;
 	private PersonDetailsService personDetailsService;

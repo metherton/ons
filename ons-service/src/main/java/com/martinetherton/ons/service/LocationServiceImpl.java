@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.persist.LocationRepository;
 
+import java.util.List;
+
 @Service
 @Transactional(timeout=60)
 public class LocationServiceImpl implements LocationService {
@@ -25,6 +27,12 @@ public class LocationServiceImpl implements LocationService {
     @Transactional(readOnly=true)
     public Location getLocation(long id) {
         return locationRepository.findBy(id);
+    }
+
+    @Override
+    @Transactional(readOnly=true)
+    public List<Location> getLocations() {
+        return locationRepository.findAll();
     }
 
 }
