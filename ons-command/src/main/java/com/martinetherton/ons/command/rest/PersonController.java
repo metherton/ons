@@ -24,7 +24,7 @@ import com.martinetherton.ons.service.PersonService;
 import com.martinetherton.ons.service.SurnameService;
 
 @Controller
-public class    PersonController {
+public class PersonController {
 
 	private PersonService personService;
 	private PersonDetailsService personDetailsService;
@@ -56,11 +56,6 @@ public class    PersonController {
                 listAllMotherDetails).build();
         return personsForm;
     }
-
-//	@RequestMapping(value = "/persons", method = RequestMethod.GET)
-//	public @ResponseBody  List<PersonDetails> listPersonDetails() {
-//		return personService.listAllPersonDetails();
-//	}
 	
 	@RequestMapping(value = "/persons", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
@@ -70,19 +65,6 @@ public class    PersonController {
 		return entityWithLocation(url, person.getEntityId());
 	}		
 
-//	@RequestMapping(value = "/persons", method = RequestMethod.GET)
-//	public @ResponseBody List<PersonDetails> listAllPersons() {
-//		List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
-//		return listAllPersonDetails;		
-//	}		
-
-//	@RequestMapping(value = "/persons", method = RequestMethod.GET)
-//	public @ResponseBody List<Person> listAllPersons() {
-//		List<Person> listAllPersonDetails = personService.listAllPersonDetails();
-//		return listAllPersonDetails;
-//	}		
-	
-	
 	private HttpEntity<String> entityWithLocation(StringBuffer url,
 			Object resourceId) {
 		// Configure and return an HttpEntity object - it will be used to build
@@ -104,8 +86,4 @@ public class    PersonController {
 		return template.expand(childIdentifier);
 	}
 
-
-	
-	
-	
 }

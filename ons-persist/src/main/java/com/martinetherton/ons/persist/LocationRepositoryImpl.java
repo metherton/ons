@@ -33,4 +33,10 @@ public class LocationRepositoryImpl implements LocationRepository {
         return locations;
     }
 
+    @Override
+    public Location add(Location newLocation) {
+        entityManager.persist(newLocation);
+        return newLocation;
+    }
+
 }

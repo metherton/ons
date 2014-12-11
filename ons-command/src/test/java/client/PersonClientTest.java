@@ -3,6 +3,8 @@ package client;
 import static org.junit.Assert.assertEquals;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.martinetherton.ons.command.rest.PersonsForm;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -39,10 +41,10 @@ public class PersonClientTest {
 	}
 
     @Test
-    public void getListPersonDetails() {
+    public void getAddPersonForm() {
         String url = BASE_URL + "/persons";
-        PersonDetails[] listPersonDetails = restTemplate.getForObject(url, PersonDetails[].class);
-        assertEquals("samuel", listPersonDetails[0].getPerson().getFirstName());
+        Object personsForm = restTemplate.getForObject(url, PersonsForm.class);
+ //       assertEquals(personsForm.getSurnames().size(), Matchers.is(Matchers.greaterThan(0)));
     }
 
 }

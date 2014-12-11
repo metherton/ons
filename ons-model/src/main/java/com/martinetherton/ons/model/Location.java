@@ -7,6 +7,10 @@ import javax.persistence.*;
 @Table(name="T_LOCATION")
 public class Location {
 
+    public Long getEntityId() {
+        return entityId;
+    }
+
     @Id
     @GeneratedValue
     @Column(name="ID")

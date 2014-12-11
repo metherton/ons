@@ -50,6 +50,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     @Transactional
     public Person addPerson(Person pToInsert) {
+
         return personRepository.add(pToInsert);
     }
 

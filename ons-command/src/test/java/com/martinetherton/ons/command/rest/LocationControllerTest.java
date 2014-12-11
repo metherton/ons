@@ -1,5 +1,6 @@
 package com.martinetherton.ons.command.rest;
 
+import com.martinetherton.ons.service.CountryService;
 import com.martinetherton.ons.service.LocationService;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -12,10 +13,13 @@ public class LocationControllerTest {
     @Test
     public void getLocations() {
         LocationService locationService;
+        CountryService countryService;
         locationService = Mockito.mock(LocationService.class);
-        LocationController locationController = new LocationController(locationService);
+        countryService = Mockito.mock(CountryService.class);
 
-        locationController.getLocations();
+        LocationController locationController = new LocationController(locationService, countryService);
+
+        locationController.getAddLocationForm();
 
         Mockito.verify(locationService).getLocations();
     }

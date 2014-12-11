@@ -35,4 +35,10 @@ public class LocationServiceImpl implements LocationService {
         return locationRepository.findAll();
     }
 
+    @Override
+    @Transactional
+    public Location addLocation(Location lToInsert) {
+        return locationRepository.add(lToInsert);
+    }
+
 }

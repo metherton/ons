@@ -3,6 +3,7 @@ package com.martinetherton.ons.command.rest;
 import java.net.URI;
 import java.util.List;
 
+import com.martinetherton.ons.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -17,10 +18,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriTemplate;
 import org.springframework.http.HttpStatus;
 
-import com.martinetherton.ons.model.Person;
-import com.martinetherton.ons.model.PersonDetails;
-import com.martinetherton.ons.model.SearchResult;
-import com.martinetherton.ons.model.Surname;
 import com.martinetherton.ons.service.PersonDetailsService;
 import com.martinetherton.ons.service.PersonService;
 import com.martinetherton.ons.service.SurnameService;
@@ -35,11 +32,16 @@ public class SurnameController {
 		this.surnameService = surnameService;
 	}
 
-	@RequestMapping(value = "/surnames", method = RequestMethod.GET)
-	public @ResponseBody List<Surname> listAllSurnames() {
-		return surnameService.getSurnames();
-	}	
-	
+//	@RequestMapping(value = "/surnames", method = RequestMethod.GET)
+//	public @ResponseBody List<Surname> listAllSurnames() {
+//		return surnameService.getSurnames();
+//	}
+
+    @RequestMapping(value = "/surnames", method = RequestMethod.GET)
+    public @ResponseBody SurnamesForm getAddSurnameForm() {
+        return new SurnamesForm.Builder(surnameService.getSurnames(),new Surname()).build();
+    }
+
 	@RequestMapping(value = "/surnames/{surnameId}", method = RequestMethod.GET)
 	public @ResponseBody Surname surnameDetails(@PathVariable("surnameId") long id) {
 		return surnameService.getSurname(id);

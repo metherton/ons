@@ -3,6 +3,7 @@ package com.martinetherton.ons.persist;
 import javax.persistence.EntityManager;
 
 import com.martinetherton.ons.model.Location;
+import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.Surname;
 
 import java.util.List;
@@ -13,5 +14,6 @@ public interface LocationRepository {
 
     Location findBy(long id);
     public List<Location> findAll();
+    Location add(Location newLocation);
 
 }
