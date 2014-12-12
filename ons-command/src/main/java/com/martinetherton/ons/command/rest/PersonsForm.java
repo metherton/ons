@@ -1,5 +1,7 @@
 package com.martinetherton.ons.command.rest;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.martinetherton.ons.model.Person;
@@ -15,6 +17,7 @@ public class PersonsForm {
 		private List<Surname> surnames;
 		public List<PersonDetails> fatherDetails;
 		public List<PersonDetails> motherDetails;
+
 		
 		public Builder(List<PersonDetails> personDetails, Person addedPerson, List<Surname> surnames, List<PersonDetails> fatherDetails, List<PersonDetails> motherDetails) {
 			this.personDetails = personDetails;
@@ -35,6 +38,7 @@ public class PersonsForm {
 	private List<Surname> surnames;
 	private List<PersonDetails> fatherDetails;
 	private List<PersonDetails> motherDetails;
+    private Employees employees;
 
 	private PersonsForm(Builder builder) {
 		personDetails = builder.personDetails;
@@ -42,7 +46,24 @@ public class PersonsForm {
 		surnames = builder.surnames;
 		fatherDetails = builder.fatherDetails;
 		motherDetails = builder.motherDetails;
-	}
+        long oneMonthAgo = System.currentTimeMillis() - 100000;
+        long oneMonthFuture = System.currentTimeMillis() + 100000;
+
+        Date oneMonth = new Date(oneMonthAgo);
+        Date oneMonthPlus = new Date(oneMonthFuture);
+        Worker worker1 = new Worker("worker1", oneMonth);
+        Worker worker2 = new Worker("worker2", oneMonthPlus);
+        Worker manager1 = new Worker("manager1", oneMonthPlus);
+        Worker manager2 = new Worker("manager2", oneMonth);
+        List<Worker> workers = new ArrayList<Worker>();
+        List<Worker> managers = new ArrayList<Worker>();
+        workers.add(worker1);
+        workers.add(worker2);
+        managers.add(manager1);
+        managers.add(manager2);
+        employees = new Employees(workers, managers);
+
+    }
 
 	public List<PersonDetails> getPersonDetails() {
 		return personDetails;
@@ -64,6 +85,7 @@ public class PersonsForm {
 		return surnames;
 	}
 
+    public Employees getEmployees() {return employees;}
 
 
 }
