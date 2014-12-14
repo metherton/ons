@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by martin on 11/12/14.
@@ -47,5 +49,18 @@ public class CensusServiceImpl implements CensusService {
     @Transactional(readOnly=true)
     public List<CensusHouseholdEntry> getCensusHouseholdEntries() {
         return censusHouseholdEntryRepository.findAll();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Map<Long, List<CensusHouseholdEntry>> getCensusToCensusHouseholdEntryMap() {
+        Map<Long, List<CensusHouseholdEntry>> censusEntries = new HashMap<Long, List<CensusHouseholdEntry>>();
+        List<Census> censuses = censusRepository.findAll();
+        for (Census census : censuses) {
+            Long year = census.getYear();
+            List<CensusHouseholdEntry> entries = censusHouseholdEntryRepository.findAllEntriesFor(year);
+            censusEntries.put(year, entries);
+        }
+        return censusEntries;
     }
 }

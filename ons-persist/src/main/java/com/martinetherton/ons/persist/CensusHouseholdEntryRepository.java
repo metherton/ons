@@ -14,4 +14,6 @@ public interface CensusHouseholdEntryRepository {
     void setEntityManager(EntityManager entityManager);
 
     List<CensusHouseholdEntry> findAll();
+
+    List<CensusHouseholdEntry> findAllEntriesFor(Long year);
 }

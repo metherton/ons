@@ -29,4 +29,13 @@ public class CensusHouseholdEntryRepositoryImpl implements CensusHouseholdEntryR
         List<CensusHouseholdEntry> censusHouseholdEntries = query.getResultList();
         return censusHouseholdEntries;
     }
+
+    @Override
+    public List<CensusHouseholdEntry> findAllEntriesFor(Long year) {
+        Query query = entityManager.createQuery("select c from CensusHouseholdEntry c  JOIN c.censusHousehold b " +
+                                                "JOIN b.census a JOIN c.person WHERE a.year = :year");
+        query.setParameter("year", year);
+        List<CensusHouseholdEntry> censusHouseholdEntries = query.getResultList();
+        return censusHouseholdEntries;
+    }
 }

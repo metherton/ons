@@ -5,6 +5,7 @@ import com.martinetherton.ons.model.CensusHousehold;
 import com.martinetherton.ons.model.CensusHouseholdEntry;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by martin on 11/12/14.
@@ -15,4 +16,6 @@ public interface CensusService {
     List<CensusHousehold> getCensusHouseholds();
 
     List<CensusHouseholdEntry> getCensusHouseholdEntries();
+
+    Map<Long, List<CensusHouseholdEntry>> getCensusToCensusHouseholdEntryMap();
 }

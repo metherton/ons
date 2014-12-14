@@ -44,6 +44,12 @@ public class CensusHouseholdEntryRepositoryTest {
         assertThat(censusHouseholdEntries.size(), is(Matchers.greaterThan(0)));
     }
 
+    @Test
+    public void findAllCensusHouseholdEntriesFor1901() {
+        List<CensusHouseholdEntry> censusHouseholdEntries = repository.findAllEntriesFor(1901L);
+        assertThat(censusHouseholdEntries.size(), is(Matchers.greaterThan(0)));
+    }
+
     private EntityManagerFactory createEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(createTestDataSource());
