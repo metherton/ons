@@ -17,6 +17,8 @@ public class PersonsForm {
 		private List<Surname> surnames;
 		public List<PersonDetails> fatherDetails;
 		public List<PersonDetails> motherDetails;
+        public String deathDate = "1904-11-21";
+        public String funeralDate = "1904-12-17";;
 
 		
 		public Builder(List<PersonDetails> personDetails, Person addedPerson, List<Surname> surnames, List<PersonDetails> fatherDetails, List<PersonDetails> motherDetails) {
@@ -40,6 +42,17 @@ public class PersonsForm {
 	private List<PersonDetails> motherDetails;
     private Employees employees;
 
+    public String getDeathDate() {
+        return deathDate;
+    }
+
+    public String getFuneralDate() {
+        return funeralDate;
+    }
+
+    public String deathDate;
+    public String funeralDate;
+
 	private PersonsForm(Builder builder) {
 		personDetails = builder.personDetails;
 		addedPerson = builder.addedPerson;
@@ -62,6 +75,9 @@ public class PersonsForm {
         managers.add(manager1);
         managers.add(manager2);
         employees = new Employees(workers, managers);
+
+        deathDate = builder.deathDate;
+        funeralDate = builder.funeralDate;
 
     }
 
