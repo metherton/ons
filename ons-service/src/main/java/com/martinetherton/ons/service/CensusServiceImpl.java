@@ -3,6 +3,7 @@ package com.martinetherton.ons.service;
 import com.martinetherton.ons.model.Census;
 import com.martinetherton.ons.model.CensusHousehold;
 import com.martinetherton.ons.model.CensusHouseholdEntry;
+import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.persist.CensusHouseholdEntryRepository;
 import com.martinetherton.ons.persist.CensusHouseholdRepository;
 import com.martinetherton.ons.persist.CensusRepository;
@@ -63,4 +64,23 @@ public class CensusServiceImpl implements CensusService {
         }
         return censusEntries;
     }
+
+    @Override
+    @Transactional
+    public CensusHouseholdEntry addCensusHouseholdEntry(CensusHouseholdEntry censusHouseholdEntry) {
+        return censusHouseholdEntryRepository.add(censusHouseholdEntry);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public CensusHousehold findCensusHousehold(Census census, Location location) {
+        return censusHouseholdRepository.findCensusHousehold(census, location);
+    }
+
+    @Override
+    @Transactional
+    public CensusHousehold addCensusHousehold(CensusHousehold censusHousehold) {
+        return censusHouseholdRepository.add(censusHousehold);
+    }
+
 }

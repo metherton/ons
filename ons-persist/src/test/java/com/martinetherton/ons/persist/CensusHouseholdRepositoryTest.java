@@ -2,6 +2,7 @@ package com.martinetherton.ons.persist;
 
 import com.martinetherton.ons.model.Census;
 import com.martinetherton.ons.model.CensusHousehold;
+import com.martinetherton.ons.model.Location;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Before;
@@ -42,6 +43,16 @@ public class CensusHouseholdRepositoryTest {
     public void findAllCensusHouseholds() {
         List<CensusHousehold> censusHouseholds = repository.findAll();
         assertThat(censusHouseholds.size(), is(Matchers.greaterThan(0)));
+    }
+
+    @Test
+    public void findCensusHouseholdForCensusAndLocation() {
+        Census census = new Census();
+        census.setEntityId(0L);
+        Location location = new Location();
+        location.setEntityId(0L);
+        CensusHousehold censusHousehold = repository.findCensusHousehold(census, location);
+        assertThat(censusHousehold.getEntityId(), is(0L));
     }
 
     private EntityManagerFactory createEntityManagerFactory() {

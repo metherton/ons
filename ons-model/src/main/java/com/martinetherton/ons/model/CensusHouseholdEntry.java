@@ -26,7 +26,7 @@ public class CensusHouseholdEntry {
         this.entityId = entityId;
     }
 
-    public long getEntityId() {
+    public Long getEntityId() {
         return entityId;
     }
 

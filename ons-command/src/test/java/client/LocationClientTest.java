@@ -3,6 +3,7 @@ package client;
 import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.model.PersonDetails;
 import com.martinetherton.ons.model.Surname;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,6 +18,7 @@ public class LocationClientTest {
     private RestTemplate restTemplate = new RestTemplate();
 
     @Test
+    @Ignore
     public void getLocations() {
         String url = BASE_URL + "/locations";
         Location[] locations = restTemplate.getForObject(url, Location[].class);

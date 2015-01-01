@@ -11,6 +11,10 @@ public class Location {
         return entityId;
     }
 
+    public void setEntityId(Long entityId) {
+        this.entityId = entityId;
+    }
+
     @Id
     @GeneratedValue
     @Column(name="ID")

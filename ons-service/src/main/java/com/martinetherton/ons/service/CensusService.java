@@ -3,6 +3,7 @@ package com.martinetherton.ons.service;
 import com.martinetherton.ons.model.Census;
 import com.martinetherton.ons.model.CensusHousehold;
 import com.martinetherton.ons.model.CensusHouseholdEntry;
+import com.martinetherton.ons.model.Location;
 
 import java.util.List;
 import java.util.Map;
@@ -18,4 +19,10 @@ public interface CensusService {
     List<CensusHouseholdEntry> getCensusHouseholdEntries();
 
     Map<Long, List<CensusHouseholdEntry>> getCensusToCensusHouseholdEntryMap();
+
+    CensusHouseholdEntry addCensusHouseholdEntry(CensusHouseholdEntry censusHouseholdEntry);
+
+    CensusHousehold findCensusHousehold(Census census, Location location);
+
+    CensusHousehold addCensusHousehold(CensusHousehold censusHousehold);
 }

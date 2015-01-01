@@ -38,4 +38,10 @@ public class CensusHouseholdEntryRepositoryImpl implements CensusHouseholdEntryR
         List<CensusHouseholdEntry> censusHouseholdEntries = query.getResultList();
         return censusHouseholdEntries;
     }
+
+    @Override
+    public CensusHouseholdEntry add(CensusHouseholdEntry censusHouseholdEntry) {
+        entityManager.persist(censusHouseholdEntry);
+        return censusHouseholdEntry;
+    }
 }

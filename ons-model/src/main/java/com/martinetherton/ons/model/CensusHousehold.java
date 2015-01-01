@@ -9,6 +9,10 @@ import javax.persistence.*;
 @Table(name="T_CENSUS_HOUSEHOLD")
 public class CensusHousehold {
 
+    public Long getEntityId() {
+        return entityId;
+    }
+
     @Id
     @Column(name="ID")
     @GeneratedValue

@@ -16,4 +16,6 @@ public interface CensusHouseholdEntryRepository {
     List<CensusHouseholdEntry> findAll();
 
     List<CensusHouseholdEntry> findAllEntriesFor(Long year);
+
+    CensusHouseholdEntry add(CensusHouseholdEntry censusHouseholdEntry);
 }

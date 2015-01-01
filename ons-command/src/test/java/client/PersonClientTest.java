@@ -27,6 +27,7 @@ public class PersonClientTest {
 	private RestTemplate restTemplate = new RestTemplate();
 		
 	@Test
+    @Ignore
 	public void getPersonDetails() {
 		String url = BASE_URL + "/persons/{personId}";
 		PersonDetails personDetails = restTemplate.getForObject(url, PersonDetails.class, 3);
@@ -34,6 +35,7 @@ public class PersonClientTest {
 	}
 
 	@Test
+    @Ignore
 	public void getSurname() {
 		String url = BASE_URL + "/surnames/{surnameId}";
 		Surname person = restTemplate.getForObject(url, Surname.class, 1); 
@@ -41,6 +43,7 @@ public class PersonClientTest {
 	}
 
     @Test
+    @Ignore
     public void getAddPersonForm() {
         String url = BASE_URL + "/persons";
         Object personsForm = restTemplate.getForObject(url, PersonsForm.class);

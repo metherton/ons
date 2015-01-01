@@ -34,6 +34,7 @@ public class SurnameClientTest {
 	}
 
     @Test
+    @Ignore
     public void getSurnames() {
         String url = BASE_URL + "/surnames";
         Surname[] surnames = restTemplate.getForObject(url, Surname[].class);

@@ -20,5 +20,6 @@ public interface PersonService {
 	List<PersonDetails> listAllFemalePersonDetails();
 
 	PersonDetails getPersonDetails(long id);
+    List<Person> getPersons();
     
 }

@@ -103,7 +103,13 @@ public class PersonServiceImpl implements PersonService {
 								.withFather(father).build();
 	}
 
-	@Override
+    @Override
+    @Transactional(readOnly=true)
+    public List<Person> getPersons() {
+        return personRepository.findAll();
+    }
+
+    @Override
 	@Transactional(readOnly=true)
 	public List<PersonDetails> listAllMalePersonDetails() {
 		List<Person> persons = personRepository.findAllMalePersons();
