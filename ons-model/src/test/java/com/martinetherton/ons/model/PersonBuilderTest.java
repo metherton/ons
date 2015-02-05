@@ -16,12 +16,13 @@ public class PersonBuilderTest {
 		
 		String firstName = "Martin";
 		Surname surname = new Surname("Smith");
+        Location location = new Location();
 		Date birthDate = new Date();
 		Long entityId = 1L;
 		
 		Long fatherId = 2L;
 		Long motherId = 3L;
-		Person person = new Person.Builder(entityId, firstName, surname, birthDate, 1).withFather(fatherId ).withMother(motherId ).build();
+		Person person = new Person.Builder(entityId, firstName, surname, birthDate, 1, location).withFather(fatherId ).withMother(motherId ).build();
 		assertThat(person.getFirstName(), Matchers.is("Martin"));
 		assertThat(person.getFatherId(), Matchers.is(fatherId));
 		assertThat(person.getMotherId(), Matchers.is(motherId));

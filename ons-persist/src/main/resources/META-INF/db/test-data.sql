@@ -3,15 +3,12 @@ insert into T_SURNAME (SURNAME) values ('Eatherton');
 insert into T_SURNAME (SURNAME) values ('Wilkinson');
 insert into T_SURNAME (SURNAME) values ('De Roo');
 
-insert into T_FATHER (PERSON_ID) values (5);
-insert into T_MOTHER (PERSON_ID) values (3);
-
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER) values (0, 'Martin', '1963-03-04', 5, 3, 1);
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 'Mark', '1960-06-30', 1);
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 'Samuel Original', '1805-01-01', 1);
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (2, 'Nora', '1936-04-23', 0);
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (3, 'Erna', '1959-03-05', 0);
-insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, GENDER) values (0, 'Sydney', '1931-06-12', 1);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER, LOCATION_ID) values (0, 'Martin', '1963-03-04', 5, 3, 1, 0);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER, LOCATION_ID) values (0, 'Mark', '1960-06-30', 5, 3, 0,0);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER, LOCATION_ID) values (0, 'Samuel Original', '1805-01-01', 5, 3, 0,0);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER, LOCATION_ID) values (2, 'Nora', '1936-04-23',  5, 3, 0,0);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER, LOCATION_ID) values (3, 'Erna', '1959-03-05',  5, 3, 0,0);
+insert into T_PERSON (SURNAME_ID, FIRST_NAME, DATE_OF_BIRTH, FATHER_ID, MOTHER_ID, GENDER, LOCATION_ID) values (0, 'Sydney', '1931-06-12',  5, 3, 0,0);
 insert into T_COUNTRY (CODE, NAME) values ('nl', 'netherlands');
 insert into T_COUNTRY (CODE, NAME) values ('uk', 'united kingdom');
 

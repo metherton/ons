@@ -31,15 +31,18 @@ public class Person  {
     	private final Long entityId;
     	private final String firstName;
     	private final Surname surname;
+        private final Location location;
     	private final Date birthDate;
     	private int gender;
     	
-		public Builder(Long entityId, String firstName, Surname surname, Date birthDate, int gender) {
+		public Builder(Long entityId, String firstName, Surname surname, Date birthDate, int gender, Location location) {
 			this.entityId = entityId;
 			this.firstName = firstName;
 			this.surname = surname;
 			this.birthDate = birthDate;
 			this.gender = gender;
+            this.location = location;
+
 		}
 
 		public Builder withFather(Long val) {
@@ -73,6 +76,7 @@ public class Person  {
 		fatherId = builder.fatherId;
 		motherId = builder.motherId;
 		gender = builder.gender;
+        location = builder.location;
 	}
 
 	@Override
@@ -158,6 +162,18 @@ public class Person  {
     @OneToOne
     @JoinColumn(name="SURNAME_ID")
     private Surname surname;
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    @OneToOne
+    @JoinColumn(name="LOCATION_ID")
+    private Location location;
 
     @Column(name="DATE_OF_BIRTH") 
     @NotNull

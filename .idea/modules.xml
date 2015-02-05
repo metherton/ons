@@ -9,7 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/ons-selenium/ons-selenium.iml" filepath="$PROJECT_DIR$/ons-selenium/ons-selenium.iml" />
       <module fileurl="file://$PROJECT_DIR$/ons-service/ons-service.iml" filepath="$PROJECT_DIR$/ons-service/ons-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/ons-webapp/ons-webapp.iml" filepath="$PROJECT_DIR$/ons-webapp/ons-webapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../onsAngular/onsAngular.iml" filepath="$PROJECT_DIR$/../onsAngular/onsAngular.iml" />
+      <module fileurl="file://$USER_HOME$/angularTutorial/angular-seed/onsAngular.iml" filepath="$USER_HOME$/angularTutorial/angular-seed/onsAngular.iml" />
     </modules>
   </component>
 </project>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.martinetherton.ons.model.Location;
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.PersonDetails;
 import com.martinetherton.ons.model.Surname;
@@ -18,15 +19,16 @@ public class PersonsForm {
 		public List<PersonDetails> fatherDetails;
 		public List<PersonDetails> motherDetails;
         public String deathDate = "1904-11-21";
-        public String funeralDate = "1904-12-17";;
+        public String funeralDate = "1904-12-17";
+        private List<Location> locations;
 
-		
-		public Builder(List<PersonDetails> personDetails, Person addedPerson, List<Surname> surnames, List<PersonDetails> fatherDetails, List<PersonDetails> motherDetails) {
+		public Builder(List<PersonDetails> personDetails, Person addedPerson, List<Surname> surnames, List<PersonDetails> fatherDetails, List<PersonDetails> motherDetails, List<Location> locations) {
 			this.personDetails = personDetails;
 			this.addedPerson = addedPerson;
 			this.surnames = surnames;
 			this.fatherDetails = fatherDetails;
 			this.motherDetails = motherDetails;
+            this.locations = locations;
 		}
 
 		public PersonsForm build() {
@@ -41,6 +43,7 @@ public class PersonsForm {
 	private List<PersonDetails> fatherDetails;
 	private List<PersonDetails> motherDetails;
     private Employees employees;
+    private List<Location> locations;
 
     public String getDeathDate() {
         return deathDate;
@@ -79,6 +82,7 @@ public class PersonsForm {
         deathDate = builder.deathDate;
         funeralDate = builder.funeralDate;
 
+        locations = builder.locations;
     }
 
 	public List<PersonDetails> getPersonDetails() {
@@ -102,6 +106,10 @@ public class PersonsForm {
 	}
 
     public Employees getEmployees() {return employees;}
+
+    public List<Location> getLocations() {
+        return locations;
+    }
 
 
 }

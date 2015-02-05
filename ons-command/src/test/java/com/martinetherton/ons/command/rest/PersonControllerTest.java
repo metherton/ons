@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.martinetherton.ons.service.*;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,12 +17,6 @@ import org.mockito.Mockito;
 import com.martinetherton.ons.model.Person;
 import com.martinetherton.ons.model.PersonDetails;
 import com.martinetherton.ons.model.Surname;
-import com.martinetherton.ons.service.PersonDetailsService;
-import com.martinetherton.ons.service.PersonDetailsServiceImpl;
-import com.martinetherton.ons.service.PersonService;
-import com.martinetherton.ons.service.PersonServiceImpl;
-import com.martinetherton.ons.service.SurnameService;
-import com.martinetherton.ons.service.SurnameServiceImpl;
 
 public class PersonControllerTest {
 
@@ -30,13 +25,14 @@ public class PersonControllerTest {
 	private PersonService personService;
 	private PersonDetailsService personDetailsService;
 	private SurnameService surnameService;
+    private LocationService locationService;
 	
 	@Before
 	public void setUp() {
 		personService = Mockito.mock(PersonServiceImpl.class);
 		surnameService = Mockito.mock(SurnameServiceImpl.class);
 		personDetailsService = Mockito.mock(PersonDetailsServiceImpl.class);
-		controller = new PersonController(personService, personDetailsService, surnameService);
+		controller = new PersonController(personService, personDetailsService, surnameService, locationService);
 	}
 	
 	@Test

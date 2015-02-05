@@ -3,6 +3,7 @@ package com.martinetherton.ons.command.rest;
 import java.net.URI;
 import java.util.List;
 
+import com.martinetherton.ons.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -29,12 +30,14 @@ public class PersonController {
 	private PersonService personService;
 	private PersonDetailsService personDetailsService;
 	private SurnameService surnameService;
+    private LocationService locationService;
 
 	@Autowired
-	public PersonController(PersonService personService, PersonDetailsService personDetailsService, SurnameService surnameService) {
+	public PersonController(PersonService personService, PersonDetailsService personDetailsService, SurnameService surnameService, LocationService locationService) {
 		this.personService = personService;
 		this.personDetailsService = personDetailsService;
 		this.surnameService = surnameService;
+        this.locationService = locationService;
 	}
 
 	@RequestMapping(value = "/persons/{personId}", method = RequestMethod.GET)
@@ -53,7 +56,8 @@ public class PersonController {
                 new Person(),
                 surnameService.getSurnames(),
                 listAllFatherDetails,
-                listAllMotherDetails).build();
+                listAllMotherDetails,
+                locationService.getLocations()).build();
         return personsForm;
     }
 	

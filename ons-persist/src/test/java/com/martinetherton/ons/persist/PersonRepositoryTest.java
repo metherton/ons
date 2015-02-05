@@ -105,7 +105,7 @@ public class PersonRepositoryTest {
     @Test
     public void findAllMalePersons() {
         List<Person> persons = repository.findAllMalePersons();
-        assertThat(persons.size(), is(4));
+        assertThat(persons.size(), is(1));
     }   
     
     private EntityManagerFactory createEntityManagerFactory() {
