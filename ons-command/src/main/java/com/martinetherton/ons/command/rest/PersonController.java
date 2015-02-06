@@ -24,6 +24,8 @@ import com.martinetherton.ons.service.PersonDetailsService;
 import com.martinetherton.ons.service.PersonService;
 import com.martinetherton.ons.service.SurnameService;
 
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 public class PersonController {
 
@@ -48,7 +50,7 @@ public class PersonController {
 
     @RequestMapping(value = "/persons", method = RequestMethod.GET)
     public @ResponseBody
-    PersonsForm getAddPersonForm() {
+    PersonsForm getAddPersonForm(HttpServletResponse response) {
         List<PersonDetails> listAllPersonDetails = personService.listAllPersonDetails();
         List<PersonDetails> listAllFatherDetails = personService.listAllMalePersonDetails();
         List<PersonDetails> listAllMotherDetails = personService.listAllFemalePersonDetails();
@@ -58,6 +60,13 @@ public class PersonController {
                 listAllFatherDetails,
                 listAllMotherDetails,
                 locationService.getLocations()).build();
+
+
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+
         return personsForm;
     }
 	

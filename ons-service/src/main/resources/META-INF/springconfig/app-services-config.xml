@@ -24,7 +24,7 @@
         </property>
     </bean>
 	
- <!--  	<import resource="classpath:/META-INF/springconfig/services-security-config.xml"/>    -->
+   	<!--<import resource="classpath:/META-INF/springconfig/services-security-config.xml"/>-->
     <import resource="classpath:/META-INF/springconfig/app-persist-config.xml"/>
     <import resource="classpath:/META-INF/springconfig/app-model-config.xml"/>	
     <import resource="classpath:/META-INF/springconfig/aspects-config.xml"/>
@@ -41,6 +41,6 @@
 	           </map>
 	       </property>
     	</bean>
-    </beans> 
-	 
+    </beans>
+
 </beans>
