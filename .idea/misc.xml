@@ -12,7 +12,32 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/basic/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/authserver/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/resource/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/ui/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/authserver/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/resource/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/ui/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/proxy/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/proxy/resource/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/proxy/ui/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/single/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/spring-session/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/spring-session/resource/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/spring-session/ui/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/vanilla/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/vanilla/resource/pom.xml" />
+        <option value="$USER_HOME$/uiresourcedemo/protected/spring-security-angular/vanilla/ui/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">

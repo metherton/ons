@@ -31,12 +31,26 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="basic" target="1.7" />
+      <module name="oauth2-authserver" target="1.7" />
+      <module name="oauth2-resource" target="1.7" />
+      <module name="oauth2-ui" target="1.7" />
+      <module name="oauth2-vanilla-authserver" target="1.7" />
+      <module name="oauth2-vanilla-resource" target="1.7" />
+      <module name="oauth2-vanilla-ui" target="1.7" />
       <module name="ons-command" target="1.7" />
       <module name="ons-model" target="1.7" />
       <module name="ons-persist" target="1.7" />
       <module name="ons-selenium" target="1.7" />
       <module name="ons-service" target="1.7" />
       <module name="ons-webapp" target="1.7" />
+      <module name="proxy-resource" target="1.7" />
+      <module name="proxy-ui" target="1.7" />
+      <module name="single" target="1.7" />
+      <module name="spring-session-resource" target="1.7" />
+      <module name="spring-session-ui" target="1.7" />
+      <module name="vanilla-resource" target="1.7" />
+      <module name="vanilla-ui" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

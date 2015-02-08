@@ -3,6 +3,20 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/ons-selenium" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ons-webapp" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/basic" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/authserver" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/resource" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2-vanilla/ui" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/authserver" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/resource" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/oauth2/ui" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/proxy/resource" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/proxy/ui" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/single" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/spring-session/resource" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/spring-session/ui" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/vanilla/resource" charset="UTF-8" />
+    <file url="file://$USER_HOME$/uiresourcedemo/protected/spring-security-angular/vanilla/ui" charset="UTF-8" />
   </component>
 </project>
 
