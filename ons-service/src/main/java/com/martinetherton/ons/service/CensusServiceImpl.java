@@ -83,4 +83,9 @@ public class CensusServiceImpl implements CensusService {
         return censusHouseholdRepository.add(censusHousehold);
     }
 
+    @Override
+    public CensusHouseholdEntry getCensusHouseholdEntry(long id) {
+        return censusHouseholdEntryRepository.findBy(id);
+    }
+
 }

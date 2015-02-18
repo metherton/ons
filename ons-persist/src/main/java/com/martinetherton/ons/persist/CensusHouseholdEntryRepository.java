@@ -2,6 +2,7 @@ package com.martinetherton.ons.persist;
 
 import com.martinetherton.ons.model.CensusHousehold;
 import com.martinetherton.ons.model.CensusHouseholdEntry;
+import com.martinetherton.ons.model.Person;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 public interface CensusHouseholdEntryRepository {
 
     void setEntityManager(EntityManager entityManager);
+
+    CensusHouseholdEntry findBy(long id);
 
     List<CensusHouseholdEntry> findAll();
 

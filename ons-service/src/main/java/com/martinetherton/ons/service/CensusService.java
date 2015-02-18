@@ -25,4 +25,7 @@ public interface CensusService {
     CensusHousehold findCensusHousehold(Census census, Location location);
 
     CensusHousehold addCensusHousehold(CensusHousehold censusHousehold);
+
+    CensusHouseholdEntry getCensusHouseholdEntry(long id);
+
 }

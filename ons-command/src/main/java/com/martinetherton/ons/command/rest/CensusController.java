@@ -77,4 +77,8 @@ public class CensusController {
         return template.expand(childIdentifier);
     }
 
+    @RequestMapping(value = "/censuses/{censusHouseholdEntryId}", method = RequestMethod.GET)
+    public @ResponseBody CensusHouseholdEntry censusHouseholdEntryDetails(@PathVariable("censusHouseholdEntryId") long id) {
+        return censusService.getCensusHouseholdEntry(id);
+    }
 }

@@ -42,4 +42,5 @@ public class Census {
     public Long getEntityId() {
         return entityId;
     }
+
 }

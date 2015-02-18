@@ -43,5 +43,10 @@ public class CensusServiceIntegrationTest  extends ServiceIntegrationTest {
         Assert.assertThat(censusEntries.size(), Matchers.greaterThan(0));
     }
 
+    @Test
+    public void getCensusHouseholdEntry() {
+        Assert.assertThat(censusService.getCensusHouseholdEntry(0).getPerson().getFirstName(), Matchers.is("Mark"));
+    }
+
 
 }

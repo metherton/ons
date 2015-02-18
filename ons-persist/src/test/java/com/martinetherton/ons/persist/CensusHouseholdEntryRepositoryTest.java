@@ -2,6 +2,7 @@ package com.martinetherton.ons.persist;
 
 import com.martinetherton.ons.model.CensusHousehold;
 import com.martinetherton.ons.model.CensusHouseholdEntry;
+import com.martinetherton.ons.model.Person;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Before;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -48,6 +50,14 @@ public class CensusHouseholdEntryRepositoryTest {
     public void findAllCensusHouseholdEntriesFor1901() {
         List<CensusHouseholdEntry> censusHouseholdEntries = repository.findAllEntriesFor(1901L);
         assertThat(censusHouseholdEntries.size(), is(Matchers.greaterThan(0)));
+    }
+
+    @Test
+    public void findCensusHouseholdEntryById() {
+        long id = 0;
+        CensusHouseholdEntry censusHouseholdEntry = repository.findBy(id);
+        assertNotNull(censusHouseholdEntry);
+        assertThat(censusHouseholdEntry.getPerson().getFirstName(), is("Mark"));
     }
 
     private EntityManagerFactory createEntityManagerFactory() {

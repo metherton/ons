@@ -2,6 +2,7 @@ package com.martinetherton.ons.persist;
 
 import com.martinetherton.ons.model.CensusHousehold;
 import com.martinetherton.ons.model.CensusHouseholdEntry;
+import com.martinetherton.ons.model.Person;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -21,6 +22,11 @@ public class CensusHouseholdEntryRepositoryImpl implements CensusHouseholdEntryR
     @PersistenceContext
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
+    }
+
+    @Override
+    public CensusHouseholdEntry findBy(long id) {
+        return entityManager.find(CensusHouseholdEntry.class, id);
     }
 
     @Override
