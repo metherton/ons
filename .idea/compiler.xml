@@ -17,17 +17,47 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+      <profile default="false" name="Annotation profile for ons-selenium" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ons-selenium" />
+      </profile>
+      <profile default="false" name="Annotation profile for ons-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ons-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for ons-command" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="ons-command" />
+      </profile>
+      <profile default="false" name="Annotation profile for ons-model" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="ons-model" />
-        <module name="ons-persist" />
-        <module name="ons-selenium" />
-        <module name="ons-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for ons-webapp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="ons-webapp" />
+      </profile>
+      <profile default="false" name="Annotation profile for ons-persist" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ons-persist" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -40,6 +70,7 @@
       <module name="oauth2-vanilla-ui" target="1.7" />
       <module name="ons-command" target="1.7" />
       <module name="ons-model" target="1.7" />
+      <module name="ons-parent" target="1.5" />
       <module name="ons-persist" target="1.7" />
       <module name="ons-selenium" target="1.7" />
       <module name="ons-service" target="1.7" />
@@ -54,4 +85,3 @@
     </bytecodeTargetLevel>
   </component>
 </project>
-

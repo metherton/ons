@@ -64,4 +64,8 @@ public class LocationController {
     }
 
 
+    @RequestMapping(value = "/locations/{locationId}", method = RequestMethod.GET)
+    public @ResponseBody Location locationDetails(@PathVariable("locationId") long id) {
+        return locationService.getLocation(id);
+    }
 }
